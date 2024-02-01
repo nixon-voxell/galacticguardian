@@ -55,7 +55,14 @@ public class ShipBuilder : MonoBehaviour
                 Vector3 position = new Vector3(tileStart + x * this.TileSize, tileStart + y * this.TileSize, 0.0f);
 
                 TileNode tileNode = Object.Instantiate(this.TileNodePrefab, position, Quaternion.identity, this.transform);
+
                 tileNode.BuildBtn = this.InGameHud.CreateBuildBtn(position);
+                tileNode.BuildBtn.clicked += () =>
+                {
+                    tileNode.SetActive(true);
+                    // tileNode.SetCanBuild(false);
+                    this.CheckTilesCanBuild();
+                };
 
                 this.TileNodes[flattenIndex] = tileNode;
             }

@@ -3,12 +3,14 @@ using UnityEngine.UIElements;
 
 public class InGameHud : UiMono
 {
+    public VisualElement TileBtnGrp;
     private Button m_TileBtn;
 
     protected override void Awake()
     {
         base.Awake();
 
+        this.TileBtnGrp = this.Root.Q<VisualElement>("tile-btn-grp");
         this.m_TileBtn = this.Root.Q<Button>("tile-btn");
     }
 
@@ -27,7 +29,7 @@ public class InGameHud : UiMono
         buildBtn.style.left = position.x;
         buildBtn.style.top = position.y;
 
-        this.Root.Add(buildBtn);
+        this.TileBtnGrp.Add(buildBtn);
 
         return buildBtn;
     }
