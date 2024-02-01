@@ -1,12 +1,15 @@
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class InGameHud : UiMono
 {
     private Button m_TileBtn;
+    private Button m_PlayBtn;
 
     private void Start()
     {
         this.m_TileBtn = this.Root.Q<Button>("tile-btn");
+        this.m_PlayBtn = this.Root.Q<Button>("play-btn");
 
         // Button newBtn = new Button();
 
