@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
 
@@ -11,6 +12,12 @@ public class ShipBuilder : MonoBehaviour
     [SerializeField] private TileNode[] TileNodes;
 
     private InGameHud InGameHud;
+
+    private int m_GridLength;
+    private int m_TileCount;
+    private int2 m_MaxIndex2D;
+    // Core tile index
+    private int m_CenterTileIndex;
 
     private int2[] indexOffsets = new int2[]
     {
@@ -28,38 +35,39 @@ public class ShipBuilder : MonoBehaviour
     {
         this.InGameHud = UiManager.Instance.GetUi<InGameHud>();
 
-        int gridLength = (int)this.TilesFromCenter * 2 + 1;
-        int tileCount = gridLength * gridLength;
-        int2 maxIndex2D = gridLength - 1;
+        this.m_GridLength = (int)this.TilesFromCenter * 2 + 1;
+        this.m_TileCount = this.m_GridLength * this.m_GridLength;
+        this.m_MaxIndex2D = this.m_GridLength - 1;
+        this.m_CenterTileIndex = mathx.flatten_int2((int)this.TilesFromCenter, this.m_GridLength);
 
         float tileStart = -this.TileSize * (this.TilesFromCenter + 0.5f);
 
-        this.TileNodes = new TileNode[tileCount];
+        this.TileNodes = new TileNode[this.m_TileCount];
 
         // Create tiles
-        for (int y = 0; y < gridLength; y++)
+        for (int y = 0; y < this.m_GridLength; y++)
         {
-            for (int x = 0; x < gridLength; x++)
+            for (int x = 0; x < this.m_GridLength; x++)
             {
                 int2 index2D = new int2(x, y);
-                int flattenIndex = mathx.flatten_int2(index2D, gridLength);
+                int flattenIndex = mathx.flatten_int2(index2D, this.m_GridLength);
 
                 Vector3 position = new Vector3(tileStart + x * this.TileSize, tileStart + y * this.TileSize, 0.0f);
 
                 TileNode tileNode = Object.Instantiate(this.TileNodePrefab, position, Quaternion.identity, this.transform);
-                this.InGameHud.CreateBuildBtn(position);
+                tileNode.BuildBtn = this.InGameHud.CreateBuildBtn(position);
 
                 this.TileNodes[flattenIndex] = tileNode;
             }
         }
 
-        // Set tile components
-        for (int y = 0; y < gridLength; y++)
+        // Set tile neighbors
+        for (int y = 0; y < this.m_GridLength; y++)
         {
-            for (int x = 0; x < gridLength; x++)
+            for (int x = 0; x < this.m_GridLength; x++)
             {
                 int2 index2D = new int2(x, y);
-                int flattenIndex = mathx.flatten_int2(index2D, gridLength);
+                int flattenIndex = mathx.flatten_int2(index2D, this.m_GridLength);
 
                 TileNode tileNode = this.TileNodes[flattenIndex];
 
@@ -68,17 +76,82 @@ public class ShipBuilder : MonoBehaviour
                     int2 neighborIndex2D = index2D + offset;
                     if (
                         math.any(neighborIndex2D < 0) ||
-                        math.any(neighborIndex2D > maxIndex2D)
+                        math.any(neighborIndex2D > this.m_MaxIndex2D)
                     )
                     {
                         continue;
                     }
 
-                    TileNode neighborTile = this.TileNodes[mathx.flatten_int2(neighborIndex2D, gridLength)];
+                    TileNode neighborTile = this.TileNodes[mathx.flatten_int2(neighborIndex2D, this.m_GridLength)];
                     tileNode.Neighbors.Add(neighborTile);
                 }
+
+                // TODO: remove this
+                // tileNode.SetActive(true);
             }
         }
 
+        // Set core tile to active
+        this.TileNodes[this.m_CenterTileIndex].SetActive(true);
+        this.CheckTilesConnected();
+        this.CheckTilesCanBuild();
+    }
+
+    private void CheckTilesCanBuild()
+    {
+        // Allow tile for building based on neighbor activeness
+        foreach (TileNode tileNode in this.TileNodes)
+        {
+            if (tileNode.Active)
+            {
+                tileNode.SetCanBuild(false);
+                continue;
+            }
+
+            bool neighborActive = false;
+
+            foreach (TileNode neighborNode in tileNode.Neighbors)
+            {
+                if (neighborNode.Active)
+                {
+                    neighborActive = true;
+                    break;
+                }
+            }
+
+            tileNode.SetCanBuild(neighborActive);
+        }
+    }
+
+    private void CheckTilesConnected()
+    {
+        // Set all Connected to false first
+        foreach (TileNode tileNode in this.TileNodes)
+        {
+            tileNode.Connected = false;
+        }
+
+
+        this.RecursiveTraverseForConnectivity(in this.GetCenterTile().Neighbors);
+    }
+
+    private void RecursiveTraverseForConnectivity(in List<TileNode> tileNodes)
+    {
+        foreach (TileNode tileNode in tileNodes)
+        {
+            // Connection only works on enabled tiles
+            if (tileNode.Active == false || tileNode.Connected == true)
+            {
+                continue;
+            }
+
+            tileNode.Connected = true;
+            this.RecursiveTraverseForConnectivity(in tileNode.Neighbors);
+        }
+    }
+
+    private TileNode GetCenterTile()
+    {
+        return this.TileNodes[this.m_CenterTileIndex];
     }
 }

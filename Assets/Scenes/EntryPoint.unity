@@ -484,7 +484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialVisibility: 1
-  Position: {x: 0, y: 0, z: 0}
 --- !u!1 &1318406191
 GameObject:
   m_ObjectHideFlags: 0
