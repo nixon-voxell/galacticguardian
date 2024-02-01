@@ -30,6 +30,7 @@ public class ShipBuilder : MonoBehaviour
 
         int gridLength = (int)this.TilesFromCenter * 2 + 1;
         int tileCount = gridLength * gridLength;
+        int2 maxIndex2D = gridLength - 1;
 
         float tileStart = -this.TileSize * (this.TilesFromCenter + 0.5f);
 
@@ -51,5 +52,33 @@ public class ShipBuilder : MonoBehaviour
                 this.TileNodes[flattenIndex] = tileNode;
             }
         }
+
+        // Set tile components
+        for (int y = 0; y < gridLength; y++)
+        {
+            for (int x = 0; x < gridLength; x++)
+            {
+                int2 index2D = new int2(x, y);
+                int flattenIndex = mathx.flatten_int2(index2D, gridLength);
+
+                TileNode tileNode = this.TileNodes[flattenIndex];
+
+                foreach (int2 offset in indexOffsets)
+                {
+                    int2 neighborIndex2D = index2D + offset;
+                    if (
+                        math.any(neighborIndex2D < 0) ||
+                        math.any(neighborIndex2D > maxIndex2D)
+                    )
+                    {
+                        continue;
+                    }
+
+                    TileNode neighborTile = this.TileNodes[mathx.flatten_int2(neighborIndex2D, gridLength)];
+                    tileNode.Neighbors.Add(neighborTile);
+                }
+            }
+        }
+
     }
 }
