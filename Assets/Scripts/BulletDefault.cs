@@ -78,12 +78,15 @@ public class BulletDefault : MonoBehaviour
     }
     private void ResetBullet()
     {
+        // TODO: Why no reset???
         if (m_Activated)
         {
             m_Activated = false;
             m_BulletStat.BulletSpeed = 0;
             m_Collider.enabled = false;
             m_MeshRenderer.enabled = false;
+            gameObject.SetActive(false);
+
             if (m_Pfx != null)
                 m_Pfx.SetActive(false);
         }
