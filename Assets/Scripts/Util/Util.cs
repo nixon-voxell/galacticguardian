@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Util
 {
@@ -25,5 +27,12 @@ public class Util
             yield return null;
 
         func();
+    }
+
+    public static Quaternion LookAt2DRotation(Vector2 objectPos, Vector2 targetPos)
+    {
+        Vector3 dir = targetPos - objectPos;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        return Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
