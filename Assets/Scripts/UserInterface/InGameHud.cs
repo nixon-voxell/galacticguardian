@@ -1,17 +1,34 @@
+using UnityEngine;
 using UnityEngine.UIElements;
 
 public class InGameHud : UiMono
 {
     private Button m_TileBtn;
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
+
         this.m_TileBtn = this.Root.Q<Button>("tile-btn");
+    }
 
-        // Button newBtn = new Button();
+    public Button CreateBuildBtn(Vector3 worldPosition)
+    {
+        Button buildBtn = new Button();
 
-        this.Root.Add(this.m_TileBtn);
-        UnityEngine.Debug.Log(this.m_TileBtn.style.left);
-        this.m_TileBtn.style.left = 100.0f;
+        foreach (string className in this.m_TileBtn.GetClasses())
+        {
+            buildBtn.AddToClassList(className);
+        }
+
+        Vector2 position = RuntimePanelUtils.CameraTransformWorldToPanel(
+            this.Root.panel, worldPosition, Camera.main
+        );
+        buildBtn.style.left = position.x;
+        buildBtn.style.top = position.y;
+
+        this.Root.Add(buildBtn);
+
+        return buildBtn;
     }
 }
