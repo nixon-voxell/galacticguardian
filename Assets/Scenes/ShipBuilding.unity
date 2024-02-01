@@ -167,10 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b40eec21f31b6b4ea8c4d296b5fc0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TilesFromCenter: 5
+  TilesFromCenter: 8
   TileSize: 0.5
   TileNodePrefab: {fileID: 2000124733}
-  TileNodes: []
+  EssenceCost: 10
 --- !u!1 &2000124731
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Neighbors: []
   Connected: 0
+  m_CanBuild: 0
 --- !u!212 &2000124734
 SpriteRenderer:
   m_ObjectHideFlags: 0

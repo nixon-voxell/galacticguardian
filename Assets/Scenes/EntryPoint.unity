@@ -436,6 +436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af36f760e34b0341b2cf92458a7e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PoolManager: {fileID: 0}
 --- !u!114 &678497222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd64f0134abce489404fedb5558752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EssenceCount: 165
+  EssenceCount: 1000
   Time: 0
 --- !u!1 &1189783050
 GameObject:
