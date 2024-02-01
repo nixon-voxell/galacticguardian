@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class GameManager : SingletonMono<GameManager>
 {
     [HideInInspector] public Player Player;
