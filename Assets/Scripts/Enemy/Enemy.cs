@@ -3,24 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : StateController
 {
-    public enum EnemyState { Chasing, Attacking };
-
     public float EnemyMaxHP;
     public float EnemyDamage;
     public float EnemyMovementSpeed;
-    public float EnemyAtkRate;
+    public float EnemyAtkRate; 
     public float EnemyAtkRange;
     public CircleCollider2D AtkCollider;
 
+    [Header("Behaviours")] 
+    public State AtkState;
+    public EnemyChase ChaseState; 
 
+    // Assign at RunTime
     private float m_EnemyCurrentHP;
     private Transform m_AtkTarget;
-    private EnemyState m_CurrentState;
+
+    public Transform AtkTarget { get => m_AtkTarget;}
+
+    // States
+
 
     private void Awake()
-    {
+    { 
         InitializeEnemy();
     }
 
@@ -42,21 +48,23 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        
         EvaluateState();
-    }
 
+        this.StateUpdate();
+    }
 
     private void EvaluateState()
     {
-        if (m_AtkTarget != null)
+        // Change State To
+        if (AtkTarget != null)
         {
-            m_CurrentState = EnemyState.Attacking;
-            Attack();
+            this.ChangeState(AtkState);
         }
         else
         {
-            m_CurrentState = EnemyState.Chasing;
-            Chasing();
+            // Chasing
+            this.ChangeState(ChaseState);
         }
     }
     private void InitializeEnemy()
@@ -64,18 +72,4 @@ public class Enemy : MonoBehaviour
         m_EnemyCurrentHP = EnemyMaxHP;
         AtkCollider.radius = EnemyAtkRange;
     }
-
-    private void Chasing()
-    {
-        Debug.Log("Chasing");
-    }
-
-    private void Attack()
-    {
-        Debug.Log("Attack");
-    }
-
-    
-
-
 }

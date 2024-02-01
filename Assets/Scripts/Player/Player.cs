@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private void OnEnable()
+    private void Start()
     {
         GameManager.Instance.Player = this;
-    }
+    } 
 
     private void OnDisable()
     {
