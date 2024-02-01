@@ -3,7 +3,7 @@ using Unity.Mathematics;
 
 public class ShipBuilder : MonoBehaviour
 {
-    [Tooltip("Number of tiles counting from the left towards the center but not including the center tile.")]
+    [Tooltip("Number of tiles counting from the center towards the edge but not including the center tile.")]
     [SerializeField] private uint TilesFromCenter;
 
     [SerializeField] private TileNode TileNodePrefab;
