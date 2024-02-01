@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/EntryPoint.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/UserInterfaces/Main Menu/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: bbf5f855ae5019743a1921b2a3da2594
   - enabled: 1
     path: Assets/Scenes/Player_Movement.unity
