@@ -380,6 +380,63 @@ MonoBehaviour:
     Count: 500
     m_Prefab: {fileID: 2561027712594855420, guid: 929f7bf83f517894484ed42606cbf8d2, type: 3}
     m_DefaultActive: 0
+--- !u!1001 &1433468227
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 370638884592542012, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958031677815349607, guid: feaf623b471174841a4191a019df9e5b, type: 3}
+      propertyPath: m_Name
+      value: Enemy_Melee
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feaf623b471174841a4191a019df9e5b, type: 3}
 --- !u!1001 &3440659302665799423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,3 +503,4 @@ SceneRoots:
   - {fileID: 1121282241}
   - {fileID: 915392397}
   - {fileID: 977561452}
+  - {fileID: 1433468227}

@@ -9,12 +9,20 @@ public class Enemy : StateController
     public float EnemyDamage;
     public float EnemyMovementSpeed;
     public float EnemyAtkRate; 
+    public float EnemyAtkSpeed; 
     public float EnemyAtkRange;
     public CircleCollider2D AtkCollider;
 
     [Header("Behaviours")] 
     public State AtkState;
-    public EnemyChase ChaseState; 
+    public EnemyChase ChaseState;
+
+    [Header("Scaling")]
+    [SerializeField] private float m_EnemyHPScale;
+    [SerializeField] private float m_EnemyDamageScale;
+    [SerializeField] private float m_EnemyMovementSpeedScale;
+    [SerializeField] private float m_EnemyAtkSpeedScale;
+    [SerializeField] private float m_EnemyAtkRateScale; 
 
     // Assign at RunTime
     private float m_EnemyCurrentHP;
@@ -25,7 +33,7 @@ public class Enemy : StateController
     // States
 
 
-    private void Awake()
+    private void Start()
     { 
         InitializeEnemy();
     }
@@ -56,6 +64,16 @@ public class Enemy : StateController
 
     public void InitializeEnemy()
     {
+        float time = GameStat.Instance.Time;
+
+        EnemyMaxHP += m_EnemyAtkRateScale * time;
+        EnemyDamage += m_EnemyDamageScale * time;
+        EnemyMovementSpeed += m_EnemyMovementSpeedScale * time;
+        EnemyAtkRate += m_EnemyAtkRateScale * time;
+        EnemyAtkSpeed += m_EnemyAtkSpeedScale * time;
+
+        // ENEMY SCALLING
+
         m_EnemyCurrentHP = EnemyMaxHP;
         AtkCollider.radius = EnemyAtkRange;
     }

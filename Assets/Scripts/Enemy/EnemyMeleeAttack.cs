@@ -28,7 +28,6 @@ public class EnemyMeleeAttack : State
 
         if (Time.time > m_NextAtkTime)
         {
-            Debug.Log("Enemy melee atk");
             m_Damageable.OnDamage(m_Enemy.transform, m_Enemy.EnemyDamage);
             m_NextAtkTime = Time.time + (1 / m_Enemy.EnemyAtkRate);
         }

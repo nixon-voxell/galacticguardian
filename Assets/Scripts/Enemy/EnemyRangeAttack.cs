@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class EnemyRangeAttack : State
 {
-    [SerializeField] private float m_BulletSpeed;
-
     private Enemy m_Enemy;
     private float m_NextAtkTime;
     private Transform m_Victim;
+    private BulletStat m_BulletStat;
+
+    private void Start()
+    {
+        m_BulletStat = new BulletStat(0,0);
+    }
 
     protected override void OnEnter()
     {
         m_Enemy = this.StateController as Enemy;
         m_Victim = m_Enemy.AtkTarget;
+        m_BulletStat.BulletDamage = m_Enemy.EnemyDamage;
+        m_BulletStat.BulletSpeed = m_Enemy.EnemyAtkSpeed;
     }
 
     protected override void OnExit()
@@ -32,7 +38,7 @@ public class EnemyRangeAttack : State
             BulletDefault bullet =  GameManager.Instance.PoolManager.m_DefaultBullet.GetNextObject();
             bullet.transform.position = m_Enemy.transform.position;
             bullet.transform.rotation = Util.LookAt2DRotation(m_Enemy.transform.position, m_Victim.transform.position);
-            bullet.StartBullet(new BulletStat(m_Enemy.EnemyDamage, m_BulletSpeed));
+            bullet.StartBullet(m_BulletStat);
             m_NextAtkTime = Time.time + (1 / m_Enemy.EnemyAtkRate);
         }
     }

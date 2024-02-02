@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateController: {fileID: 0}
-  m_BulletSpeed: 5
 --- !u!1 &1701825993403906629
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +351,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.73
+  m_Radius: 0.55
 --- !u!114 &2544069029293496021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +369,13 @@ MonoBehaviour:
   EnemyDamage: 5
   EnemyMovementSpeed: 3
   EnemyAtkRate: 1
-  EnemyAtkRange: 0.6
+  EnemyAtkSpeed: -1
+  EnemyAtkRange: 0.55
   AtkCollider: {fileID: 8159349420221584907}
   AtkState: {fileID: 253845280765208721}
   ChaseState: {fileID: 6007758984651726667}
+  m_EnemyHPScale: 0.25
+  m_EnemyDamageScale: 0.2
+  m_EnemyMovementSpeedScale: 0.15
+  m_EnemyAtkSpeedScale: -1
+  m_EnemyAtkRateScale: 0.15

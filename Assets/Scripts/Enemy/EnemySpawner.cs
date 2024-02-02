@@ -36,9 +36,6 @@ public class EnemySpawner : MonoBehaviour
     {
         if (m_CurrentSpawnRate < m_MaxSpawnRate)
             m_CurrentSpawnRate += m_SpawnRateIncrease * Time.deltaTime;
-
-        print(m_CurrentSpawnRate);
-
     }
 
     private IEnumerator StartSpawning()
@@ -61,6 +58,7 @@ public class EnemySpawner : MonoBehaviour
         Enemy _enemy = m_EnemyPool[enemyIdx].GetNextObject();
         _enemy.transform.position = spawnPos;
         _enemy.gameObject.SetActive(true);
+        _enemy.InitializeEnemy();
     }
 
     private Vector2 GetRandomPos()
