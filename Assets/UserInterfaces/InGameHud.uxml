@@ -5,12 +5,12 @@
     </ui:VisualElement>
     <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; padding-top: 40px; padding-right: 40px; padding-bottom: 40px; padding-left: 40px;">
         <ui:VisualElement picking-mode="Ignore" style="flex-direction: row;">
-            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;" />
-            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; align-items: center;">
+            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; width: 33.33%;" />
+            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; align-items: center; width: 33.33%;">
                 <ui:Label text="00:00:00" picking-mode="Ignore" name="time-lbl" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Lemon_milk_2/Lemon%20Milk%20SDF.asset?fileID=11400000&amp;guid=8264aca48eef959419918d30c8a9d25d&amp;type=2#Lemon Milk SDF&apos;); font-size: 80px; color: rgb(255, 255, 255);" />
             </ui:VisualElement>
-            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; align-items: flex-end;">
-                <ui:Label text="100" style="color: rgb(255, 255, 255); font-size: 36px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Candy_beans/Candy%20Beans%20SDF.asset?fileID=11400000&amp;guid=4fb97fa8f3eeb234da27440138e7059d&amp;type=2#Candy Beans SDF&apos;);" />
+            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; align-items: flex-end; width: 33.33%;">
+                <ui:Label text="100" name="essence-lbl" style="color: rgb(255, 255, 255); font-size: 36px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Candy_beans/Candy%20Beans%20SDF.asset?fileID=11400000&amp;guid=4fb97fa8f3eeb234da27440138e7059d&amp;type=2#Candy Beans SDF&apos;);" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;" />

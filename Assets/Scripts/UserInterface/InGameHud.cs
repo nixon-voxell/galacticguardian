@@ -3,16 +3,9 @@ using UnityEngine.UIElements;
 
 public class InGameHud : UiMono
 {
+    private Label m_EssenceLbl;
     public VisualElement TileBtnGrp;
     private Button m_TileBtn;
-
-    protected override void Awake()
-    {
-        base.Awake();
-
-        this.TileBtnGrp = this.Root.Q<VisualElement>("tile-btn-grp");
-        this.m_TileBtn = this.Root.Q<Button>("tile-btn");
-    }
 
     public Button CreateBuildBtn(Vector3 worldPosition)
     {
@@ -36,5 +29,19 @@ public class InGameHud : UiMono
         this.TileBtnGrp.Add(buildBtn);
 
         return buildBtn;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        this.m_EssenceLbl = this.Root.Q<Label>("essence-lbl");
+        this.TileBtnGrp = this.Root.Q<VisualElement>("tile-btn-grp");
+        this.m_TileBtn = this.Root.Q<Button>("tile-btn");
+    }
+
+    private void Update()
+    {
+        this.m_EssenceLbl.text = GameStat.Instance.EssenceCount.ToString();
     }
 }
