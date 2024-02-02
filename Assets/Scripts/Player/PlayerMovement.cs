@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float MovementSpeed;
-    float speedX, speedY;
-    Rigidbody2D rb;
+    private float m_speedX, m_speedY;
+    private Rigidbody2D rb;
 
     void Start()
     {
@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speedX = Input.GetAxisRaw("Horizontal") * MovementSpeed;
-        speedY = Input.GetAxisRaw("Vertical") * MovementSpeed;
-        rb.velocity = new Vector2(speedX, speedY);
+        m_speedX = Input.GetAxisRaw("Horizontal") * MovementSpeed;
+        m_speedY = Input.GetAxisRaw("Vertical") * MovementSpeed;
+        rb.velocity = new Vector2(m_speedX, m_speedY);
     }
 }
