@@ -8,4 +8,9 @@ public class GameStat : SingletonMono<GameStat>
         this.EssenceCount = 0;
         this.Time = 0.0f;
     }
+
+    private void Update()
+    {
+        this.Time += UnityEngine.Time.deltaTime;
+    }
 }
