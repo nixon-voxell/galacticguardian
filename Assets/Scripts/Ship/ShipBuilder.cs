@@ -61,7 +61,6 @@ public class ShipBuilder : MonoBehaviour
                 tileNode.BuildBtn = this.InGameHud.CreateBuildBtn(position);
                 tileNode.BuildBtn.clicked += () =>
                 {
-                    Debug.Log("Clicked");
                     // Tiles can only be built when there is enought essence
                     if (GameStat.Instance.EssenceCount < this.EssenceCost)
                     {
