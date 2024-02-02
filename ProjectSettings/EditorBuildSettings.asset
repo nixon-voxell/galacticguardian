@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Player_Movement.unity
     guid: d157cc4f1bef0eb468537d4e5febc471
+  - enabled: 1
+    path: Assets/Scenes/ScoreBoard.unity
+    guid: abb814a3a66323f49a08a68232b6195f
   m_configObjects: {}

@@ -1,35 +1,46 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
 public class StartMenu : UiMono
 {
-   UnityEngine.UI.Button UiButton;
-
     void Start()
     {
         if (this.m_Doc == null)
         {
             UnityEngine.Debug.LogError("No Button Found!");
+            return;
         }
 
-        var visualElement = this.m_Doc.rootVisualElement.Q("play-btn");
+        var PlayBtn = this.m_Doc.rootVisualElement.Q("play-btn") as Button;
+        var RetryBtn = this.m_Doc.rootVisualElement.Q("retry-btn") as Button;
+        var QuitBtn = this.m_Doc.rootVisualElement.Q("quit-btn") as Button;
 
-        if (visualElement != null && visualElement.name == "play-btn")
+        if (PlayBtn != null)
         {
-            Debug.Log("Button Found!");
-            visualElement.RegisterCallback<ClickEvent>(OnButtonClick);
+            Debug.Log("Play Button Found!");
+            PlayBtn.clicked += OnButtonClick;
         }
-        else
+
+        if (RetryBtn != null)
         {
-            Debug.LogError("Element with name 'play-btn' is not found or is not a Button!");
+            Debug.Log("Retry Button Found!");
+            RetryBtn.clicked += OnButtonClick;
+        }
+
+        if (QuitBtn != null)
+        {
+            Debug.Log("Quit Button Found!");
+            QuitBtn.clicked += OnQuitButtonClick;
         }
     }
 
-
-    public void OnButtonClick(ClickEvent evt)
+    public void OnButtonClick()
     {
         SceneManager.LoadScene("Player_Movement");
+    }
+    public void OnQuitButtonClick()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
