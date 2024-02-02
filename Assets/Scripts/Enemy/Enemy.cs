@@ -40,7 +40,7 @@ public class Enemy : StateController
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Tile"))
         {
             m_AtkTarget = collision.transform;
         }
@@ -48,7 +48,7 @@ public class Enemy : StateController
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Tile"))
         {
             m_AtkTarget = null;
         }
@@ -66,14 +66,14 @@ public class Enemy : StateController
     {
         float time = GameStat.Instance.Time;
 
+        // Enemy Scaling
         EnemyMaxHP += m_EnemyAtkRateScale * time;
         EnemyDamage += m_EnemyDamageScale * time;
         EnemyMovementSpeed += m_EnemyMovementSpeedScale * time;
         EnemyAtkRate += m_EnemyAtkRateScale * time;
         EnemyAtkSpeed += m_EnemyAtkSpeedScale * time;
 
-        // ENEMY SCALLING
-
+        // Reassignation
         m_EnemyCurrentHP = EnemyMaxHP;
         AtkCollider.radius = EnemyAtkRange;
     }
