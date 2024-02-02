@@ -54,6 +54,12 @@ public class Enemy : StateController
         this.StateUpdate();
     }
 
+    public void InitializeEnemy()
+    {
+        m_EnemyCurrentHP = EnemyMaxHP;
+        AtkCollider.radius = EnemyAtkRange;
+    }
+
     private void EvaluateState()
     {
         // Change State To
@@ -67,9 +73,5 @@ public class Enemy : StateController
             this.ChangeState(ChaseState);
         }
     }
-    private void InitializeEnemy()
-    {
-        m_EnemyCurrentHP = EnemyMaxHP;
-        AtkCollider.radius = EnemyAtkRange;
-    }
+    
 }
