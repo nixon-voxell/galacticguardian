@@ -17,6 +17,10 @@ public class InGameHud : UiMono
     public Button CreateBuildBtn(Vector3 worldPosition)
     {
         Button buildBtn = new Button();
+        buildBtn.RegisterCallback<NavigationSubmitEvent>((evt) =>
+        {
+            evt.StopPropagation();
+        }, TrickleDown.TrickleDown);
 
         foreach (string className in this.m_TileBtn.GetClasses())
         {
