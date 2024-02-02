@@ -400,6 +400,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678497220}
+  - component: {fileID: 678497221}
+  - component: {fileID: 678497222}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -422,6 +424,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678497221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678497219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af36f760e34b0341b2cf92458a7e298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PoolManager: {fileID: 0}
+--- !u!114 &678497222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678497219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd64f0134abce489404fedb5558752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EssenceCount: 1000
+  Time: 0
 --- !u!1 &1189783050
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729c82a3d2e96e94d8aca80e08a917d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialVisibility: 0
+  InitialVisibility: 1
 --- !u!1 &1318406191
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +567,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 678497220}
   - {fileID: 288041218}
+  - {fileID: 678497220}
   - {fileID: 1318406192}
