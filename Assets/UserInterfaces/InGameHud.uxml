@@ -15,10 +15,10 @@
         </ui:VisualElement>
         <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;" />
         <ui:VisualElement picking-mode="Ignore">
-            <ui:VisualElement style="flex-direction: row; align-self: center;">
-                <ui:Button name="tower0-btn" class="tower-btn" />
-                <ui:Button name="tower1-btn" class="tower-btn" />
-                <ui:Button name="tower2-btn" class="tower-btn" />
+            <ui:VisualElement name="tower-btn-grp" style="flex-direction: row; align-self: center;">
+                <ui:Button name="tower0-btn" text="Laser" class="tower-btn" />
+                <ui:Button name="tower1-btn" text="Atomic" class="tower-btn" />
+                <ui:Button name="tower2-btn" text="Rail" class="tower-btn" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
