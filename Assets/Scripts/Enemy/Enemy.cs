@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : StateController
+public class Enemy : StateController, IDamageable
 {
     public float EnemyMaxHP;
     public float EnemyDamage;
@@ -22,7 +22,7 @@ public class Enemy : StateController
     [SerializeField] private float m_EnemyDamageScale;
     [SerializeField] private float m_EnemyMovementSpeedScale;
     [SerializeField] private float m_EnemyAtkSpeedScale;
-    [SerializeField] private float m_EnemyAtkRateScale; 
+    [SerializeField] private float m_EnemyAtkRateScale;
 
     // Assign at RunTime
     private float m_EnemyCurrentHP;
@@ -78,6 +78,17 @@ public class Enemy : StateController
         AtkCollider.radius = EnemyAtkRange;
     }
 
+    public void OnDamage(Transform attacker, float damage)
+    {
+        m_EnemyCurrentHP -= damage;
+
+        if (m_EnemyCurrentHP <= 0)
+        {
+            m_EnemyCurrentHP = 0;
+            DestroyEnemy();
+        }
+    }
+
     private void EvaluateState()
     {
         // Change State To
@@ -91,5 +102,11 @@ public class Enemy : StateController
             this.ChangeState(ChaseState);
         }
     }
-    
+
+    private void DestroyEnemy()
+    {
+        gameObject.SetActive(false);
+        Debug.Log($"[SYSTEM] Enemy {transform.name} dead");
+    }
+
 }
