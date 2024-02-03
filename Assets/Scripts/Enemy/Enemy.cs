@@ -10,8 +10,8 @@ public class Enemy : StateController, IDamageable
     public float EnemyMovementSpeed;
     public float EnemyAtkRate; 
     public float EnemyAtkSpeed; 
-    public float EnemyAtkRange;
-    public CircleCollider2D AtkCollider;
+    public float EnemyAtkRange; // This stat not scaled
+    public LayerMask AtkLayerMask;
 
     [Header("Behaviours")] 
     public State AtkState;
@@ -38,30 +38,13 @@ public class Enemy : StateController, IDamageable
         InitializeEnemy();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Tile"))
-        {
-            m_AtkTarget = collision.transform;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Tile"))
-        {
-            m_AtkTarget = null;
-        }
-    }
-
     private void Update()
     {
-        
+        EnemyDetection();
         EvaluateState();
 
         this.StateUpdate();
     }
-
     public void InitializeEnemy()
     {
         float time = GameStat.Instance.Time;
@@ -75,12 +58,14 @@ public class Enemy : StateController, IDamageable
 
         // Reassignation
         m_EnemyCurrentHP = EnemyMaxHP;
-        AtkCollider.radius = EnemyAtkRange;
     }
 
     public void OnDamage(Transform attacker, float damage)
     {
         m_EnemyCurrentHP -= damage;
+
+        Debug.Log("Take Damage: " + damage);
+
 
         if (m_EnemyCurrentHP <= 0)
         {
@@ -100,6 +85,34 @@ public class Enemy : StateController, IDamageable
         {
             // Chasing
             this.ChangeState(ChaseState);
+        }
+    }
+    private void EnemyDetection()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, EnemyAtkRange, AtkLayerMask);
+        if (colliders.Length > 0)
+        {
+            // Check if existing target is still within range
+            if (Array.Exists<Collider2D>(colliders, collider => collider.transform == m_AtkTarget))
+                return;
+
+            // Get the closest target
+            float nearestDist = float.PositiveInfinity;
+            int targetIdx = 0;
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                float dist = Vector2.Distance(transform.position, colliders[i].transform.position);
+                if (dist < nearestDist)
+                {
+                    nearestDist = dist;
+                    targetIdx = i;
+                }
+            }
+            m_AtkTarget = colliders[targetIdx].transform;
+        }
+        else
+        {
+            m_AtkTarget = null;
         }
     }
 
