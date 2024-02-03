@@ -18,9 +18,13 @@ public class TileHealth : MonoBehaviour, IDamageable
         InitializeTile();
     }
 
-    public void InitializeTile()
+    public void InitializeTile(float newHP = -1)
     {
-        m_CurrentHealth = MaxHealth;
+        if (newHP == -1)
+            m_CurrentHealth = MaxHealth;
+        else
+            m_CurrentHealth = newHP;
+
     }
 
     public void OnDamage(Transform attacker, float damage)
