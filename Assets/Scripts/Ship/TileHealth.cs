@@ -15,7 +15,11 @@ public class TileHealth : MonoBehaviour, IDamageable
 
     private void OnEnable()
     {
-        // Future purposes better to move it to a function to be called at the tile node handler
+        InitializeTile();
+    }
+
+    public void InitializeTile()
+    {
         m_CurrentHealth = MaxHealth;
     }
 

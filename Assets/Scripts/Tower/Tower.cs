@@ -41,6 +41,8 @@ public class Tower : MonoBehaviour
     {
         m_BulletStat = new BulletStat(TowerDamage, TowerAtkSpeed);
         m_TowerBehaviour.InitializeBehaviour(this);
+        m_TileHealth.MaxHealth = TowerMaxHP;
+        m_TileHealth.InitializeTile();
         // Set node health
     }
 
