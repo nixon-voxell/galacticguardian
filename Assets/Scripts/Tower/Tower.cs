@@ -14,7 +14,6 @@ public class Tower : MonoBehaviour
 
     // Assign at runtime
     private Transform m_EnemyTarget;
-    private float m_NextAtkTime;
     private BulletStat m_BulletStat;
     private ITower m_TowerBehaviour;
     private TileHealth m_TileHealth;
@@ -36,20 +35,15 @@ public class Tower : MonoBehaviour
     {
         // Check and get target
         EnemyDetection();
-        TowerAttack();
         
     }
     public void InitializeTower()
     {
         m_BulletStat = new BulletStat(TowerDamage, TowerAtkSpeed);
+        m_TowerBehaviour.InitializeBehaviour(this);
         // Set node health
     }
 
-    private void TowerAttack()
-    {
-        if (m_EnemyTarget != null) 
-            m_TowerBehaviour.AttackEnemy(this, m_EnemyTarget);
-    }
 
     private void EnemyDetection()
     {
@@ -73,10 +67,16 @@ public class Tower : MonoBehaviour
                 }
             }
 
+            // Set target
+            m_TowerBehaviour.SetTargetLost(this, m_EnemyTarget);
             m_EnemyTarget = colliders[targetIdx].transform;
+            m_TowerBehaviour.SetNewTarget(this, m_EnemyTarget);
         }
         else
+        {
+            m_TowerBehaviour.SetTargetLost(this, m_EnemyTarget);
             m_EnemyTarget = null;
+        }
     }
 
 }

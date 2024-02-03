@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface ITower
 {
-    public void AttackEnemy(Tower tower, Transform victim);
+    public void SetNewTarget(Tower tower, Transform victim);
+    public void SetTargetLost(Tower tower, Transform victim);
+    public void InitializeBehaviour(Tower tower);
 }

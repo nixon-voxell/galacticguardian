@@ -14,12 +14,6 @@ public class TowerLaserGunAtk : MonoBehaviour, ITower
         ShootEnemy();
     }
 
-    public void AttackEnemy(Tower tower, Transform victim)
-    {
-        m_Tower = tower;
-        m_Target = victim;
-    }
-
     private void ShootEnemy()
     {
         if (m_Target != null && Time.time > m_NextAtkTime)
@@ -33,4 +27,18 @@ public class TowerLaserGunAtk : MonoBehaviour, ITower
         }
     }
 
+    public void SetNewTarget(Tower tower, Transform victim)
+    {
+        m_Target = victim;
+    }
+
+    public void SetTargetLost(Tower tower, Transform victim)
+    {
+        m_Target = null;
+    }
+
+    public void InitializeBehaviour(Tower tower)
+    {
+        m_Tower = tower;
+    }
 }

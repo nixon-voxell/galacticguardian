@@ -58,10 +58,10 @@ public class BulletDefault : MonoBehaviour
         m_ResetCr = StartCoroutine(ResetBullet(m_BulletStat.BulletLifetime));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         IDamageable victim;
-        if (collision.collider.TryGetComponent<IDamageable>(out victim))
+        if (collision.TryGetComponent<IDamageable>(out victim))
         {
             victim.OnDamage(transform, m_BulletStat.BulletDamage);
 
@@ -81,6 +81,7 @@ public class BulletDefault : MonoBehaviour
             StartCoroutine(ResetBullet(0));
         }
     }
+
     private IEnumerator ResetBullet(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
