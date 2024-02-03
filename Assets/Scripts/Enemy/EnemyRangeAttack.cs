@@ -34,8 +34,7 @@ public class EnemyRangeAttack : State
 
         if (Time.time > m_NextAtkTime)
         {
-            Debug.Log("Enemy range spawn bullet");
-            BulletDefault bullet =  GameManager.Instance.PoolManager.m_DefaultBullet.GetNextObject();
+            BulletDefault bullet =  GameManager.Instance.PoolManager.m_EnemyBullet.GetNextObject();
             bullet.transform.position = m_Enemy.transform.position;
             bullet.transform.rotation = Util.LookAt2DRotation(m_Enemy.transform.position, m_Victim.transform.position);
             bullet.StartBullet(m_BulletStat);

@@ -88,7 +88,6 @@ public class BulletDefault : MonoBehaviour
         // TODO: Why no reset???
         if (m_Activated)
         {
-            print("reset");
             m_Activated = false;
             m_BulletStat.BulletSpeed = 0;
             m_Collider.enabled = false;
