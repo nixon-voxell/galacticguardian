@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class BulletStat
+public struct BulletStat
 {
     public float BulletDamage;
     public float BulletSpeed;

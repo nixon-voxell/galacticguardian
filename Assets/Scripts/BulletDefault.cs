@@ -14,6 +14,7 @@ public class BulletDefault : MonoBehaviour
     
     private bool m_Activated = false;
     private Rigidbody2D m_Rb;
+    private Coroutine m_ResetCr;
 
     private void Awake()
     {
@@ -47,13 +48,14 @@ public class BulletDefault : MonoBehaviour
         if (this.m_BulletStat.EnemyGoThroughCount == -1)
             this.m_BulletStat.PierceThroughEnemy = true;
 
+        this.m_Rb.velocity = Vector2.zero;
         this.m_Activated = true;
         this.m_Collider.enabled = true;
         this.m_MeshRenderer.enabled = true;
         if (m_Pfx != null)
             this.m_Pfx?.SetActive(true);
 
-        Invoke("ResetBullet", this.m_BulletStat.BulletLifetime);
+        m_ResetCr = StartCoroutine(ResetBullet(m_BulletStat.BulletLifetime));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,13 +76,19 @@ public class BulletDefault : MonoBehaviour
 
         // Enemy go through count will be -1 for it to be resetted
         if (m_BulletStat.EnemyGoThroughCount < 0 && !m_BulletStat.PierceThroughEnemy)
-            ResetBullet();
+        {
+            StopCoroutine(m_ResetCr);
+            StartCoroutine(ResetBullet(0));
+        }
     }
-    private void ResetBullet()
+    private IEnumerator ResetBullet(float waitTime)
     {
+        yield return new WaitForSeconds(waitTime);
+
         // TODO: Why no reset???
         if (m_Activated)
         {
+            print("reset");
             m_Activated = false;
             m_BulletStat.BulletSpeed = 0;
             m_Collider.enabled = false;
