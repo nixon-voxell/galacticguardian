@@ -35,7 +35,10 @@ public class TileHealth : MonoBehaviour, IDamageable
         if (m_CurrentHealth <= 0 )
         {
             m_CurrentHealth = 0;
-            Debug.Log("GAME OVER");
+
+            // For now to debug. I destroy itself
+            // Do the destroy disabling stuff here
+            Destroy(gameObject);
         }
     }
 }
