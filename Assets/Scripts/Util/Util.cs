@@ -11,7 +11,7 @@ public class Util
         monoBehaviour.StartCoroutine(_CallFunctionNextFrame(func));
     }
 
-    public static void CallFunctionNextSeconds(MonoBehaviour monoBehaviour, Action func, float seconds)
+    public static void CallFunctionNextSeconds(MonoBehaviour monoBehaviour, float seconds, Action func)
     {
         monoBehaviour.StartCoroutine(_CallFunctionNextFrame(func, seconds));
     }
