@@ -64,7 +64,7 @@ public class Enemy : StateController, IDamageable
     {
         m_EnemyCurrentHP -= damage;
 
-        Debug.Log("Take Damage: " + damage);
+        Debug.Log("Enemy: " + gameObject.name + " | Damage: " + damage);
 
 
         if (m_EnemyCurrentHP <= 0)

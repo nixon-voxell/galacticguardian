@@ -40,7 +40,7 @@ public class Tower : MonoBehaviour
     public void InitializeTower()
     {
         m_BulletStat = new BulletStat(TowerDamage, TowerAtkSpeed);
-        m_TowerBehaviour.InitializeBehaviour(this);
+        m_TowerBehaviour?.InitializeBehaviour(this);
         m_TileHealth.InitializeTile(TowerMaxHP);
         // Set node health
     }
@@ -69,13 +69,13 @@ public class Tower : MonoBehaviour
             }
 
             // Set target
-            m_TowerBehaviour.SetTargetLost(this, m_EnemyTarget);
+            m_TowerBehaviour?.SetTargetLost(this, m_EnemyTarget);
             m_EnemyTarget = colliders[targetIdx].transform;
-            m_TowerBehaviour.SetNewTarget(this, m_EnemyTarget);
+            m_TowerBehaviour?.SetNewTarget(this, m_EnemyTarget);
         }
         else
         {
-            m_TowerBehaviour.SetTargetLost(this, m_EnemyTarget);
+            m_TowerBehaviour?.SetTargetLost(this, m_EnemyTarget);
             m_EnemyTarget = null;
         }
     }

@@ -64,6 +64,8 @@ public class TowerRailGunAtk : MonoBehaviour, ITower
             alpha -= alphaDecreaseRate * Time.deltaTime;
             yield return null;
         } while (alpha > 0);
+        SetProjectileFxOpacity(0);
+
     }
 
     private void SetProjectileFxOpacity(float alpha)

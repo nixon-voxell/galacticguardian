@@ -6,7 +6,8 @@ public class BulletAtomic : MonoBehaviour
 {
     [SerializeField] private Sprite m_PreHitSprite;
     [SerializeField] private Sprite m_HitSprite;
-    [SerializeField] private Transform m_SpriteRendererTransform;
+    [SerializeField] private Transform m_PreHitRendererTransform;
+    [SerializeField] private Transform m_HitRendererTransform;
     [SerializeField] private float m_HitCleanupTime;
     [SerializeField] private float m_HitRadiusFix; // Scale radius by abit to adjust visual with colliders hit
 
@@ -17,13 +18,15 @@ public class BulletAtomic : MonoBehaviour
     private LayerMask m_AtkLayers;
 
     // To be assigned on runtime
-    private SpriteRenderer m_SpriteRenderer;
+    private SpriteRenderer m_PreHitRenderer;
+    private SpriteRenderer m_HitRenderer;
     private Transform m_Owner;
 
 
     private void Awake()
     {
-        m_SpriteRenderer = m_SpriteRendererTransform.GetComponent<SpriteRenderer>();
+        m_PreHitRenderer = m_PreHitRendererTransform.GetComponent<SpriteRenderer>();
+        m_HitRenderer = m_HitRendererTransform.GetComponent<SpriteRenderer>();
     }
 
     public void StartBullet(float aoeRange, float damage, float hitDelay, LayerMask atkLayers)
@@ -35,6 +38,9 @@ public class BulletAtomic : MonoBehaviour
         m_HitDelay = hitDelay;
         m_AtkLayers = atkLayers;
 
+        m_PreHitRenderer.enabled = false;
+        m_HitRenderer.gameObject.SetActive(false);
+
         StartCoroutine(StartAttack());
     }
 
@@ -43,19 +49,22 @@ public class BulletAtomic : MonoBehaviour
         // Pre hit
         float preHitT = 0;
         float preHitSpriteSize = 0f;
-        m_SpriteRenderer.sprite = m_PreHitSprite;
+        m_PreHitRenderer.enabled = true;
+        StartCoroutine(RenderOpacity(m_PreHitRenderer, m_HitDelay, true));
 
         while (preHitT < 1)
         {
             // Times sprite size by 2 as aoe is radius
             preHitSpriteSize = Mathf.Lerp(0, m_AOERadius, preHitT);
-            m_SpriteRendererTransform.localScale = new Vector2(preHitSpriteSize * 2, preHitSpriteSize * 2);
+            m_PreHitRendererTransform.localScale = new Vector2(preHitSpriteSize * 2, preHitSpriteSize * 2);
             preHitT += Time.deltaTime * (1 / m_HitDelay);
             yield return null;
         }
+        m_PreHitRenderer.enabled = false;
 
         // Hit
-        m_SpriteRenderer.sprite = m_HitSprite;
+        m_HitRenderer.gameObject.SetActive(true);
+        m_HitRendererTransform.localScale = new Vector2(m_AOERadius * 2, m_AOERadius * 2);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, m_AOERadius - m_HitRadiusFix, m_AtkLayers);
         if (colliders.Length > 0)
         {
@@ -64,6 +73,7 @@ public class BulletAtomic : MonoBehaviour
                 colliders[i].GetComponent<IDamageable>().OnDamage(m_Owner, m_Damage);
             }
         }
+        StartCoroutine(RenderOpacity(m_HitRenderer, m_HitCleanupTime, false));
 
         yield return new WaitForSeconds(m_HitCleanupTime);
         ResetBullet();
@@ -71,8 +81,35 @@ public class BulletAtomic : MonoBehaviour
 
     private void ResetBullet()
     {
-        m_SpriteRenderer.sprite = null;
+        m_PreHitRenderer.enabled = false;
+        m_HitRenderer.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
-
+    private IEnumerator RenderOpacity(SpriteRenderer renderer, float duration, bool increasingly)
+    {
+        if (increasingly)
+        {
+            float t = 0;
+            while (t < 1)
+            {
+                Color color = renderer.color;
+                color.a = t;
+                renderer.color = color;
+                t += Time.deltaTime * (1 / duration);
+                yield return null;
+            }
+        }
+        else
+        {
+            float t = 1;
+            while (t > 0)
+            {
+                Color color = renderer.color;
+                color.a = t;
+                renderer.color = color;
+                t -= Time.deltaTime * (1 / duration);
+                yield return null;
+            }
+        }
+    }
 }

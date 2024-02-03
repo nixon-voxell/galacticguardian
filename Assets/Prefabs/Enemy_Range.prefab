@@ -337,7 +337,7 @@ MonoBehaviour:
   EnemyMovementSpeed: 4
   EnemyAtkRate: 0.75
   EnemyAtkSpeed: 5
-  EnemyAtkRange: 5
+  EnemyAtkRange: 3.5
   AtkLayerMask:
     serializedVersion: 2
     m_Bits: 64
