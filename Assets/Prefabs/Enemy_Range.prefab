@@ -254,6 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateController: {fileID: 0}
+  m_MeleeAtkRange: 0
+  m_Enemy: {fileID: 2544069029293496021}
 --- !u!1 &7958031677815349607
 GameObject:
   m_ObjectHideFlags: 0

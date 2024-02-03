@@ -254,6 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateController: {fileID: 0}
+  m_MeleeAtkRange: 0.6
+  m_Enemy: {fileID: 2544069029293496021}
 --- !u!1 &7958031677815349607
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,10 +337,10 @@ MonoBehaviour:
   EnemyMovementSpeed: 3
   EnemyAtkRate: 1
   EnemyAtkSpeed: -1
-  EnemyAtkRange: 0.55
+  EnemyAtkRange: 5
   AtkLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   AtkState: {fileID: 253845280765208721}
   ChaseState: {fileID: 6007758984651726667}
   m_EnemyHPScale: 0.25

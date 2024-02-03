@@ -1,19 +1,54 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMeleeAttack : State
 {
-    private Enemy m_Enemy;
+    [SerializeField] private float m_MeleeAtkRange;
+    [SerializeField] private Enemy m_Enemy;
+
     private float m_NextAtkTime;
     private Transform m_Victim;
-    private IDamageable m_Damageable;
+    private float m_Speed;
+    private Rigidbody2D m_EnemyRb;
+
+    private void Awake()
+    {
+        m_EnemyRb = m_Enemy.GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        AttackEnemyInRange();
+    }
+
+    private void AttackEnemyInRange()
+    {
+        if (m_Victim == null) return;
+
+        Collider2D collider = Physics2D.OverlapCircle(transform.position, m_MeleeAtkRange, m_Enemy.AtkLayerMask);
+        if (collider != null && Time.time > m_NextAtkTime)
+        {
+            collider.transform.GetComponent<IDamageable>().OnDamage(m_Enemy.transform, m_Enemy.EnemyDamage);
+            m_NextAtkTime = Time.time + (1 / m_Enemy.EnemyAtkRate);
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (m_Victim != null)
+        {
+            Vector3 dir = m_Victim.transform.position - m_Enemy.transform.position;
+            m_EnemyRb.velocity = dir.normalized * m_Speed;
+        }
+    }
 
     protected override void OnEnter()
     {
-        m_Enemy = this.StateController as Enemy;
         m_Victim = m_Enemy.AtkTarget;
-        m_Damageable = m_Victim.GetComponent<IDamageable>();
+        m_Speed = m_Enemy.EnemyMovementSpeed;
     }
 
     protected override void OnExit()
@@ -26,10 +61,6 @@ public class EnemyMeleeAttack : State
         if (m_Victim == null)
             Debug.LogWarning("[SYSTEM] Melee Atk: Victim is null");
 
-        if (Time.time > m_NextAtkTime)
-        {
-            m_Damageable.OnDamage(m_Enemy.transform, m_Enemy.EnemyDamage);
-            m_NextAtkTime = Time.time + (1 / m_Enemy.EnemyAtkRate);
-        }
+        
     }
 }

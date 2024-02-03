@@ -29,8 +29,7 @@ public class EnemyChase : State
     protected override void OnEnter()
     {
         m_Victim = GameManager.Instance.Player.transform;
-        Enemy enemy = this.StateController as Enemy;
-        m_Speed = enemy.EnemyMovementSpeed;
+        m_Speed = Enemy.EnemyMovementSpeed;
     }
 
     protected override void OnExit()
