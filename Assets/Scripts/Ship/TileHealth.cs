@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,10 @@ public class TileHealth : MonoBehaviour, IDamageable
     public float MaxHealth;
      
     private float m_CurrentHealth;
+
+    public event Action<Transform, float> OnDamageEvent; // Transform - Attacker | float - Damage
+    public event Action<Transform> OnKilledEvent; // Transform - Killer
+
 
     private void OnEnable()
     {

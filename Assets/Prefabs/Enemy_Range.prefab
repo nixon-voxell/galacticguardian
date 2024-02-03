@@ -264,7 +264,6 @@ GameObject:
   m_Component:
   - component: {fileID: 370638884592542012}
   - component: {fileID: 8850414567361928524}
-  - component: {fileID: 8159349420221584907}
   - component: {fileID: 2544069029293496021}
   m_Layer: 8
   m_Name: Enemy_Range
@@ -317,41 +316,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &8159349420221584907
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7958031677815349607}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4
 --- !u!114 &2544069029293496021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,8 +334,10 @@ MonoBehaviour:
   EnemyMovementSpeed: 4
   EnemyAtkRate: 0.75
   EnemyAtkSpeed: 5
-  EnemyAtkRange: 4
-  AtkCollider: {fileID: 8159349420221584907}
+  EnemyAtkRange: 5
+  AtkLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   AtkState: {fileID: 8469135666270334595}
   ChaseState: {fileID: 6007758984651726667}
   m_EnemyHPScale: 0.15
