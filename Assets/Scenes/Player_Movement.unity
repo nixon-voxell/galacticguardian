@@ -332,7 +332,7 @@ Transform:
   m_GameObject: {fileID: 490343737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.29, y: 1.27, z: 0}
+  m_LocalPosition: {x: 2.29, y: 3.25, z: 0}
   m_LocalScale: {x: 0.47851, y: 0.47851, z: 0.47851}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -442,7 +442,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c5027da466bea1d449c2c23e44ef0db3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49056602, g: 0.43225345, b: 0.43225345, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -870,6 +870,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1728020419653354519, guid: 8711cd0b6d1483e4dad86dd7be50f95c, type: 3}
+      propertyPath: m_Player
+      value: 
+      objectReference: {fileID: 1133705608}
+    - target: {fileID: 1728020419653354519, guid: 8711cd0b6d1483e4dad86dd7be50f95c, type: 3}
+      propertyPath: m_Explosion
+      value: 
+      objectReference: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
     - target: {fileID: 1811426530043808708, guid: 8711cd0b6d1483e4dad86dd7be50f95c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -949,6 +957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EssenceCount: 0
   Time: 0
+  m_Explosion: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
 --- !u!1 &1883123058
 GameObject:
   m_ObjectHideFlags: 0
