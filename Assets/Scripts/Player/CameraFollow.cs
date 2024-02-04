@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollow : SingletonMono<CameraFollow>
 {
-    public float FollowSpeed = 2f;
-    public Transform player;
+    [HideInInspector] public Transform PlayerTransform;
+
+    [SerializeField] private Vector3 m_Offset;
 
     private void Update()
     {
-        Vector3 newPos = new Vector3(player.position.x, player.position.y, -10f);
-        transform.position = Vector3.Slerp(transform.position,newPos,FollowSpeed * Time.deltaTime);
+        if (this.PlayerTransform == null)
+        {
+            return;
+        }
+
+        this.transform.position = this.PlayerTransform.position + this.m_Offset;
     }
-
-
-
 }
