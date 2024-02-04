@@ -59,8 +59,9 @@ public class ShipBuilder : MonoBehaviour
 
                 TileNode tileNode = Object.Instantiate(this.TileNodePrefab, position, Quaternion.identity, this.transform);
 
-                tileNode.BuildBtn = this.InGameHud.CreateBuildBtn(position);
-                tileNode.BuildBtn.clicked += () =>
+                // Build button
+                tileNode.TileBtn = this.InGameHud.CreateTileBtn(position);
+                tileNode.TileBtn.clicked += () =>
                 {
                     // Tiles can only be built when there is enought essence
                     if (GameStat.Instance.EssenceCount < this.EssenceCost)
@@ -72,6 +73,9 @@ public class ShipBuilder : MonoBehaviour
                     tileNode.SetActive(true);
                     this.CheckTilesCanBuild();
                 };
+
+                // Tile Build Btn
+                tileNode.TileBuildBtn = this.InGameHud.CreateTileBuildBtn(position);
 
                 this.m_TileNodes[flattenIndex] = tileNode;
             }

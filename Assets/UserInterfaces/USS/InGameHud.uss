@@ -66,3 +66,38 @@
 .tower-btn:hover {
     scale: 1.2 1.2;
 }
+
+.tile-build-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    transition-timing-function: ease-in-out-cubic, ease-in-out-cubic;
+    translate: -50% -50%;
+    background-color: rgba(171, 157, 242, 0.6);
+    transition-duration: 0.1s, 0.1s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    transition-property: background-color, scale;
+}
+
+.tile-build-btn:hover {
+    background-color: rgb(171, 157, 242);
+}

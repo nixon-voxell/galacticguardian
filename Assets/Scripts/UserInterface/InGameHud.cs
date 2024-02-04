@@ -3,17 +3,28 @@ using UnityEngine.UIElements;
 
 public class InGameHud : UiMono
 {
+    [SerializeField] private uint TowerBtnCount;
+
     public VisualElement TileBtnGrp;
     public VisualElement TowerBtnGrp;
 
     private Label m_EssenceLbl;
     private Button m_TileBtn;
+    private Button m_TileBuildBtn;
 
-    private Button m_Tower0Btn;
-    private Button m_Tower1Btn;
-    private Button m_Tower2Btn;
+    private Button[] m_TowerBtns;
 
-    public Button CreateBuildBtn(Vector3 worldPosition)
+    public Button CreateTileBtn(Vector3 worldPosition)
+    {
+        return this.CreateBtn(worldPosition, this.m_TileBtn, this.TileBtnGrp);
+    }
+
+    public Button CreateTileBuildBtn(Vector3 worldPosition)
+    {
+        return this.CreateBtn(worldPosition, this.m_TileBuildBtn, this.TileBtnGrp);
+    }
+
+    public Button CreateBtn(Vector3 worldPosition, Button buttonPrefab, VisualElement targetRoot)
     {
         Button buildBtn = new Button();
         buildBtn.RegisterCallback<NavigationSubmitEvent>((evt) =>
@@ -21,7 +32,7 @@ public class InGameHud : UiMono
             evt.StopPropagation();
         }, TrickleDown.TrickleDown);
 
-        foreach (string className in this.m_TileBtn.GetClasses())
+        foreach (string className in buttonPrefab.GetClasses())
         {
             buildBtn.AddToClassList(className);
         }
@@ -32,7 +43,7 @@ public class InGameHud : UiMono
         buildBtn.style.left = position.x;
         buildBtn.style.top = position.y;
 
-        this.TileBtnGrp.Add(buildBtn);
+        targetRoot.Add(buildBtn);
 
         return buildBtn;
     }
@@ -47,23 +58,14 @@ public class InGameHud : UiMono
 
         this.m_EssenceLbl = this.Root.Q<Label>("essence-lbl");
         this.m_TileBtn = this.Root.Q<Button>("tile-btn");
+        this.m_TileBuildBtn = this.Root.Q<Button>("tile-build-btn");
 
-        this.m_Tower0Btn = this.Root.Q<Button>("tower0-btn");
-        this.m_Tower1Btn = this.Root.Q<Button>("tower1-btn");
-        this.m_Tower2Btn = this.Root.Q<Button>("tower2-btn");
+        this.m_TowerBtns = new Button[this.TowerBtnCount];
 
-        this.m_Tower0Btn.clicked += () =>
+        for (uint t = 0; t < this.TowerBtnCount; t++)
         {
-            Debug.Log("Tower 0 Clicked");
-        };
-        this.m_Tower1Btn.clicked += () =>
-        {
-            Debug.Log("Tower 1 Clicked");
-        };
-        this.m_Tower2Btn.clicked += () =>
-        {
-            Debug.Log("Tower 2 Clicked");
-        };
+            this.m_TowerBtns[t] = this.Root.Q<Button>($"tower{t}-btn");
+        }
     }
 
     private void Update()

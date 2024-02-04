@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -11,6 +9,9 @@ public class Tower : MonoBehaviour
     public float TowerAtkSpeed;
     public float TowerAtkRange;
     public LayerMask TowerAtkLayers;
+
+    [SerializeField] public uint m_EssenceCost;
+    public int EssenceConst => (int)this.m_EssenceCost;
 
     // Assign at runtime
     private Transform m_EnemyTarget;
@@ -35,8 +36,8 @@ public class Tower : MonoBehaviour
     {
         // Check and get target
         EnemyDetection();
-        
     }
+
     public void InitializeTower()
     {
         m_BulletStat = new BulletStat(TowerDamage, TowerAtkSpeed);
@@ -44,7 +45,6 @@ public class Tower : MonoBehaviour
         m_TileHealth.InitializeTile(TowerMaxHP);
         // Set node health
     }
-
 
     private void EnemyDetection()
     {
@@ -60,7 +60,7 @@ public class Tower : MonoBehaviour
             int targetIdx = 0;
             for (int i = 0; i < colliders.Length; i++)
             {
-                float dist = Vector2.Distance(transform.position, colliders[i].transform.position);
+                float dist = Vector2.SqrMagnitude(transform.position - colliders[i].transform.position);
                 if (dist < nearestDist)
                 {
                     nearestDist = dist;

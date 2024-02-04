@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b40eec21f31b6b4ea8c4d296b5fc0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TilesFromCenter: 8
+  TilesFromCenter: 6
   TileSize: 0.5
   TileNodePrefab: {fileID: 1803619661}
   TowerPrefabs:

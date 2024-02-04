@@ -6,7 +6,9 @@ public class TileNode : MonoBehaviour
 {
     public List<TileNode> Neighbors;
     public bool Connected = false;
-    public Button BuildBtn;
+
+    public Button TileBtn;
+    public Button TileBuildBtn;
 
     private bool m_Active = false;
     public bool Active => this.m_Active;
@@ -22,7 +24,7 @@ public class TileNode : MonoBehaviour
     public void SetCanBuild(bool canBuild)
     {
         this.m_CanBuild = canBuild;
-        this.BuildBtn.visible = canBuild;
+        this.TileBtn.visible = canBuild;
     }
 
     public void Reset()
