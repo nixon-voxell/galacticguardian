@@ -8,6 +8,7 @@ public class ShipBuilder : MonoBehaviour
     [SerializeField] private uint TilesFromCenter;
     [SerializeField] private float TileSize = 1.0f;
     [SerializeField] private TileNode TileNodePrefab;
+    [SerializeField] private Tower[] TowerPrefabs;
 
     [Tooltip("The number of essence that a single tile cost.")]
     [SerializeField] private uint EssenceCost;
