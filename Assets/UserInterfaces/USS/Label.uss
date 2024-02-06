@@ -1,0 +1,13 @@
+.label {
+    -unity-font-definition: url('project://database/Assets/Fonts/Lemon_milk_2/Lemon%20Milk%20SDF.asset?fileID=11400000&guid=8264aca48eef959419918d30c8a9d25d&type=2#Lemon Milk SDF');
+    color: rgb(204, 204, 204);
+    font-size: 128px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}

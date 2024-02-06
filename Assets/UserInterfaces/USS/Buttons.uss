@@ -1,0 +1,35 @@
+.button {
+    -unity-text-align: middle-center;
+    -unity-font: url('project://database/Assets/Fonts/Candy_beans/Candy%20Beans.otf?fileID=12800000&guid=d0c0594094287eb439f1f6c1e5e7e737&type=3#Candy Beans');
+    -unity-font-definition: url('project://database/Assets/Fonts/Candy_beans/Candy%20Beans%20SDF.asset?fileID=11400000&guid=4fb97fa8f3eeb234da27440138e7059d&type=2#Candy Beans SDF');
+    font-size: 42px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-top: 8px;
+    padding-right: 14px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    border-top-width: 6px;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(204, 204, 204);
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out-cubic;
+}
+
+.button:hover {
+    scale: 1.2 1.2;
+    background-color: rgb(0, 0, 0);
+}
