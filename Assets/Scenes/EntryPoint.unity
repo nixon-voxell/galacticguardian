@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 32155048}
   - component: {fileID: 32155049}
+  - component: {fileID: 32155050}
   m_Layer: 0
   m_Name: ScoreBoard
   m_TagString: Untagged
@@ -171,6 +172,19 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 0865c35e19552e24c9d6aab13ac7d1b9, type: 3}
   m_SortingOrder: 0
+--- !u!114 &32155050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32155047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9833105f1df92f41871bc4550b26927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialVisibility: 0
 --- !u!1 &288041216
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,8 +539,9 @@ GameObject:
   m_Component:
   - component: {fileID: 882206381}
   - component: {fileID: 882206382}
+  - component: {fileID: 882206383}
   m_Layer: 0
-  m_Name: MainMenu
+  m_Name: StartMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -563,6 +578,19 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 2e0ec3593ab987044afb589745820703, type: 3}
   m_SortingOrder: 0
+--- !u!114 &882206383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882206380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbd18019b0f99d4097195ff918b9933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialVisibility: 0
 --- !u!1 &1189783050
 GameObject:
   m_ObjectHideFlags: 0

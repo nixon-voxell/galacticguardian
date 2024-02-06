@@ -2,23 +2,25 @@
     <Style src="project://database/Assets/UserInterfaces/USS/ScoreBoard.uss?fileID=7433441132597879392&amp;guid=7fa4e1603d4c5274ab6550c266f831e6&amp;type=3#ScoreBoard" />
     <Style src="project://database/Assets/UserInterfaces/USS/Buttons.uss?fileID=7433441132597879392&amp;guid=7f4794ba51420194e82a9f88a5ca176e&amp;type=3#Buttons" />
     <Style src="project://database/Assets/UserInterfaces/USS/Label.uss?fileID=7433441132597879392&amp;guid=c5cc565c7edf9ae4fbefcce199dd3842&amp;type=3#Label" />
-    <ui:VisualElement picking-mode="Ignore" class="header" style="align-self: center; flex-grow: 1; justify-content: center;">
-        <ui:Label text="GAME OVER!" picking-mode="Ignore" class="label" style="color: rgb(255, 69, 84); font-size: 300px;" />
-        <ui:VisualElement style="flex-direction: row; justify-content: space-around;">
-            <ui:Label tabindex="-1" text="Total Time:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
-            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="total-time-lbl" class="label" />
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-direction: row; justify-content: space-around;">
-            <ui:Label tabindex="-1" text="Enemies Killed:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
-            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="enemies-killed-lbl" class="label" />
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-direction: row; justify-content: space-around;">
-            <ui:Label tabindex="-1" text="High Score:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
-            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="high-score-lbl" class="label" />
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-direction: row-reverse; padding-top: 200px;">
-            <ui:Button text="RETRY" parse-escape-sequences="true" display-tooltip-when-elided="true" name="retry-btn" class="button" />
-            <ui:Button text="QUIT" name="quit-btn" class="button" />
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.8);">
+        <ui:VisualElement picking-mode="Ignore" class="header" style="align-self: center; flex-grow: 1; justify-content: center; background-color: rgba(0, 0, 0, 0.8); padding-top: 60px; padding-right: 60px; padding-bottom: 60px; padding-left: 60px;">
+            <ui:Label text="GAME OVER!" picking-mode="Ignore" class="label" style="color: rgb(255, 69, 84); font-size: 300px;" />
+            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; justify-content: space-around;">
+                <ui:Label tabindex="-1" text="Total Time:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="total-time-lbl" class="label" />
+            </ui:VisualElement>
+            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; justify-content: space-around;">
+                <ui:Label tabindex="-1" text="Enemies Killed:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="enemies-killed-lbl" class="label" />
+            </ui:VisualElement>
+            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; justify-content: space-around;">
+                <ui:Label tabindex="-1" text="High Score:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="high-score-lbl" class="label" />
+            </ui:VisualElement>
+            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row-reverse; padding-top: 200px;">
+                <ui:Button text="RETRY" parse-escape-sequences="true" display-tooltip-when-elided="true" name="retry-btn" class="button" />
+                <ui:Button text="QUIT" name="quit-btn" class="button" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
