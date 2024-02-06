@@ -16,6 +16,9 @@ public class ScoreBoard : UiMono
         this.m_HighScoreLbl = this.Root.Q<Label>("high-score-lbl");
 
         this.m_QuitBtn = this.Root.Q<Button>("quit-btn");
-        this.m_RetryBtn = this.Root.Q<Button>("retry-btn");
+
+        this.m_QuitBtn.clicked += () =>
+        {
+        };
     }
 }

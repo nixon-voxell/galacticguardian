@@ -18,7 +18,6 @@
                 <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="high-score-lbl" class="label" />
             </ui:VisualElement>
             <ui:VisualElement picking-mode="Ignore" style="flex-direction: row-reverse; padding-top: 200px;">
-                <ui:Button text="RETRY" parse-escape-sequences="true" display-tooltip-when-elided="true" name="retry-btn" class="button" />
                 <ui:Button text="QUIT" name="quit-btn" class="button" />
             </ui:VisualElement>
         </ui:VisualElement>
