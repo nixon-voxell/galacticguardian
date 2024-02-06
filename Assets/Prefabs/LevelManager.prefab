@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8758723253303286363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2769033812633612955}
+  - component: {fileID: 8497197662813395685}
+  - component: {fileID: 6687401845951712036}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2769033812633612955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758723253303286363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8497197662813395685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758723253303286363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad519d9267ce045be715c3ddd124db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PoolManager: {fileID: 0}
+--- !u!114 &6687401845951712036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758723253303286363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd564d8b5aaa8bc459382e7bc41a72b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EnemyBullet:
+    Count: 200
+    m_Prefab: {fileID: 2561027712594855420, guid: 8a94cba7f27acee4985eb39d54ecf2f2, type: 3}
+    m_DefaultActive: 0
+  m_TowerBullet:
+    Count: 200
+    m_Prefab: {fileID: 2561027712594855420, guid: 929f7bf83f517894484ed42606cbf8d2, type: 3}
+    m_DefaultActive: 0
+  m_AtomicBullet:
+    Count: 100
+    m_Prefab: {fileID: 5166894591524693893, guid: db69de40e4ca9db449210e1a0cbd0876, type: 3}
+    m_DefaultActive: 0
