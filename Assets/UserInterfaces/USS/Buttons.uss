@@ -25,11 +25,11 @@
     border-bottom-left-radius: 12px;
     background-color: rgba(0, 0, 0, 0.6);
     color: rgb(204, 204, 204);
-    transition-duration: 0.1s;
+    transition-duration: 0.15s;
     transition-timing-function: ease-in-out-cubic;
 }
 
 .button:hover {
     scale: 1.2 1.2;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
 }

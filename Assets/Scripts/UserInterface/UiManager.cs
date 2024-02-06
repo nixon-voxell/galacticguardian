@@ -2,11 +2,12 @@ public class UiManager : SingletonMono<UiManager>
 {
     public UiMono[] Uis;
 
-    public void SetOnlyVisible(System.Type type)
+    public void SetOnlyVisible<T>()
+    where T : UiMono
     {
         foreach (UiMono ui in this.Uis)
         {
-            if (ui.GetType() == type)
+            if (ui.GetType() == typeof(T))
             {
                 ui.Root.visible = true;
             }

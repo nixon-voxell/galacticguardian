@@ -4,6 +4,7 @@
     <ui:VisualElement style="align-self: center; align-items: center; flex-grow: 1; flex-direction: column; justify-content: center;">
         <ui:Label text="Ship" class="header label" />
         <ui:VisualElement style="height: 100px;" />
-        <ui:Button text="PLAY!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="play-btn" class="button" />
+        <ui:Button text="PLAY!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="play-btn" class="button" style="border-left-color: rgb(120, 220, 232); border-right-color: rgb(120, 220, 232); border-top-color: rgb(120, 220, 232); border-bottom-color: rgb(120, 220, 232); color: rgb(120, 220, 232);" />
+        <ui:Button text="QUIT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit-btn" class="button" style="border-left-color: rgb(255, 97, 136); border-right-color: rgb(255, 97, 136); border-top-color: rgb(255, 97, 136); border-bottom-color: rgb(255, 97, 136); color: rgb(255, 97, 136);" />
     </ui:VisualElement>
 </ui:UXML>

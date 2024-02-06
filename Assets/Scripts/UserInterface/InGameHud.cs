@@ -67,6 +67,12 @@ public class InGameHud : UiMono
         }
     }
 
+    public void ResetButtons()
+    {
+        this.InitTowerSelection();
+        this.TileBtnGrp.Clear();
+    }
+
     private void SetBorderColor(VisualElement element, Color color)
     {
         element.style.borderTopColor = color;

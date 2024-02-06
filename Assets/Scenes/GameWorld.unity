@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &203647943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 203647944}
+  - component: {fileID: 203647945}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &203647944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203647943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &203647945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203647943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad519d9267ce045be715c3ddd124db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PoolManager: {fileID: 0}
 --- !u!4 &312582189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4178477605990983872, guid: 8711cd0b6d1483e4dad86dd7be50f95c, type: 3}
@@ -380,9 +426,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Neighbors: []
   Connected: 0
-  Tower: {fileID: 0}
   m_CanBuildTile: 0
   m_CanBuildTower: 0
+  Tower: {fileID: 0}
 --- !u!4 &1803619662
 Transform:
   m_ObjectHideFlags: 0
@@ -442,11 +488,6 @@ MonoBehaviour:
   TilesFromCenter: 6
   TileSize: 0.5
   TileNodePrefab: {fileID: 1803619661}
-  TowerPrefabs:
-  - {fileID: 7903870784335104415, guid: 8aa3fdde890f27641b067c8c98105bdd, type: 3}
-  - {fileID: 2910809368432290605, guid: 6fdd30c24508aeb45a99379bcfd47571, type: 3}
-  - {fileID: 1779504736072717458, guid: 92cf8d74d2cebdf4f9a72b8f9b1dafb1, type: 3}
-  - {fileID: 8107021187561106245, guid: 8f92dba73ca582248bfd720dc670ec2b, type: 3}
   EssenceCost: 10
 --- !u!4 &1811686031
 Transform:
@@ -467,6 +508,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 203647944}
   - {fileID: 1699626979}
   - {fileID: 1803619662}
   - {fileID: 1384122522}

@@ -18,7 +18,7 @@
                 <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="high-score-lbl" class="label" />
             </ui:VisualElement>
             <ui:VisualElement picking-mode="Ignore" style="flex-direction: row-reverse; padding-top: 200px;">
-                <ui:Button text="QUIT" name="quit-btn" class="button" />
+                <ui:Button text="Quit to Main Menu" name="quit-btn" class="button" style="color: rgb(255, 216, 102); border-left-color: rgb(255, 216, 102); border-right-color: rgb(255, 216, 102); border-top-color: rgb(255, 216, 102); border-bottom-color: rgb(255, 216, 102);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
