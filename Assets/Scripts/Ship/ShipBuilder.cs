@@ -8,7 +8,6 @@ public class ShipBuilder : MonoBehaviour
     [SerializeField] private uint TilesFromCenter;
     [SerializeField] private float TileSize = 1.0f;
     [SerializeField] private TileNode TileNodePrefab;
-    [SerializeField] private Tower[] TowerPrefabs;
 
     [Tooltip("The number of essence that a single tile cost.")]
     [SerializeField] private uint EssenceCost;
@@ -37,6 +36,8 @@ public class ShipBuilder : MonoBehaviour
     private void Start()
     {
         this.InGameHud = UiManager.Instance.GetUi<InGameHud>();
+        // Reinitialize tower selection index
+        this.InGameHud.InitTowerSelection();
 
         this.m_GridLength = (int)this.TilesFromCenter * 2 + 1;
         this.m_TileCount = this.m_GridLength * this.m_GridLength;
@@ -59,9 +60,9 @@ public class ShipBuilder : MonoBehaviour
 
                 TileNode tileNode = Object.Instantiate(this.TileNodePrefab, position, Quaternion.identity, this.transform);
 
-                // Build button
-                tileNode.TileBtn = this.InGameHud.CreateTileBtn(position);
-                tileNode.TileBtn.clicked += () =>
+                // Build tile button
+                tileNode.BuildTileBtn = this.InGameHud.CreateBuildTileBtn(position);
+                tileNode.BuildTileBtn.clicked += () =>
                 {
                     // Tiles can only be built when there is enought essence
                     if (GameStat.Instance.EssenceCount < this.EssenceCost)
@@ -71,11 +72,19 @@ public class ShipBuilder : MonoBehaviour
 
                     GameStat.Instance.EssenceCount -= (int)this.EssenceCost;
                     tileNode.SetActive(true);
-                    this.CheckTilesCanBuild();
+                    this.CheckCanBuildTiles();
+                    this.CheckCanBuildTowers();
                 };
 
-                // Tile Build Btn
-                tileNode.TileBuildBtn = this.InGameHud.CreateTileBuildBtn(position);
+                // Build tower button
+                tileNode.BuildTowerBtn = this.InGameHud.CreateBuildTowerBtn(position);
+                tileNode.BuildTowerBtn.clicked += () =>
+                {
+                    tileNode.Tower = Object.Instantiate(this.InGameHud.SelectedTowerPrefab, tileNode.transform);
+
+                    this.CheckCanBuildTiles();
+                    this.CheckCanBuildTowers();
+                };
 
                 this.m_TileNodes[flattenIndex] = tileNode;
             }
@@ -114,17 +123,18 @@ public class ShipBuilder : MonoBehaviour
         // Set core tile to active
         this.m_TileNodes[this.m_CenterTileIndex].SetActive(true);
         this.CheckTilesConnected();
-        this.CheckTilesCanBuild();
+        this.CheckCanBuildTiles();
+        this.CheckCanBuildTowers();
     }
 
-    private void CheckTilesCanBuild()
+    private void CheckCanBuildTiles()
     {
         // Allow tile for building based on neighbor activeness
         foreach (TileNode tileNode in this.m_TileNodes)
         {
             if (tileNode.Active)
             {
-                tileNode.SetCanBuild(false);
+                tileNode.SetCanBuildTile(false);
                 continue;
             }
 
@@ -139,7 +149,27 @@ public class ShipBuilder : MonoBehaviour
                 }
             }
 
-            tileNode.SetCanBuild(neighborActive);
+            tileNode.SetCanBuildTile(neighborActive);
+        }
+    }
+
+    private void CheckCanBuildTowers()
+    {
+        foreach (TileNode tileNode in this.m_TileNodes)
+        {
+            if (tileNode.Active == false)
+            {
+                tileNode.SetCanBuildTower(false);
+                continue;
+            }
+
+            if (tileNode.Tower != null)
+            {
+                tileNode.SetCanBuildTower(false);
+                continue;
+            }
+
+            tileNode.SetCanBuildTower(true);
         }
     }
 

@@ -1,30 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+// using System;
 using UnityEngine;
 
 public class TileHealth : MonoBehaviour, IDamageable
 {
-    public float MaxHealth;
-     
     private float m_CurrentHealth;
 
-    public event Action<Transform, float> OnDamageEvent; // Transform - Attacker | float - Damage
-    public event Action<Transform> OnKilledEvent; // Transform - Killer
+    // public event Action<Transform, float> OnDamageEvent; // Transform - Attacker | float - Damage
+    // public event Action<Transform> OnKilledEvent; // Transform - Killer
 
-
-    private void OnEnable()
+    public void InitializeTile(float health)
     {
-        InitializeTile();
-    }
-
-    public void InitializeTile(float newHP = -1)
-    {
-        if (newHP == -1)
-            m_CurrentHealth = MaxHealth;
-        else
-            m_CurrentHealth = newHP;
-
+        m_CurrentHealth = health;
     }
 
     public void OnDamage(Transform attacker, float damage)
@@ -32,7 +18,7 @@ public class TileHealth : MonoBehaviour, IDamageable
         m_CurrentHealth -= damage;
         Debug.Log($"Node: {gameObject.name} | Health: {m_CurrentHealth} | Damage: {damage}");
 
-        if (m_CurrentHealth <= 0 )
+        if (m_CurrentHealth <= 0)
         {
             m_CurrentHealth = 0;
 

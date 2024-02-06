@@ -258,9 +258,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803619662}
-  - component: {fileID: 1803619661}
   - component: {fileID: 1803619660}
   - component: {fileID: 1803619659}
+  - component: {fileID: 1803619661}
+  - component: {fileID: 1803619663}
   m_Layer: 0
   m_Name: TileNode
   m_TagString: Untagged
@@ -379,7 +380,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Neighbors: []
   Connected: 0
-  m_CanBuild: 0
+  Tower: {fileID: 0}
+  m_CanBuildTile: 0
+  m_CanBuildTower: 0
 --- !u!4 &1803619662
 Transform:
   m_ObjectHideFlags: 0
@@ -395,6 +398,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1803619663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803619658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a15f671357468479b703b838405838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1811686029
 GameObject:
   m_ObjectHideFlags: 0

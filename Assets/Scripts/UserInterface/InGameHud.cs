@@ -3,25 +3,32 @@ using UnityEngine.UIElements;
 
 public class InGameHud : UiMono
 {
-    [SerializeField] private uint TowerBtnCount;
+    [SerializeField] private Color m_SelectedBorderColor;
+    [SerializeField] private Tower[] m_TowerPrefabs;
+
+    public uint TowerBtnCount => (uint)this.m_TowerPrefabs.Length;
+    public Tower SelectedTowerPrefab => this.m_TowerPrefabs[this.m_SelectedTower];
 
     public VisualElement TileBtnGrp;
     public VisualElement TowerBtnGrp;
 
     private Label m_EssenceLbl;
-    private Button m_TileBtn;
-    private Button m_TileBuildBtn;
+    private Button m_BuildTileBtn;
+    private Button m_BuildTowerBtn;
 
     private Button[] m_TowerBtns;
+    private uint m_SelectedTower;
 
-    public Button CreateTileBtn(Vector3 worldPosition)
+    public uint SelectedTower => this.m_SelectedTower;
+
+    public Button CreateBuildTileBtn(Vector3 worldPosition)
     {
-        return this.CreateBtn(worldPosition, this.m_TileBtn, this.TileBtnGrp);
+        return this.CreateBtn(worldPosition, this.m_BuildTileBtn, this.TileBtnGrp);
     }
 
-    public Button CreateTileBuildBtn(Vector3 worldPosition)
+    public Button CreateBuildTowerBtn(Vector3 worldPosition)
     {
-        return this.CreateBtn(worldPosition, this.m_TileBuildBtn, this.TileBtnGrp);
+        return this.CreateBtn(worldPosition, this.m_BuildTowerBtn, this.TileBtnGrp);
     }
 
     public Button CreateBtn(Vector3 worldPosition, Button buttonPrefab, VisualElement targetRoot)
@@ -48,24 +55,52 @@ public class InGameHud : UiMono
         return buildBtn;
     }
 
+    public void InitTowerSelection()
+    {
+        this.m_SelectedTower = 0;
+
+        this.SetBorderColor(this.m_TowerBtns[0], this.m_SelectedBorderColor);
+
+        for (uint t = 1; t < this.TowerBtnCount; t++)
+        {
+            this.SetBorderColor(this.m_TowerBtns[t], Color.white);
+        }
+    }
+
+    private void SetBorderColor(VisualElement element, Color color)
+    {
+        element.style.borderTopColor = color;
+        element.style.borderLeftColor = color;
+        element.style.borderRightColor = color;
+        element.style.borderBottomColor = color;
+    }
+
     protected override void Awake()
     {
         base.Awake();
 
         this.TileBtnGrp = this.Root.Q<VisualElement>("tile-btn-grp");
         this.TowerBtnGrp = this.Root.Q<VisualElement>("tower-btn-grp");
-        this.TowerBtnGrp.SetEnabled(false);
 
         this.m_EssenceLbl = this.Root.Q<Label>("essence-lbl");
-        this.m_TileBtn = this.Root.Q<Button>("tile-btn");
-        this.m_TileBuildBtn = this.Root.Q<Button>("tile-build-btn");
+        this.m_BuildTileBtn = this.Root.Q<Button>("build-tile-btn");
+        this.m_BuildTowerBtn = this.Root.Q<Button>("build-tower-btn");
 
         this.m_TowerBtns = new Button[this.TowerBtnCount];
 
         for (uint t = 0; t < this.TowerBtnCount; t++)
         {
             this.m_TowerBtns[t] = this.Root.Q<Button>($"tower{t}-btn");
+            uint index = t;
+            this.m_TowerBtns[t].clicked += () =>
+            {
+                this.SetBorderColor(this.m_TowerBtns[this.m_SelectedTower], Color.white);
+                this.m_SelectedTower = index;
+                this.SetBorderColor(this.m_TowerBtns[index], this.m_SelectedBorderColor);
+            };
         }
+
+        this.InitTowerSelection();
     }
 
     private void Update()

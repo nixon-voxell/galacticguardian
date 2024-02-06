@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     {
         CameraFollow.Instance.PlayerTransform = this.transform;
         GameManager.Instance.Player = this;
+
     }
 
     private void OnDisable()

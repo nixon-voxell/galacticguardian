@@ -45,6 +45,7 @@ public class Enemy : StateController, IDamageable
 
         this.StateUpdate();
     }
+
     public void InitializeEnemy()
     {
         float time = GameStat.Instance.Time;

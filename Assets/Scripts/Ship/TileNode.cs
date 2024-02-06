@@ -7,13 +7,17 @@ public class TileNode : MonoBehaviour
     public List<TileNode> Neighbors;
     public bool Connected = false;
 
-    public Button TileBtn;
-    public Button TileBuildBtn;
+    public Button BuildTileBtn;
+    public Button BuildTowerBtn;
 
     private bool m_Active = false;
     public bool Active => this.m_Active;
-    public bool m_CanBuild = false;
-    public bool CanBuild => this.m_CanBuild;
+    public bool m_CanBuildTile = false;
+    public bool CanBuildTile => this.m_CanBuildTile;
+    public bool m_CanBuildTower = false;
+    public bool CanBuildTower => this.m_CanBuildTower;
+
+    public Tower Tower;
 
     public void SetActive(bool active)
     {
@@ -21,10 +25,16 @@ public class TileNode : MonoBehaviour
         this.m_Active = active;
     }
 
-    public void SetCanBuild(bool canBuild)
+    public void SetCanBuildTile(bool canBuild)
     {
-        this.m_CanBuild = canBuild;
-        this.TileBtn.visible = canBuild;
+        this.m_CanBuildTile = canBuild;
+        this.BuildTileBtn.visible = canBuild;
+    }
+
+    public void SetCanBuildTower(bool canBuild)
+    {
+        this.m_CanBuildTower = canBuild;
+        this.BuildTowerBtn.visible = canBuild;
     }
 
     public void Reset()
