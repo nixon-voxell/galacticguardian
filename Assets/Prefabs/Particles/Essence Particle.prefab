@@ -9924,7 +9924,7 @@ GameObject:
   - component: {fileID: 5112403345868107846}
   - component: {fileID: -2882727770722267075}
   m_Layer: 0
-  m_Name: CFXR3 Hit Ice B (Air)
+  m_Name: Essence Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -938,11 +938,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1785910565}
   m_SourcePrefab: {fileID: 100100000, guid: 8711cd0b6d1483e4dad86dd7be50f95c, type: 3}
---- !u!4 &1785910558 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4178477605990983872, guid: 8711cd0b6d1483e4dad86dd7be50f95c, type: 3}
-  m_PrefabInstance: {fileID: 1677214850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1785910565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,14 +992,14 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -1019,8 +1014,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 60.000004
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -1108,8 +1103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a63e15b5b8328643a6bfd420020c2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowSpeed: 4
-  player: {fileID: 1785910558}
+  PlayerTransform: {fileID: 0}
+  m_Offset: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
