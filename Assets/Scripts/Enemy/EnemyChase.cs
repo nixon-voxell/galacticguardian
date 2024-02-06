@@ -28,7 +28,7 @@ public class EnemyChase : State
     }
     protected override void OnEnter()
     {
-        m_Victim = GameManager.Instance.Player.transform;
+        m_Victim = LevelManager.Instance.Player.transform;
         m_Speed = Enemy.EnemyMovementSpeed;
     }
 

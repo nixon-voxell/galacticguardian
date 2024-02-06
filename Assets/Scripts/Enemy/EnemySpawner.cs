@@ -25,11 +25,12 @@ public class EnemySpawner : MonoBehaviour
 
         m_CurrentSpawnRate = m_InitialSpawnRate;
 
-        Util.CallFunctionNextFrame(this, () => {
+        Util.CallFunctionNextFrame(this, () =>
+        {
             SpawnActive = true;
             StartCoroutine(StartSpawning());
         });
-        
+
     }
 
     private void Update()
@@ -64,8 +65,8 @@ public class EnemySpawner : MonoBehaviour
     private Vector2 GetRandomPos()
     {
         Vector2 randomDirection = -Random.insideUnitCircle.normalized;
-        Vector2 spawnPosition = (Vector2) GameManager.Instance.Player.transform.position + randomDirection * m_SpawnOffRange;
-        
+        Vector2 spawnPosition = (Vector2)LevelManager.Instance.Player.transform.position + randomDirection * m_SpawnOffRange;
+
         return spawnPosition;
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyRangeAttack : State
@@ -11,7 +9,7 @@ public class EnemyRangeAttack : State
 
     private void Start()
     {
-        m_BulletStat = new BulletStat(0,0);
+        m_BulletStat = new BulletStat(0, 0);
     }
 
     protected override void OnEnter()
@@ -30,11 +28,13 @@ public class EnemyRangeAttack : State
     protected override void OnUpdate()
     {
         if (m_Victim == null)
+        {
             Debug.LogWarning("[SYSTEM] Melee Atk: Victim is null");
+        }
 
         if (Time.time > m_NextAtkTime)
         {
-            BulletDefault bullet =  GameManager.Instance.PoolManager.m_EnemyBullet.GetNextObject();
+            BulletDefault bullet = LevelManager.Instance.PoolManager.m_EnemyBullet.GetNextObject();
             bullet.transform.position = m_Enemy.transform.position;
             bullet.transform.rotation = Util.LookAt2DRotation(m_Enemy.transform.position, m_Victim.transform.position);
             bullet.StartBullet(m_BulletStat);

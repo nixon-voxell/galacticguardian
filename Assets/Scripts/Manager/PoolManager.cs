@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PoolManager : MonoBehaviour
@@ -10,7 +8,7 @@ public class PoolManager : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.PoolManager = this;
+        LevelManager.Instance.PoolManager = this;
         m_EnemyBullet.Initialize(new GameObject("Default Bullet Pool").transform);
         m_TowerBullet.Initialize(new GameObject("Tower Bullet Pool").transform);
         m_AtomicBullet.Initialize(new GameObject("Atomic Bullet Pool").transform);

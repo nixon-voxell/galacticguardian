@@ -11,11 +11,11 @@ public class ScoreBoard : UiMono
 
     private void Start()
     {
-        this.m_TotalTimeLbl = this.Root.Q<Label>();
-        this.m_EnemiesKilledLbl = this.Root.Q<Label>();
-        this.m_HighScoreLbl = this.Root.Q<Label>();
+        this.m_TotalTimeLbl = this.Root.Q<Label>("total-time-lbl");
+        this.m_EnemiesKilledLbl = this.Root.Q<Label>("enemies-killed-lbl");
+        this.m_HighScoreLbl = this.Root.Q<Label>("high-score-lbl");
 
-        this.m_QuitBtn = this.Root.Q<Button>();
-        this.m_RetryBtn = this.Root.Q<Button>();
+        this.m_QuitBtn = this.Root.Q<Button>("quit-btn");
+        this.m_RetryBtn = this.Root.Q<Button>("retry-btn");
     }
 }
