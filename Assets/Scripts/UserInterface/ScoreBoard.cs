@@ -19,6 +19,7 @@ public class ScoreBoard : UiMono
 
         this.m_QuitBtn.clicked += () =>
         {
+            GameManager.Instance.ToStart();
         };
     }
 }

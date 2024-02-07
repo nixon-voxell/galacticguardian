@@ -135,6 +135,14 @@ public class ShipBuilder : MonoBehaviour
         this.CheckCanBuildTowers();
     }
 
+    private void Update()
+    {
+        if (this.GetCenterTile().Active == false)
+        {
+            GameManager.Instance.ToEnd();
+        }
+    }
+
     private void CheckCanBuildTiles()
     {
         // Allow tile for building based on neighbor activeness

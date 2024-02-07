@@ -22,6 +22,7 @@ public class GameManager : SingletonMono<GameManager>
 
         // Enable only start menu
         UiManager.Instance.SetOnlyVisible<StartMenu>();
+        UiManager.Instance.GetUi<InGameHud>().ResetButtons();
 
         // Return to normal time scale
         Time.timeScale = 1.0f;
@@ -34,9 +35,12 @@ public class GameManager : SingletonMono<GameManager>
         // Load game world
         SceneManager.LoadSceneAsync(this.GameWorld, LoadSceneMode.Additive);
 
+        // Reset camera position
+        Camera.main.transform.position = Vector3.zero;
+
+        // Enable only in game hud
         UiManager.Instance.SetOnlyVisible<InGameHud>();
-        InGameHud hud = UiManager.Instance.GetUi<InGameHud>();
-        hud.ResetButtons();
+        UiManager.Instance.GetUi<InGameHud>().ResetButtons();
 
         // Return to normal time scale
         Time.timeScale = 1.0f;
