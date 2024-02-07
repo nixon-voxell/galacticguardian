@@ -5,12 +5,13 @@ using Unity.Mathematics;
 public class ShipBuilder : MonoBehaviour
 {
     [Tooltip("Number of tiles counting from the center towards the edge but not including the center tile.")]
-    [SerializeField] private uint TilesFromCenter;
-    [SerializeField] private float TileSize = 1.0f;
+    [SerializeField] private uint m_TilesFromCenter = 6;
+    [SerializeField] private float m_TileSize = 0.5f;
     [SerializeField] private TileNode TileNodePrefab;
 
     [Tooltip("The number of essence that a single tile cost.")]
-    [SerializeField] private uint EssenceCost;
+    [SerializeField] private uint m_EssenceCost = 100;
+    [SerializeField] private float m_TileDefaultHealth = 10.0f;
 
     private TileNode[] m_TileNodes;
     private InGameHud InGameHud;
@@ -46,12 +47,12 @@ public class ShipBuilder : MonoBehaviour
         // Reinitialize tower selection index
         this.InGameHud.InitTowerSelection();
 
-        this.m_GridLength = (int)this.TilesFromCenter * 2 + 1;
+        this.m_GridLength = (int)this.m_TilesFromCenter * 2 + 1;
         this.m_TileCount = this.m_GridLength * this.m_GridLength;
         this.m_MaxIndex2D = this.m_GridLength - 1;
-        this.m_CenterTileIndex = mathx.flatten_int2((int)this.TilesFromCenter, this.m_GridLength);
+        this.m_CenterTileIndex = mathx.flatten_int2((int)this.m_TilesFromCenter, this.m_GridLength);
 
-        float tileStart = -this.TileSize * (this.TilesFromCenter + 0.5f);
+        float tileStart = -this.m_TileSize * (this.m_TilesFromCenter + 0.5f);
 
         this.m_TileNodes = new TileNode[this.m_TileCount];
 
@@ -63,7 +64,7 @@ public class ShipBuilder : MonoBehaviour
                 int2 index2D = new int2(x, y);
                 int flattenIndex = mathx.flatten_int2(index2D, this.m_GridLength);
 
-                Vector3 position = new Vector3(tileStart + x * this.TileSize, tileStart + y * this.TileSize, 0.0f);
+                Vector3 position = new Vector3(tileStart + x * this.m_TileSize, tileStart + y * this.m_TileSize, 0.0f);
 
                 TileNode tileNode = Object.Instantiate(this.TileNodePrefab, position, Quaternion.identity, this.transform);
 
@@ -72,13 +73,15 @@ public class ShipBuilder : MonoBehaviour
                 tileNode.BuildTileBtn.clicked += () =>
                 {
                     // Tiles can only be built when there is enought essence
-                    if (GameStat.Instance.EssenceCount < this.EssenceCost)
+                    if (GameStat.Instance.EssenceCount < this.m_EssenceCost)
                     {
                         return;
                     }
 
-                    GameStat.Instance.EssenceCount -= (int)this.EssenceCost;
+                    GameStat.Instance.EssenceCount -= (int)this.m_EssenceCost;
                     tileNode.SetActive(true);
+                    tileNode.TileHealth.Health = this.m_TileDefaultHealth;
+
                     this.CheckCanBuildTiles();
                     this.CheckCanBuildTowers();
                 };
@@ -88,6 +91,7 @@ public class ShipBuilder : MonoBehaviour
                 tileNode.BuildTowerBtn.clicked += () =>
                 {
                     tileNode.Tower = Object.Instantiate(this.InGameHud.SelectedTowerPrefab, tileNode.transform);
+                    tileNode.TileHealth.Health = tileNode.Tower.TowerMaxHP;
 
                     this.CheckCanBuildTiles();
                     this.CheckCanBuildTowers();

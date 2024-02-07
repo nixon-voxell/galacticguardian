@@ -2,8 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(TileHealth))]
 public class TileNode : MonoBehaviour
 {
+    private TileHealth m_TileHealth;
+    public TileHealth TileHealth => this.m_TileHealth;
+
     public List<TileNode> Neighbors;
     public bool Connected = false;
 
@@ -45,5 +49,10 @@ public class TileNode : MonoBehaviour
         LevelManager.Instance.Player.ShipBuilder.RecheckTileButtons();
 
         this.Tower = null;
+    }
+
+    public void Awake()
+    {
+        this.m_TileHealth = this.GetComponent<TileHealth>();
     }
 }

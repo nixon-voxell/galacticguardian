@@ -4,20 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(TileNode))]
 public class TileHealth : MonoBehaviour, IDamageable
 {
-    private float m_CurrentHealth;
+    public float Health;
     private TileNode m_TileNode;
-
-    public void InitializeTile(float health)
-    {
-        m_CurrentHealth = health;
-    }
 
     public void OnDamage(Transform attacker, float damage)
     {
-        m_CurrentHealth -= damage;
-        Debug.Log($"Node: {gameObject.name} | Health: {m_CurrentHealth} | Damage: {damage}");
+        this.Health -= damage;
+        Debug.Log($"Node: {gameObject.name} | Health: {Health} | Damage: {damage}");
 
-        if (m_CurrentHealth <= 0)
+        if (this.Health <= 0)
         {
             this.m_TileNode.DestroyTile();
         }

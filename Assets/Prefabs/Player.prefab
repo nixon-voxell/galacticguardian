@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbc361169bea814893192e6ad6cd336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShipBuilder: {fileID: 0}
+  m_ShipBuilder: {fileID: 7648738054156103704}
 --- !u!1 &5892197612638013793
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b40eec21f31b6b4ea8c4d296b5fc0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TilesFromCenter: 6
-  TileSize: 0.5
+  m_TilesFromCenter: 6
+  m_TileSize: 0.5
   TileNodePrefab: {fileID: 761703079437377203, guid: b00bf583e3d0a594cbc70e615637baee, type: 3}
-  EssenceCost: 10
+  m_EssenceCost: 100
+  m_TileDefaultHealth: 10
