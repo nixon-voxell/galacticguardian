@@ -17,14 +17,12 @@ public class Tower : MonoBehaviour
     private Transform m_EnemyTarget;
     private BulletStat m_BulletStat;
     private ITower m_TowerBehaviour;
-    private TileHealth m_TileHealth;
 
     public BulletStat BulletStat { get => m_BulletStat; }
 
     private void Awake()
     {
         m_TowerBehaviour = GetComponent<ITower>();
-        m_TileHealth = GetComponent<TileHealth>();
     }
 
     private void Start()
@@ -42,8 +40,6 @@ public class Tower : MonoBehaviour
     {
         m_BulletStat = new BulletStat(TowerDamage, TowerAtkSpeed);
         m_TowerBehaviour?.InitializeBehaviour(this);
-        m_TileHealth.InitializeTile(TowerMaxHP);
-        // Set node health
     }
 
     private void EnemyDetection()

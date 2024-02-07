@@ -33,6 +33,13 @@ public class ShipBuilder : MonoBehaviour
         new int2(0, 1),
     };
 
+    public void RecheckTileButtons()
+    {
+        this.CheckTilesConnected();
+        this.CheckCanBuildTiles();
+        this.CheckCanBuildTowers();
+    }
+
     private void Start()
     {
         this.InGameHud = UiManager.Instance.GetUi<InGameHud>();
@@ -114,14 +121,11 @@ public class ShipBuilder : MonoBehaviour
                     TileNode neighborTile = this.m_TileNodes[mathx.flatten_int2(neighborIndex2D, this.m_GridLength)];
                     tileNode.Neighbors.Add(neighborTile);
                 }
-
-                // TODO: remove this
-                // tileNode.SetActive(true);
             }
         }
 
         // Set core tile to active
-        this.m_TileNodes[this.m_CenterTileIndex].SetActive(true);
+        this.GetCenterTile().SetActive(true);
         this.CheckTilesConnected();
         this.CheckCanBuildTiles();
         this.CheckCanBuildTowers();
@@ -182,7 +186,18 @@ public class ShipBuilder : MonoBehaviour
         }
 
 
-        this.RecursiveTraverseForConnectivity(in this.GetCenterTile().Neighbors);
+        TileNode centerTile = this.GetCenterTile();
+        centerTile.Connected = true;
+        this.RecursiveTraverseForConnectivity(in centerTile.Neighbors);
+
+        // Deactivate all disconnected tile
+        foreach (TileNode tileNode in this.m_TileNodes)
+        {
+            if (tileNode.Connected == false)
+            {
+                tileNode.SetActive(false);
+            }
+        }
     }
 
     private void RecursiveTraverseForConnectivity(in List<TileNode> tileNodes)

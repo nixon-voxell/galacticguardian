@@ -1,12 +1,11 @@
 // using System;
 using UnityEngine;
 
+[RequireComponent(typeof(TileNode))]
 public class TileHealth : MonoBehaviour, IDamageable
 {
     private float m_CurrentHealth;
-
-    // public event Action<Transform, float> OnDamageEvent; // Transform - Attacker | float - Damage
-    // public event Action<Transform> OnKilledEvent; // Transform - Killer
+    private TileNode m_TileNode;
 
     public void InitializeTile(float health)
     {
@@ -20,11 +19,12 @@ public class TileHealth : MonoBehaviour, IDamageable
 
         if (m_CurrentHealth <= 0)
         {
-            m_CurrentHealth = 0;
-
-            // For now to debug. I destroy itself
-            // Do the destroy disabling stuff here
-            Destroy(gameObject);
+            this.m_TileNode.DestroyTile();
         }
+    }
+
+    private void Awake()
+    {
+        this.m_TileNode = this.GetComponent<TileNode>();
     }
 }

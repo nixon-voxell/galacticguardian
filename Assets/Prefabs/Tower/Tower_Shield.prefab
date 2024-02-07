@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7892693218959182398}
-  - component: {fileID: 5123339353656037535}
   - component: {fileID: 8107021187561106245}
   m_Layer: 6
   m_Name: Tower_Shield
@@ -34,18 +33,6 @@ Transform:
   - {fileID: 4643975059348211900}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5123339353656037535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5529224485039471416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a15f671357468479b703b838405838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8107021187561106245
 MonoBehaviour:
   m_ObjectHideFlags: 0

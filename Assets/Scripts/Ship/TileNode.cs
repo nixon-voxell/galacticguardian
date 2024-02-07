@@ -37,9 +37,13 @@ public class TileNode : MonoBehaviour
         this.BuildTowerBtn.visible = canBuild;
     }
 
-    public void Reset()
+    public void DestroyTile()
     {
-        this.Connected = false;
-        this.m_Active = false;
+        this.SetActive(false);
+        Object.Destroy(this.Tower);
+
+        LevelManager.Instance.Player.ShipBuilder.RecheckTileButtons();
+
+        this.Tower = null;
     }
 }

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2860361321616864311}
   - component: {fileID: 1728020419653354519}
   - component: {fileID: 6885105723410722839}
-  - component: {fileID: 4095886386591219061}
   m_Layer: 6
   m_Name: Player_Test
   m_TagString: Player
@@ -174,6 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
+  m_Explosion: {fileID: 0}
+  m_Player: {fileID: 0}
 --- !u!114 &6885105723410722839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,16 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbc361169bea814893192e6ad6cd336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4095886386591219061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811426530043808708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a15f671357468479b703b838405838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 100
+  m_ShipBuilder: {fileID: 0}
