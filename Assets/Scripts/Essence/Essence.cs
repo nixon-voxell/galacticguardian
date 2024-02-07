@@ -11,7 +11,6 @@ public class Essence : MonoBehaviour
 {
     private const int CHECK_EVERY_N_FRAME = 20;
 
-    [SerializeField] private LayerMask m_PlayerLayer;
     [SerializeField] private GameObject m_CollectParticle;
     [SerializeField] private GameObject m_SpriteRenderer;
 

@@ -42,6 +42,11 @@ public class GameStat : SingletonMono<GameStat>
         }
     }
 
+    public void AddKey()
+    {
+        KeyCount++;
+    }
+
     private void Update()
     {
         this.Time += UnityEngine.Time.deltaTime;
