@@ -11,6 +11,7 @@ public class Enemy : StateController, IDamageable
     public float EnemyAtkRate; 
     public float EnemyAtkSpeed; 
     public float EnemyAtkRange; // This stat not scaled
+    public int EssenceDropAmt; // This stat not scaled
     public LayerMask AtkLayerMask;
 
     [Header("Behaviours")] 
@@ -23,6 +24,7 @@ public class Enemy : StateController, IDamageable
     [SerializeField] private float m_EnemyMovementSpeedScale;
     [SerializeField] private float m_EnemyAtkSpeedScale;
     [SerializeField] private float m_EnemyAtkRateScale;
+    [SerializeField] private float m_EnemyEssenceDropAmtScale;
 
     // Assign at RunTime
     private float m_EnemyCurrentHP;
@@ -56,6 +58,7 @@ public class Enemy : StateController, IDamageable
         EnemyMovementSpeed += m_EnemyMovementSpeedScale * time;
         EnemyAtkRate += m_EnemyAtkRateScale * time;
         EnemyAtkSpeed += m_EnemyAtkSpeedScale * time;
+        EssenceDropAmt += (int)(m_EnemyEssenceDropAmtScale * time);
 
         // Reassignation
         m_EnemyCurrentHP = EnemyMaxHP;
@@ -120,7 +123,9 @@ public class Enemy : StateController, IDamageable
     private void DestroyEnemy()
     {
         gameObject.SetActive(false);
-        Debug.Log($"[SYSTEM] Enemy {transform.name} dead");
+        Essence essence = LevelManager.Instance.PoolManager.Essence.GetNextObject();
+        essence.transform.position = transform.position;
+        essence.InitializeObject(EssenceDropAmt);
     }
 
 }

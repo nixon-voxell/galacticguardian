@@ -78,7 +78,8 @@ public class ShipBuilder : MonoBehaviour
                         return;
                     }
 
-                    GameStat.Instance.EssenceCount -= (int)this.m_EssenceCost;
+                    GameStat.Instance.AddEssence(-(int)this.m_EssenceCost);
+                    
                     tileNode.SetActive(true);
                     tileNode.TileHealth.Health = this.m_TileDefaultHealth;
 

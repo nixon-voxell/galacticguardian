@@ -42,6 +42,9 @@ public class GameManager : SingletonMono<GameManager>
         UiManager.Instance.SetOnlyVisible<InGameHud>();
         UiManager.Instance.GetUi<InGameHud>().ResetButtons();
 
+        // Reset Game Stat
+        GameStat.Instance.Reset();
+
         // Return to normal time scale
         Time.timeScale = 1.0f;
 

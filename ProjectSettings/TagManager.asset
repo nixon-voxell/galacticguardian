@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Essence
   - Tile
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Player
   - Background
   - Enemy
-  - 
+  - Collectable
   - 
   - 
   - 

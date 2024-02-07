@@ -18,7 +18,7 @@ public class TowerAtomicAtk : MonoBehaviour, ITower
     {
         if (m_Target != null && Time.time > m_NextAtkTime)
         {
-            BulletAtomic bullet = LevelManager.Instance.PoolManager.m_AtomicBullet.GetNextObject();
+            BulletAtomic bullet = LevelManager.Instance.PoolManager.AtomicBullet.GetNextObject();
             bullet.transform.position = m_Target.position;
             bullet.StartBullet(m_AOERadius, m_Tower.TowerDamage, m_HitDelay, m_Tower.TowerAtkLayers);
 

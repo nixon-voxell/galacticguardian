@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    public Pool<BulletDefault> m_EnemyBullet;
-    public Pool<BulletDefault> m_TowerBullet;
-    public Pool<BulletAtomic> m_AtomicBullet;
+    public Pool<BulletDefault> EnemyBullet;
+    public Pool<BulletDefault> TowerBullet;
+    public Pool<BulletAtomic> AtomicBullet;
+    public Pool<Essence> Essence;
+
+    private GameObject m_PoolParent;
 
     private void Start()
     {
         LevelManager.Instance.PoolManager = this;
-        m_EnemyBullet.Initialize(new GameObject("Default Bullet Pool").transform);
-        m_TowerBullet.Initialize(new GameObject("Tower Bullet Pool").transform);
-        m_AtomicBullet.Initialize(new GameObject("Atomic Bullet Pool").transform);
+        m_PoolParent = new GameObject("Pool Manager Parent");
+        EnemyBullet.Initialize(CreateParent("Enemy Bullet Pool"));
+        TowerBullet.Initialize(CreateParent("Tower Bullet Pool"));
+        AtomicBullet.Initialize(CreateParent("Atomic Bullet Pool"));
+        Essence.Initialize(CreateParent("Essence Bullet Pool"));
+    }
+
+    private Transform CreateParent(string newChildName)
+    {
+        GameObject child = new GameObject(newChildName);
+        child.transform.parent = m_PoolParent.transform;
+        return child.transform;
     }
 }

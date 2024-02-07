@@ -59,15 +59,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd564d8b5aaa8bc459382e7bc41a72b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnemyBullet:
-    Count: 200
+  EnemyBullet:
+    Count: 100
     m_Prefab: {fileID: 2561027712594855420, guid: 8a94cba7f27acee4985eb39d54ecf2f2, type: 3}
     m_DefaultActive: 0
-  m_TowerBullet:
-    Count: 200
+  TowerBullet:
+    Count: 100
     m_Prefab: {fileID: 2561027712594855420, guid: 929f7bf83f517894484ed42606cbf8d2, type: 3}
     m_DefaultActive: 0
-  m_AtomicBullet:
+  AtomicBullet:
     Count: 100
     m_Prefab: {fileID: 5166894591524693893, guid: db69de40e4ca9db449210e1a0cbd0876, type: 3}
+    m_DefaultActive: 0
+  Essence:
+    Count: 200
+    m_Prefab: {fileID: 6350535071732960594, guid: 1adcfc3d2a4b21d43bb837a17fd95fc2, type: 3}
     m_DefaultActive: 0

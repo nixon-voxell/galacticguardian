@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432806624497628164}
   - component: {fileID: 7318408693640230890}
-  - component: {fileID: 8893210372770899210}
+  - component: {fileID: 1346138523325954354}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameWorld: GameWorld
---- !u!114 &8893210372770899210
+--- !u!114 &1346138523325954354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,5 +58,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd64f0134abce489404fedb5558752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EssenceCount: 1000
+  m_StartingEssence: 1000
+  EssenceCount: 0
   Time: 0
+  KeyCount: 0
+  KillCount: 0
+  EssenceTotalCollected: 0
+  EssenceSpent: 0

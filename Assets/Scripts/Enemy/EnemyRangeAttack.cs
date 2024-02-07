@@ -34,7 +34,7 @@ public class EnemyRangeAttack : State
 
         if (Time.time > m_NextAtkTime)
         {
-            BulletDefault bullet = LevelManager.Instance.PoolManager.m_EnemyBullet.GetNextObject();
+            BulletDefault bullet = LevelManager.Instance.PoolManager.EnemyBullet.GetNextObject();
             bullet.transform.position = m_Enemy.transform.position;
             bullet.transform.rotation = Util.LookAt2DRotation(m_Enemy.transform.position, m_Victim.transform.position);
             bullet.StartBullet(m_BulletStat);

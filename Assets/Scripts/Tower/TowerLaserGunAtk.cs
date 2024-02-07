@@ -15,7 +15,7 @@ public class TowerLaserGunAtk : MonoBehaviour, ITower
     {
         if (m_Target != null && Time.time > m_NextAtkTime)
         {
-            BulletDefault bullet = LevelManager.Instance.PoolManager.m_TowerBullet.GetNextObject();
+            BulletDefault bullet = LevelManager.Instance.PoolManager.TowerBullet.GetNextObject();
             bullet.transform.position = transform.position;
             bullet.transform.rotation = Util.LookAt2DRotation(transform.position, m_Target.transform.position);
             bullet.StartBullet(m_Tower.BulletStat);
