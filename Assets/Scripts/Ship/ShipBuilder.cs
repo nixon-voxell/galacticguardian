@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
+using UnityEngine.UIElements;
 
 public class ShipBuilder : MonoBehaviour
 {
@@ -15,13 +16,15 @@ public class ShipBuilder : MonoBehaviour
     [SerializeField] private float m_TileDefaultHealth = 10.0f;
 
     private TileNode[] m_TileNodes;
-    private InGameHud InGameHud;
+    private InGameHud m_InGameHud;
 
     private int m_GridLength;
     private int m_TileCount;
     private int2 m_MaxIndex2D;
     // Core tile index
     private int m_CenterTileIndex;
+
+    private bool m_BuildMenuActive;
 
     private int2[] indexOffsets = new int2[]
     {
@@ -44,9 +47,9 @@ public class ShipBuilder : MonoBehaviour
 
     private void Start()
     {
-        this.InGameHud = UiManager.Instance.GetUi<InGameHud>();
+        this.m_InGameHud = UiManager.Instance.GetUi<InGameHud>();
         // Reinitialize tower selection index
-        this.InGameHud.InitTowerSelection();
+        this.m_InGameHud.InitTowerSelection();
 
         this.m_GridLength = (int)this.m_TilesFromCenter * 2 + 1;
         this.m_TileCount = this.m_GridLength * this.m_GridLength;
@@ -70,7 +73,7 @@ public class ShipBuilder : MonoBehaviour
                 TileNode tileNode = Object.Instantiate(this.m_TileNodePrefab, position, Quaternion.identity, this.transform);
 
                 // Build tile button
-                tileNode.BuildTileBtn = this.InGameHud.CreateBuildTileBtn(position);
+                tileNode.BuildTileBtn = this.m_InGameHud.CreateBuildTileBtn(position);
                 tileNode.BuildTileBtn.clicked += () =>
                 {
                     // Tiles can only be built when there is enought essence
@@ -89,10 +92,10 @@ public class ShipBuilder : MonoBehaviour
                 };
 
                 // Build tower button
-                tileNode.BuildTowerBtn = this.InGameHud.CreateBuildTowerBtn(position);
+                tileNode.BuildTowerBtn = this.m_InGameHud.CreateBuildTowerBtn(position);
                 tileNode.BuildTowerBtn.clicked += () =>
                 {
-                    tileNode.Tower = Object.Instantiate(this.InGameHud.SelectedTowerPrefab, tileNode.transform);
+                    tileNode.Tower = Object.Instantiate(this.m_InGameHud.SelectedTowerPrefab, tileNode.transform);
                     int cost = tileNode.Tower.EssenceCost;
                     // Tiles can only be built when there is enought essence
                     if (GameStat.Instance.EssenceCount < cost)
@@ -145,6 +148,8 @@ public class ShipBuilder : MonoBehaviour
         // Set core tile color
         centerTile.SetColor(this.m_CenterTileColor);
         centerTile.BuildTowerBtn.style.backgroundColor = this.m_CenterTileColor;
+        // Set health
+        centerTile.TileHealth.Health = this.m_TileDefaultHealth;
 
         this.CheckTilesConnected();
         this.CheckCanBuildTiles();
@@ -157,6 +162,20 @@ public class ShipBuilder : MonoBehaviour
         {
             GameManager.Instance.ToEnd();
         }
+
+        if (UserInput.Instance.Build)
+        {
+            this.SetBuildMenuActive(!this.m_BuildMenuActive);
+        }
+    }
+
+    private void SetBuildMenuActive(bool active)
+    {
+        this.m_InGameHud.TileBtnGrp.visible = active;
+        this.m_InGameHud.TileBtnGrp.style.display = active ? DisplayStyle.Flex : DisplayStyle.None;
+        this.m_InGameHud.TowerBtnGrp.visible = active;
+
+        this.m_BuildMenuActive = active;
     }
 
     private void CheckCanBuildTiles()
