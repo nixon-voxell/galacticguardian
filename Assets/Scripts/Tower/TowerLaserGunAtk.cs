@@ -13,29 +13,31 @@ public class TowerLaserGunAtk : MonoBehaviour, ITower
 
     private void ShootEnemy()
     {
-        if (m_Target != null && Time.time > m_NextAtkTime)
+        if (this.m_Target == null || Time.time < this.m_NextAtkTime)
         {
-            BulletDefault bullet = LevelManager.Instance.PoolManager.TowerBullet.GetNextObject();
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = Util.LookAt2DRotation(transform.position, m_Target.transform.position);
-            bullet.StartBullet(m_Tower.BulletStat);
-
-            m_NextAtkTime = Time.time + (1 / m_Tower.TowerAtkRate);
+            return;
         }
+
+        BulletDefault bullet = LevelManager.Instance.PoolManager.TowerBullet.GetNextObject();
+        bullet.transform.position = this.transform.position;
+        bullet.transform.rotation = this.transform.rotation;
+        bullet.StartBullet(this.m_Tower.BulletStat);
+
+        this.m_NextAtkTime = Time.time + (1 / this.m_Tower.TowerAtkRate);
     }
 
     public void SetNewTarget(Tower tower, Transform victim)
     {
-        m_Target = victim;
+        this.m_Target = victim;
     }
 
     public void SetTargetLost(Tower tower, Transform victim)
     {
-        m_Target = null;
+        this.m_Target = null;
     }
 
     public void InitializeBehaviour(Tower tower)
     {
-        m_Tower = tower;
+        this.m_Tower = tower;
     }
 }

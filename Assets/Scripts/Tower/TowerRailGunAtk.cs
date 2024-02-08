@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 
 public class TowerRailGunAtk : MonoBehaviour, ITower
 {
@@ -54,7 +51,7 @@ public class TowerRailGunAtk : MonoBehaviour, ITower
 
     private IEnumerator ProjectFxFade()
     {
-        
+
         float alpha = 1;
         float alphaDecreaseRate = 1 / m_ProjectileFxDuration;
 
