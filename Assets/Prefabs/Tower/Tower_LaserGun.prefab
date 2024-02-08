@@ -138,7 +138,7 @@ MonoBehaviour:
   TowerAtkLayers:
     serializedVersion: 2
     m_Bits: 256
-  m_EssenceCost: 0
+  m_EssenceCost: 20
 --- !u!114 &2333681623531913232
 MonoBehaviour:
   m_ObjectHideFlags: 0

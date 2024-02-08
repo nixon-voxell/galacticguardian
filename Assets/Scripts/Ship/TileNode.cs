@@ -5,6 +5,9 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(TileHealth))]
 public class TileNode : MonoBehaviour
 {
+    public SpriteRenderer SpriteRenderer => this.m_SpriteRenderer;
+    [SerializeField] private SpriteRenderer m_SpriteRenderer;
+
     private TileHealth m_TileHealth;
     public TileHealth TileHealth => this.m_TileHealth;
 
@@ -49,6 +52,11 @@ public class TileNode : MonoBehaviour
         LevelManager.Instance.Player.ShipBuilder.RecheckTileButtons();
 
         this.Tower = null;
+    }
+
+    public void SetColor(Color color)
+    {
+        this.SpriteRenderer.color = color;
     }
 
     public void Awake()

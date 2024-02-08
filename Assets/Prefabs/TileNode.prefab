@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b91a8c0e602284b88623bf4a2a88a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpriteRenderer: {fileID: 1659353633273585277}
   Neighbors: []
   Connected: 0
   m_CanBuildTile: 0
@@ -161,3 +162,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a15f671357468479b703b838405838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0

@@ -7,7 +7,8 @@ public class ShipBuilder : MonoBehaviour
     [Tooltip("Number of tiles counting from the center towards the edge but not including the center tile.")]
     [SerializeField] private uint m_TilesFromCenter = 6;
     [SerializeField] private float m_TileSize = 0.5f;
-    [SerializeField] private TileNode TileNodePrefab;
+    [SerializeField] private TileNode m_TileNodePrefab;
+    [SerializeField] private Color m_CenterTileColor;
 
     [Tooltip("The number of essence that a single tile cost.")]
     [SerializeField] private uint m_EssenceCost = 100;
@@ -66,7 +67,7 @@ public class ShipBuilder : MonoBehaviour
 
                 Vector3 position = new Vector3(tileStart + x * this.m_TileSize, tileStart + y * this.m_TileSize, 0.0f);
 
-                TileNode tileNode = Object.Instantiate(this.TileNodePrefab, position, Quaternion.identity, this.transform);
+                TileNode tileNode = Object.Instantiate(this.m_TileNodePrefab, position, Quaternion.identity, this.transform);
 
                 // Build tile button
                 tileNode.BuildTileBtn = this.InGameHud.CreateBuildTileBtn(position);
@@ -79,7 +80,7 @@ public class ShipBuilder : MonoBehaviour
                     }
 
                     GameStat.Instance.AddEssence(-(int)this.m_EssenceCost);
-                    
+
                     tileNode.SetActive(true);
                     tileNode.TileHealth.Health = this.m_TileDefaultHealth;
 
@@ -92,6 +93,15 @@ public class ShipBuilder : MonoBehaviour
                 tileNode.BuildTowerBtn.clicked += () =>
                 {
                     tileNode.Tower = Object.Instantiate(this.InGameHud.SelectedTowerPrefab, tileNode.transform);
+                    int cost = tileNode.Tower.EssenceCost;
+                    // Tiles can only be built when there is enought essence
+                    if (GameStat.Instance.EssenceCount < cost)
+                    {
+                        return;
+                    }
+
+                    GameStat.Instance.AddEssence(-cost);
+
                     tileNode.TileHealth.Health = tileNode.Tower.TowerMaxHP;
 
                     this.CheckCanBuildTiles();
@@ -129,8 +139,13 @@ public class ShipBuilder : MonoBehaviour
             }
         }
 
+        TileNode centerTile = this.GetCenterTile();
         // Set core tile to active
-        this.GetCenterTile().SetActive(true);
+        centerTile.SetActive(true);
+        // Set core tile color
+        centerTile.SetColor(this.m_CenterTileColor);
+        centerTile.BuildTowerBtn.style.backgroundColor = this.m_CenterTileColor;
+
         this.CheckTilesConnected();
         this.CheckCanBuildTiles();
         this.CheckCanBuildTowers();

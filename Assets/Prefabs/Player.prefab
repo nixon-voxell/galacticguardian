@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2860361321616864311}
   - component: {fileID: 1728020419653354519}
   - component: {fileID: 6885105723410722839}
+  - component: {fileID: 5972723114534555856}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -31,8 +32,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1504330628782301005}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2860361321616864311
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a43d34dead144399b037148b428be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 10
+  m_MovementSpeed: 10
   m_Explosion: {fileID: 0}
   m_Player: {fileID: 0}
 --- !u!114 &6885105723410722839
@@ -89,46 +89,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbc361169bea814893192e6ad6cd336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShipBuilder: {fileID: 7648738054156103704}
---- !u!1 &5892197612638013793
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1504330628782301005}
-  - component: {fileID: 7648738054156103704}
-  m_Layer: 0
-  m_Name: ShipBuilder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1504330628782301005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5892197612638013793}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4178477605990983872}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7648738054156103704
+  m_ShipBuilder: {fileID: 5972723114534555856}
+--- !u!114 &5972723114534555856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5892197612638013793}
+  m_GameObject: {fileID: 1811426530043808708}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b40eec21f31b6b4ea8c4d296b5fc0fa, type: 3}
@@ -136,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TilesFromCenter: 6
   m_TileSize: 0.5
-  TileNodePrefab: {fileID: 761703079437377203, guid: b00bf583e3d0a594cbc70e615637baee, type: 3}
-  m_EssenceCost: 100
+  m_TileNodePrefab: {fileID: 761703079437377203, guid: b00bf583e3d0a594cbc70e615637baee, type: 3}
+  m_CenterTileColor: {r: 0.93333334, g: 0.6156863, b: 0.4392157, a: 1}
+  m_EssenceCost: 10
   m_TileDefaultHealth: 10

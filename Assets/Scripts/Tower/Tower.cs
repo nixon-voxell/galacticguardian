@@ -10,8 +10,8 @@ public class Tower : MonoBehaviour
     public float TowerAtkRange;
     public LayerMask TowerAtkLayers;
 
-    [SerializeField] public uint m_EssenceCost;
-    public int EssenceConst => (int)this.m_EssenceCost;
+    [SerializeField] private uint m_EssenceCost;
+    public int EssenceCost => (int)this.m_EssenceCost;
 
     // Assign at runtime
     private Transform m_EnemyTarget;
