@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UserInterfaces/USS/InGameHud.uss?fileID=7433441132597879392&amp;guid=480c34811d4649346948f7e500456eb3&amp;type=3#InGameHud" />
-    <ui:Button name="build-tile-btn" class="tile-btn" style="visibility: hidden;" />
-    <ui:Button name="build-tower-btn" class="tile-btn tile-build-btn" style="visibility: hidden; left: 60px;" />
+    <ui:Button name="build-tile-btn" class="tile-btn build-tile-btn build-btn" style="visibility: hidden;" />
+    <ui:Button name="build-tower-btn" class="build-tower-btn build-btn" style="visibility: hidden; left: 60px;" />
     <ui:VisualElement name="tile-btn-grp" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%;" />
     <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; padding-top: 40px; padding-right: 40px; padding-bottom: 40px; padding-left: 40px;">
         <ui:VisualElement picking-mode="Ignore" style="flex-direction: row;">
