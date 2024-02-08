@@ -76,7 +76,7 @@ public class ShipBuilder : MonoBehaviour
                 tileNode.BuildTileBtn = this.m_InGameHud.CreateBuildTileBtn(position);
                 tileNode.BuildTileBtn.clicked += () =>
                 {
-                    // Tiles can only be built when there is enought essence
+                    // Tile can only be built when there is enough essence
                     if (GameStat.Instance.EssenceCount < this.m_EssenceCost)
                     {
                         return;
@@ -95,14 +95,14 @@ public class ShipBuilder : MonoBehaviour
                 tileNode.BuildTowerBtn = this.m_InGameHud.CreateBuildTowerBtn(position);
                 tileNode.BuildTowerBtn.clicked += () =>
                 {
-                    tileNode.Tower = Object.Instantiate(this.m_InGameHud.SelectedTowerPrefab, tileNode.transform);
-                    int cost = tileNode.Tower.EssenceCost;
-                    // Tiles can only be built when there is enought essence
+                    int cost = this.m_InGameHud.SelectedTowerPrefab.EssenceCost;
+                    // Tower can only be built when there is enough essence
                     if (GameStat.Instance.EssenceCount < cost)
                     {
                         return;
                     }
 
+                    tileNode.Tower = Object.Instantiate(this.m_InGameHud.SelectedTowerPrefab, tileNode.transform);
                     GameStat.Instance.AddEssence(-cost);
 
                     tileNode.TileHealth.Health = tileNode.Tower.TowerMaxHP;

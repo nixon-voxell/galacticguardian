@@ -46,12 +46,14 @@ public class TileNode : MonoBehaviour
 
     public void DestroyTile()
     {
+        if (this.Tower != null)
+        {
+            Object.Destroy(this.Tower.gameObject);
+            this.Tower = null;
+        }
+
         this.SetActive(false);
-        Object.Destroy(this.Tower);
-
         LevelManager.Instance.Player.ShipBuilder.RecheckTileButtons();
-
-        this.Tower = null;
     }
 
     public void SetColor(Color color)
