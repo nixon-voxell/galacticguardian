@@ -9,6 +9,15 @@ public class ScoreBoard : UiMono
     private Button m_QuitBtn;
     private Button m_RetryBtn;
 
+    public void SetValues(int time, int enemiesKilled)
+    {
+        int hrs, mins, secs;
+        Util.CalculateTimeFromSeconds((int)GameStat.Instance.Time, out hrs, out mins, out secs);
+        this.m_TotalTimeLbl.text = $"{hrs:00}:{mins:00}:{secs:00}";
+
+        this.m_EnemiesKilledLbl.text = enemiesKilled.ToString();
+    }
+
     private void Start()
     {
         this.m_TotalTimeLbl = this.Root.Q<Label>("total-time-lbl");

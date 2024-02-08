@@ -55,6 +55,7 @@ public class GameManager : SingletonMono<GameManager>
     {
         // Enable only score board
         UiManager.Instance.SetOnlyVisible<ScoreBoard>();
+        UiManager.Instance.GetUi<ScoreBoard>().SetValues((int)GameStat.Instance.Time, GameStat.Instance.KillCount);
 
         // Immediate slow down of time
         Time.timeScale = 0.1f;
