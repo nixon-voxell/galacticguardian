@@ -13,6 +13,7 @@ public class InGameHud : UiMono
     public VisualElement TowerBtnGrp;
 
     private Label m_EssenceLbl;
+    private Label m_TimeLbl;
     private Button m_BuildTileBtn;
     private Button m_BuildTowerBtn;
 
@@ -88,6 +89,7 @@ public class InGameHud : UiMono
         this.TileBtnGrp = this.Root.Q<VisualElement>("tile-btn-grp");
         this.TowerBtnGrp = this.Root.Q<VisualElement>("tower-btn-grp");
 
+        this.m_TimeLbl = this.Root.Q<Label>("time-lbl");
         this.m_EssenceLbl = this.Root.Q<Label>("essence-lbl");
         this.m_BuildTileBtn = this.Root.Q<Button>("build-tile-btn");
         this.m_BuildTowerBtn = this.Root.Q<Button>("build-tower-btn");
@@ -112,5 +114,8 @@ public class InGameHud : UiMono
     private void Update()
     {
         this.m_EssenceLbl.text = GameStat.Instance.EssenceCount.ToString();
+        int hrs, mins, secs;
+        Util.CalculateTimeFromSeconds((int)GameStat.Instance.Time, out hrs, out mins, out secs);
+        this.m_TimeLbl.text = $"{hrs:00}:{mins:00}:{secs:00}";
     }
 }

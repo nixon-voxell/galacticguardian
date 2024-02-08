@@ -9,7 +9,7 @@ public class GameStat : SingletonMono<GameStat>
     public float Time;
     public int KeyCount;
     public int KillCount;
-    public int EssenceTotalCollected; 
+    public int EssenceTotalCollected;
     public int EssenceSpent; // Not hooked up yet
 
     private void Start()
