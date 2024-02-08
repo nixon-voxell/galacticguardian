@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : StateController, IDamageable
@@ -8,13 +6,13 @@ public class Enemy : StateController, IDamageable
     public float EnemyMaxHP;
     public float EnemyDamage;
     public float EnemyMovementSpeed;
-    public float EnemyAtkRate; 
-    public float EnemyAtkSpeed; 
+    public float EnemyAtkRate;
+    public float EnemyAtkSpeed;
     public float EnemyAtkRange; // This stat not scaled
     public int EssenceDropAmt; // This stat not scaled
     public LayerMask AtkLayerMask;
 
-    [Header("Behaviours")] 
+    [Header("Behaviours")]
     public State AtkState;
     public EnemyChase ChaseState;
 
@@ -30,13 +28,13 @@ public class Enemy : StateController, IDamageable
     private float m_EnemyCurrentHP;
     private Transform m_AtkTarget;
 
-    public Transform AtkTarget { get => m_AtkTarget;}
+    public Transform AtkTarget { get => m_AtkTarget; }
 
     // States
 
 
     private void Start()
-    { 
+    {
         InitializeEnemy();
     }
 
