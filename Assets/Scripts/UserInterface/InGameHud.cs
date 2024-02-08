@@ -22,6 +22,8 @@ public class InGameHud : UiMono
 
     public uint SelectedTower => this.m_SelectedTower;
 
+    private bool m_BuildMenuActive;
+
     public Button CreateBuildTileBtn(Vector3 worldPosition)
     {
         return this.CreateBtn(worldPosition, this.m_BuildTileBtn, this.TileBtnGrp);
@@ -60,11 +62,11 @@ public class InGameHud : UiMono
     {
         this.m_SelectedTower = 0;
 
-        this.SetBorderColor(this.m_TowerBtns[0], this.m_SelectedBorderColor);
+        Util.SetBorderColor(this.m_TowerBtns[0], this.m_SelectedBorderColor);
 
         for (uint t = 1; t < this.TowerBtnCount; t++)
         {
-            this.SetBorderColor(this.m_TowerBtns[t], Color.white);
+            Util.SetBorderColor(this.m_TowerBtns[t], Color.white);
         }
     }
 
@@ -74,12 +76,13 @@ public class InGameHud : UiMono
         this.TileBtnGrp.Clear();
     }
 
-    private void SetBorderColor(VisualElement element, Color color)
+    public void SetBuildMenuActive(bool active)
     {
-        element.style.borderTopColor = color;
-        element.style.borderLeftColor = color;
-        element.style.borderRightColor = color;
-        element.style.borderBottomColor = color;
+        this.TileBtnGrp.visible = active;
+        this.TileBtnGrp.style.display = active ? DisplayStyle.Flex : DisplayStyle.None;
+        this.TowerBtnGrp.visible = active;
+
+        this.m_BuildMenuActive = active;
     }
 
     protected override void Awake()
@@ -102,9 +105,9 @@ public class InGameHud : UiMono
             uint index = t;
             this.m_TowerBtns[t].clicked += () =>
             {
-                this.SetBorderColor(this.m_TowerBtns[this.m_SelectedTower], Color.white);
+                Util.SetBorderColor(this.m_TowerBtns[this.m_SelectedTower], Color.white);
                 this.m_SelectedTower = index;
-                this.SetBorderColor(this.m_TowerBtns[index], this.m_SelectedBorderColor);
+                Util.SetBorderColor(this.m_TowerBtns[index], this.m_SelectedBorderColor);
             };
         }
 
@@ -113,9 +116,19 @@ public class InGameHud : UiMono
 
     private void Update()
     {
+        if (GameManager.Instance.CurrGameState != GameState.InGame)
+        {
+            return;
+        }
+
         this.m_EssenceLbl.text = GameStat.Instance.EssenceCount.ToString();
         int hrs, mins, secs;
         Util.CalculateTimeFromSeconds((int)GameStat.Instance.Time, out hrs, out mins, out secs);
         this.m_TimeLbl.text = $"{hrs:00}:{mins:00}:{secs:00}";
+
+        if (UserInput.Instance.Build)
+        {
+            this.SetBuildMenuActive(!this.m_BuildMenuActive);
+        }
     }
 }

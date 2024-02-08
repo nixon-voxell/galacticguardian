@@ -24,8 +24,6 @@ public class ShipBuilder : MonoBehaviour
     // Core tile index
     private int m_CenterTileIndex;
 
-    private bool m_BuildMenuActive;
-
     private int2[] indexOffsets = new int2[]
     {
         // Left
@@ -162,20 +160,6 @@ public class ShipBuilder : MonoBehaviour
         {
             GameManager.Instance.ToEnd();
         }
-
-        if (UserInput.Instance.Build)
-        {
-            this.SetBuildMenuActive(!this.m_BuildMenuActive);
-        }
-    }
-
-    private void SetBuildMenuActive(bool active)
-    {
-        this.m_InGameHud.TileBtnGrp.visible = active;
-        this.m_InGameHud.TileBtnGrp.style.display = active ? DisplayStyle.Flex : DisplayStyle.None;
-        this.m_InGameHud.TowerBtnGrp.visible = active;
-
-        this.m_BuildMenuActive = active;
     }
 
     private void CheckCanBuildTiles()

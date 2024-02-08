@@ -7,12 +7,9 @@ public class PoolManager : MonoBehaviour
     public Pool<BulletAtomic> AtomicBullet;
     public Pool<Essence> Essence;
 
-    private GameObject m_PoolParent;
-
     private void Start()
     {
         LevelManager.Instance.PoolManager = this;
-        m_PoolParent = new GameObject("Pool Manager Parent");
         EnemyBullet.Initialize(CreateParent("Enemy Bullet Pool"));
         TowerBullet.Initialize(CreateParent("Tower Bullet Pool"));
         AtomicBullet.Initialize(CreateParent("Atomic Bullet Pool"));
@@ -22,7 +19,7 @@ public class PoolManager : MonoBehaviour
     private Transform CreateParent(string newChildName)
     {
         GameObject child = new GameObject(newChildName);
-        child.transform.parent = m_PoolParent.transform;
+        child.transform.parent = this.transform;
         return child.transform;
     }
 }

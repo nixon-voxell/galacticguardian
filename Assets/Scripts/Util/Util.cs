@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Unity.Burst;
 
 public class Util
@@ -55,5 +56,13 @@ public class Util
         secondsLeft -= minutes * MIN_SECONDS;
 
         seconds = secondsLeft;
+    }
+
+    public static void SetBorderColor(VisualElement element, Color color)
+    {
+        element.style.borderTopColor = color;
+        element.style.borderLeftColor = color;
+        element.style.borderRightColor = color;
+        element.style.borderBottomColor = color;
     }
 }

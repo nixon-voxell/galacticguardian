@@ -40,7 +40,10 @@ public class GameManager : SingletonMono<GameManager>
 
         // Enable only in game hud
         UiManager.Instance.SetOnlyVisible<InGameHud>();
-        UiManager.Instance.GetUi<InGameHud>().ResetButtons();
+
+        InGameHud hud = UiManager.Instance.GetUi<InGameHud>();
+        hud.ResetButtons();
+        hud.SetBuildMenuActive(false);
 
         // Reset Game Stat
         GameStat.Instance.Reset();
@@ -56,6 +59,7 @@ public class GameManager : SingletonMono<GameManager>
         // Enable only score board
         UiManager.Instance.SetOnlyVisible<ScoreBoard>();
         UiManager.Instance.GetUi<ScoreBoard>().SetValues((int)GameStat.Instance.Time, GameStat.Instance.KillCount);
+        UiManager.Instance.GetUi<InGameHud>().SetBuildMenuActive(false);
 
         // Immediate slow down of time
         Time.timeScale = 0.1f;
