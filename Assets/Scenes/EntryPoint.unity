@@ -523,7 +523,7 @@ MonoBehaviour:
   - SoundName: Laser Gun
     Clip: {fileID: 8300000, guid: d4010652e88b5a6409e56e3260170abe, type: 3}
   - SoundName: Rail Gun
-    Clip: {fileID: 8300000, guid: 82ec5ac365f35a54ea567a1402798b79, type: 3}
+    Clip: {fileID: 8300000, guid: 42aba6aca0e49a14ebb06fff29d5e3c4, type: 3}
   - SoundName: Atomic Gun
     Clip: {fileID: 8300000, guid: 2dfaa957ba2cdd341a73babd8c80740b, type: 3}
   - SoundName: Ship Engine
