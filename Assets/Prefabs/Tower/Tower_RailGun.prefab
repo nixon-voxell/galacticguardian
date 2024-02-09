@@ -56,7 +56,7 @@ MonoBehaviour:
   TowerAtkLayers:
     serializedVersion: 2
     m_Bits: 256
-  ShootPoint: {fileID: 0}
+  ShootPoint: {fileID: 839418266716362636}
   m_EssenceCost: 200
   m_LookAtTarget: 1
 --- !u!120 &6255266299284301615
@@ -178,7 +178,6 @@ MonoBehaviour:
   m_ShootWidth: 0.5
   m_ShootRange: 10
   m_ProjectileFxDuration: 1.5
-  m_ShootPoint: {fileID: 839418266716362636}
 --- !u!1 &7204205948171514550
 GameObject:
   m_ObjectHideFlags: 0

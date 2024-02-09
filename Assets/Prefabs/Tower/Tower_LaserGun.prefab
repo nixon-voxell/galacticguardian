@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootExplosion
       objectReference: {fileID: 0}
+    - target: {fileID: 2481012445675216870, guid: e43d7ef588a852e48bdba9baf982352b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627068660218778613, guid: e43d7ef588a852e48bdba9baf982352b, type: 3}
+      propertyPath: cameraShake.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8655524179231396915, guid: e43d7ef588a852e48bdba9baf982352b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
