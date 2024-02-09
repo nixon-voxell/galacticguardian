@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - Key
   - Planeta
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -43,12 +44,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3075546509
+    locked: 0
+  - name: Obstacles
+    uniqueID: 606082767
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Collectables
     uniqueID: 2443633443
-    locked: 0
-  - name: Obstacles
-    uniqueID: 606082767
     locked: 0
