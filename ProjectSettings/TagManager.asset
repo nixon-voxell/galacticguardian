@@ -8,6 +8,7 @@ TagManager:
   - Tile
   - FxTemporaire
   - Key
+  - Planeta
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Background
   - Enemy
   - Collectable
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -47,4 +48,7 @@ TagManager:
     locked: 0
   - name: Collectables
     uniqueID: 2443633443
+    locked: 0
+  - name: Obstacles
+    uniqueID: 606082767
     locked: 0
