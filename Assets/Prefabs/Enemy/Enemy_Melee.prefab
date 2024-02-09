@@ -332,6 +332,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialState: {fileID: 6007758984651726667}
+  m_BaseStat:
+    Health: 100
+    Damage: 5
+    Speed: 1
+    EssenceDrop: 100
+    AtkRate: 1
+    AtkSpeed: -1
+  m_MaxStat:
+    Health: 300
+    Damage: 10
+    Speed: 8
+    EssenceDrop: 250
+    AtkRate: 2
+    AtkSpeed: -1
+  ProgressionDuration: 900
   EnemyMaxHP: 100
   EnemyDamage: 5
   EnemyMovementSpeed: 1
@@ -344,12 +359,6 @@ MonoBehaviour:
     m_Bits: 64
   AtkState: {fileID: 253845280765208721}
   ChaseState: {fileID: 6007758984651726667}
-  m_EnemyHPScale: 0.25
-  m_EnemyDamageScale: 0.2
-  m_EnemyMovementSpeedScale: 0.15
-  m_EnemyAtkSpeedScale: -1
-  m_EnemyAtkRateScale: 0.15
-  m_EnemyEssenceDropAmtScale: 0
 --- !u!61 &5999135261093977915
 BoxCollider2D:
   m_ObjectHideFlags: 0

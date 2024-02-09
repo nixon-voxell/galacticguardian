@@ -332,6 +332,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialState: {fileID: 6007758984651726667}
+  m_BaseStat:
+    Health: 60
+    Damage: 3
+    Speed: 1
+    EssenceDrop: 100
+    AtkRate: 0.5
+    AtkSpeed: 4
+  m_MaxStat:
+    Health: 200
+    Damage: 10
+    Speed: 5
+    EssenceDrop: 200
+    AtkRate: 1
+    AtkSpeed: 8
+  ProgressionDuration: 900
   EnemyMaxHP: 60
   EnemyDamage: 3
   EnemyMovementSpeed: 1

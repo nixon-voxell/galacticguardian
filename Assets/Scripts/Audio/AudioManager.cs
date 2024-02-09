@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Audio;
-using Unity.Mathematics;
 
 /* if want to call any music here in other script, 
  * call those functions at region Public Call Functions
