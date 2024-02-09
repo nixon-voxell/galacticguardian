@@ -1,17 +1,15 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletDefault : MonoBehaviour
 {
     [SerializeField] private string m_HitFx; //Hit effect name on the fx manager SO
-    [SerializeField] private GameObject m_Pfx; 
+    [SerializeField] private GameObject m_Pfx;
     [SerializeField] private SpriteRenderer m_MeshRenderer;
     [SerializeField] private Collider2D m_Collider;
 
     private BulletStat m_BulletStat;
-    
+
     private bool m_Activated = false;
     private Rigidbody2D m_Rb;
     private Coroutine m_ResetCr;
@@ -100,4 +98,4 @@ public class BulletDefault : MonoBehaviour
         }
     }
 }
- 
+

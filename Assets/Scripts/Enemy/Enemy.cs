@@ -51,12 +51,12 @@ public class Enemy : StateController, IDamageable
         float time = GameStat.Instance.Time;
 
         // Enemy Scaling
-        EnemyMaxHP += m_EnemyAtkRateScale * time;
-        EnemyDamage += m_EnemyDamageScale * time;
-        EnemyMovementSpeed += m_EnemyMovementSpeedScale * time;
-        EnemyAtkRate += m_EnemyAtkRateScale * time;
-        EnemyAtkSpeed += m_EnemyAtkSpeedScale * time;
-        EssenceDropAmt += (int)(m_EnemyEssenceDropAmtScale * time);
+        EnemyMaxHP = m_EnemyAtkRateScale * time;
+        EnemyDamage = m_EnemyDamageScale * time;
+        EnemyMovementSpeed = m_EnemyMovementSpeedScale * time;
+        EnemyAtkRate = m_EnemyAtkRateScale * time;
+        EnemyAtkSpeed = m_EnemyAtkSpeedScale * time;
+        EssenceDropAmt = (int)(m_EnemyEssenceDropAmtScale * time);
 
         // Reassignation
         m_EnemyCurrentHP = EnemyMaxHP;
