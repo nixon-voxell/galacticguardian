@@ -12,7 +12,6 @@ public class Tower : MonoBehaviour
 
     [SerializeField] private uint m_EssenceCost;
     public int EssenceCost => (int)this.m_EssenceCost;
-    [SerializeField] private float m_RotateSpeed = 60.0f;
 
     // Assign at runtime
     private Transform m_EnemyTarget;
@@ -38,15 +37,9 @@ public class Tower : MonoBehaviour
 
         if (this.m_EnemyTarget != null)
         {
-            Quaternion targetRotation = Util.LookAt2DRotation(
+            this.transform.rotation = Util.LookAt2DRotation(
                 transform.position, this.m_EnemyTarget.position
             );
-
-            this.transform.rotation = Quaternion.RotateTowards(
-                this.transform.rotation, targetRotation,
-                this.m_RotateSpeed * Time.deltaTime
-            );
-
         }
     }
 

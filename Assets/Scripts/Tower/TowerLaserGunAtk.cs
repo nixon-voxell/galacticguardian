@@ -20,7 +20,7 @@ public class TowerLaserGunAtk : MonoBehaviour, ITower
 
         BulletDefault bullet = LevelManager.Instance.PoolManager.TowerBullet.GetNextObject();
         bullet.transform.position = this.transform.position;
-        bullet.transform.rotation = this.transform.rotation;
+        bullet.transform.rotation = Util.LookAt2DRotation(this.transform.position, this.m_Target.position);
         bullet.StartBullet(this.m_Tower.BulletStat);
 
         this.m_NextAtkTime = Time.time + (1 / this.m_Tower.TowerAtkRate);

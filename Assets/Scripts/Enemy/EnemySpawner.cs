@@ -15,7 +15,6 @@ public class EnemySpawner : MonoBehaviour
     [HideInInspector] public bool SpawnActive;
     private float m_CurrentSpawnRate;
 
-
     private void Start()
     {
         foreach (Pool<Enemy> pool in m_EnemyPool)
