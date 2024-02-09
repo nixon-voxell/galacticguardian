@@ -1,8 +1,38 @@
 using System;
 using UnityEngine;
 
+[System.Serializable]
+public struct EnemyStat
+{
+    public float Health;
+    public float Damage;
+    public float Speed;
+    public int EssenceDrop;
+
+    public float AtkRate;
+    public float AtkSpeed;
+
+    public static EnemyStat Lerp(EnemyStat startStat, EnemyStat endStat, float time)
+    {
+        return new EnemyStat
+        {
+            Health = Mathf.Lerp(startStat.Health, endStat.Health, time),
+            Damage = Mathf.Lerp(startStat.Damage, endStat.Damage, time),
+            Speed = Mathf.Lerp(startStat.Speed, endStat.Speed, time),
+            EssenceDrop = (int)Mathf.Lerp(startStat.EssenceDrop, endStat.EssenceDrop, time),
+            AtkRate = Mathf.Lerp(startStat.AtkRate, endStat.AtkRate, time),
+            AtkSpeed = Mathf.Lerp(startStat.AtkSpeed, endStat.AtkSpeed, time),
+        };
+    }
+}
+
 public class Enemy : StateController, IDamageable
 {
+    [SerializeField] private EnemyStat m_BaseStat;
+    [SerializeField] private EnemyStat m_MaxStat;
+
+    public float ProgressionDuration;
+
     public float EnemyMaxHP;
     public float EnemyDamage;
     public float EnemyMovementSpeed;
@@ -16,22 +46,11 @@ public class Enemy : StateController, IDamageable
     public State AtkState;
     public EnemyChase ChaseState;
 
-    [Header("Scaling")]
-    [SerializeField] private float m_EnemyHPScale;
-    [SerializeField] private float m_EnemyDamageScale;
-    [SerializeField] private float m_EnemyMovementSpeedScale;
-    [SerializeField] private float m_EnemyAtkSpeedScale;
-    [SerializeField] private float m_EnemyAtkRateScale;
-    [SerializeField] private float m_EnemyEssenceDropAmtScale;
-
     // Assign at RunTime
     private float m_EnemyCurrentHP;
     private Transform m_AtkTarget;
 
     public Transform AtkTarget { get => m_AtkTarget; }
-
-    // States
-
 
     private void Start()
     {
@@ -48,15 +67,19 @@ public class Enemy : StateController, IDamageable
 
     public void InitializeEnemy()
     {
-        float time = GameStat.Instance.Time;
+        EnemyStat currStat = EnemyStat.Lerp(
+            this.m_BaseStat,
+            this.m_MaxStat,
+            GameStat.Instance.Time / this.ProgressionDuration
+        );
 
         // Enemy Scaling
-        EnemyMaxHP = m_EnemyAtkRateScale * time;
-        EnemyDamage = m_EnemyDamageScale * time;
-        EnemyMovementSpeed = m_EnemyMovementSpeedScale * time;
-        EnemyAtkRate = m_EnemyAtkRateScale * time;
-        EnemyAtkSpeed = m_EnemyAtkSpeedScale * time;
-        EssenceDropAmt = (int)(m_EnemyEssenceDropAmtScale * time);
+        EnemyMaxHP = currStat.Health;
+        EnemyDamage = currStat.Damage;
+        EnemyMovementSpeed = currStat.Speed;
+        EnemyAtkRate = currStat.AtkRate;
+        EnemyAtkSpeed = currStat.AtkSpeed;
+        EssenceDropAmt = currStat.EssenceDrop;
 
         // Reassignation
         m_EnemyCurrentHP = EnemyMaxHP;
