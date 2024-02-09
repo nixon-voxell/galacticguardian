@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(TileNode))]
 public class TileHealth : MonoBehaviour, IDamageable
 {
+    public float MaxHealth;
     public float Health;
     private TileNode m_TileNode;
 
@@ -16,6 +17,12 @@ public class TileHealth : MonoBehaviour, IDamageable
         {
             this.m_TileNode.DestroyTile();
         }
+    }
+
+    public void Initialize(float currentHealth, float maxHealth)
+    {
+        this.Health = currentHealth;
+        this.MaxHealth = maxHealth;
     }
 
     private void Awake()
