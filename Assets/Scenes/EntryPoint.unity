@@ -517,11 +517,11 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 2a5f1053e2ad004498eebc6266ed7242, type: 3}
   m_SfxSoundList:
   - SoundName: Laser Gun
-    Clip: {fileID: 8300000, guid: 1197aca27cf2c634e95c5ae50a2bcc9b, type: 3}
+    Clip: {fileID: 8300000, guid: d4010652e88b5a6409e56e3260170abe, type: 3}
   - SoundName: Rail Gun
-    Clip: {fileID: 8300000, guid: e9ae3c27160d072469c44ef5053d1ae6, type: 3}
+    Clip: {fileID: 8300000, guid: 82ec5ac365f35a54ea567a1402798b79, type: 3}
   - SoundName: Atomic Gun
-    Clip: {fileID: 8300000, guid: 550e6ca4746c57345b5c7684d7aab676, type: 3}
+    Clip: {fileID: 8300000, guid: 2dfaa957ba2cdd341a73babd8c80740b, type: 3}
   - SoundName: Ship Engine
     Clip: {fileID: 8300000, guid: 54fe5d67174eae24084b5d188f6f5993, type: 3}
   BgmSource: {fileID: 0}
