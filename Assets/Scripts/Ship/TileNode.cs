@@ -50,6 +50,7 @@ public class TileNode : MonoBehaviour
         {
             Object.Destroy(this.Tower.gameObject);
             this.Tower = null;
+
         }
 
         this.SetActive(false);

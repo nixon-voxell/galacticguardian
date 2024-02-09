@@ -1,4 +1,5 @@
 // using System;
+using MilkShake;
 using UnityEngine;
 
 [RequireComponent(typeof(TileNode))]
@@ -16,6 +17,7 @@ public class TileHealth : MonoBehaviour, IDamageable
         if (this.Health <= 0)
         {
             this.m_TileNode.DestroyTile();
+            ShakerManager.Instance.Shake("TileDestroyed");
         }
     }
 

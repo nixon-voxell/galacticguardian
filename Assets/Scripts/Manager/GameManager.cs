@@ -56,6 +56,7 @@ public class GameManager : SingletonMono<GameManager>
 
     public void ToEnd()
     {
+
         // Enable only score board
         UiManager.Instance.SetOnlyVisible<ScoreBoard>();
         UiManager.Instance.GetUi<ScoreBoard>().SetValues((int)GameStat.Instance.Time, GameStat.Instance.KillCount);

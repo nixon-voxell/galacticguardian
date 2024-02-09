@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 0
   Health: 0
+  m_ShakerDestroyed: {fileID: 11400000, guid: bffb93313c0d660419bb9603746861bd, type: 2}
 --- !u!114 &4281360802806654877
 MonoBehaviour:
   m_ObjectHideFlags: 0

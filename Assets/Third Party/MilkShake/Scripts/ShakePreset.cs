@@ -8,9 +8,15 @@ namespace MilkShake
     [CreateAssetMenu(fileName = "New Shake Preset", menuName = "MilkShake/Shake Preset")]
     public class ShakePreset : ScriptableObject, IShakeParameters
     {
+        
+
         [Header("Shake Type")]
         [SerializeField]
         private ShakeType shakeType;
+
+        [Header("Identifier Name")]
+        [SerializeField]
+        private string shakerName;
 
         [Header("Shake Strength")]
         [SerializeField]
@@ -38,6 +44,16 @@ namespace MilkShake
             get { return shakeType; }
             set { shakeType = value; }
         }
+
+        /// <summary>
+        /// The shaker identifier name to be used by shaker manager
+        /// </summary>
+        public string ShakerName
+        {
+            get { return shakerName; }
+            set { shakerName = value; }
+        }
+
 
         /// <summary>
         /// The intensity / magnitude of the shake.

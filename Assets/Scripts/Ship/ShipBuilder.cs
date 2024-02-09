@@ -80,6 +80,7 @@ public class ShipBuilder : MonoBehaviour
                     }
 
                     GameStat.Instance.AddEssence(-(int)this.m_EssenceCost);
+                    ShakerManager.Instance.Shake("TilePlaced");
 
                     tileNode.SetActive(true);
                     tileNode.TileHealth.Initialize(this.m_TileDefaultHealth, this.m_TileDefaultHealth);
@@ -101,6 +102,7 @@ public class ShipBuilder : MonoBehaviour
 
                     tileNode.Tower = Object.Instantiate(this.m_InGameHud.SelectedTowerPrefab, tileNode.transform);
                     GameStat.Instance.AddEssence(-cost);
+                    ShakerManager.Instance.Shake("TowerPlaced");
 
                     tileNode.TileHealth.Initialize(tileNode.Tower.TowerMaxHP, tileNode.Tower.TowerMaxHP);
 
