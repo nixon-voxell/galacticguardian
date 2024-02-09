@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2691245726118256811}
   - component: {fileID: 761703079437377203}
   - component: {fileID: 3375425539697148588}
+  - component: {fileID: 4281360802806654877}
   m_Layer: 6
   m_Name: TileNode
   m_TagString: Tile
@@ -32,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 909171346115892909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1659353633273585277
@@ -162,4 +164,118 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a15f671357468479b703b838405838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 0
   Health: 0
+--- !u!114 &4281360802806654877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333490566032954264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd320d1e6ab6a747826281bc29484a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirePfx: {fileID: 909171346115892909}
+  m_MinHPStartFirePerc: 0.4
+  m_FireScaleRange: {x: 0.75, y: 1.5}
+--- !u!1001 &2720313537046499304
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8265625293615150206}
+    m_Modifications:
+    - target: {fileID: 645780430800716208, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645780430800716208, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645780430800716208, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645780430800716208, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018582154240076181, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_Name
+      value: TowerFireFx
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018582154240076181, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+--- !u!4 &909171346115892909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2980952195754907973, guid: cb19ddcdeb355a04d98ebc213ed25d5a, type: 3}
+  m_PrefabInstance: {fileID: 2720313537046499304}
+  m_PrefabAsset: {fileID: 0}

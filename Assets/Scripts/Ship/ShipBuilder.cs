@@ -83,7 +83,7 @@ public class ShipBuilder : MonoBehaviour
                     GameStat.Instance.AddEssence(-(int)this.m_EssenceCost);
 
                     tileNode.SetActive(true);
-                    tileNode.TileHealth.Health = this.m_TileDefaultHealth;
+                    tileNode.TileHealth.Initialize(this.m_TileDefaultHealth, this.m_TileDefaultHealth);
 
                     this.CheckCanBuildTiles();
                     this.CheckCanBuildTowers();
@@ -103,7 +103,7 @@ public class ShipBuilder : MonoBehaviour
                     tileNode.Tower = Object.Instantiate(this.m_InGameHud.SelectedTowerPrefab, tileNode.transform);
                     GameStat.Instance.AddEssence(-cost);
 
-                    tileNode.TileHealth.Health = tileNode.Tower.TowerMaxHP;
+                    tileNode.TileHealth.Initialize(tileNode.Tower.TowerMaxHP, tileNode.Tower.TowerMaxHP);
 
                     this.CheckCanBuildTiles();
                     this.CheckCanBuildTowers();
@@ -147,7 +147,7 @@ public class ShipBuilder : MonoBehaviour
         centerTile.SetColor(this.m_CenterTileColor);
         centerTile.BuildTowerBtn.style.backgroundColor = this.m_CenterTileColor;
         // Set health
-        centerTile.TileHealth.Health = this.m_TileDefaultHealth;
+        centerTile.TileHealth.Initialize(this.m_TileDefaultHealth, this.m_TileDefaultHealth);
 
         this.CheckTilesConnected();
         this.CheckCanBuildTiles();
