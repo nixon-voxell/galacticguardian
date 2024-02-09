@@ -23,6 +23,8 @@ public class TowerAtomicAtk : MonoBehaviour, ITower
             bullet.StartBullet(m_AOERadius, m_Tower.TowerDamage, m_HitDelay, m_Tower.TowerAtkLayers);
 
             m_NextAtkTime = Time.time + (1 / m_Tower.TowerAtkRate);
+
+            AudioManager.Instance.PlaySfx("Atomic Gun");
         }
     }
 

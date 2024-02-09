@@ -46,6 +46,8 @@ public class TowerRailGunAtk : MonoBehaviour, ITower
             StartCoroutine(ProjectFxFade());
 
             m_NextAtkTime = Time.time + (1 / m_Tower.TowerAtkRate);
+
+            AudioManager.Instance.PlaySfx("Rail Gun");
         }
     }
 

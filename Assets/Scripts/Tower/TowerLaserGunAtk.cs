@@ -24,6 +24,8 @@ public class TowerLaserGunAtk : MonoBehaviour, ITower
         bullet.StartBullet(this.m_Tower.BulletStat);
 
         this.m_NextAtkTime = Time.time + (1 / this.m_Tower.TowerAtkRate);
+
+        AudioManager.Instance.PlaySfx("Laser Gun");
     }
 
     public void SetNewTarget(Tower tower, Transform victim)
