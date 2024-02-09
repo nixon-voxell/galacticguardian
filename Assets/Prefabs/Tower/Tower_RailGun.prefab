@@ -55,7 +55,7 @@ MonoBehaviour:
   TowerAtkLayers:
     serializedVersion: 2
     m_Bits: 256
-  m_EssenceCost: 0
+  m_EssenceCost: 200
 --- !u!120 &6255266299284301615
 LineRenderer:
   serializedVersion: 2
@@ -200,13 +200,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8130872812399728416}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4583934146966804450}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!212 &4251753739839577512
 SpriteRenderer:
   m_ObjectHideFlags: 0
