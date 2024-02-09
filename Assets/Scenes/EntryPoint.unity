@@ -512,13 +512,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbf48078c8530344b79004f4b183e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mixer: {fileID: 0}
-  m_BgmCutoffFreqIncrement: 5
-  m_BgmCutoffFreqDecrement: 5
-  m_BgmMuffledFreq: 200
-  m_BgmNormalFreq: 22000
-  m_BgmSoundList: []
-  m_SfxSoundList: []
+  m_BgmSoundList:
+  - SoundName: Game BGM
+    Clip: {fileID: 8300000, guid: 2a5f1053e2ad004498eebc6266ed7242, type: 3}
+  m_SfxSoundList:
+  - SoundName: Laser Gun
+    Clip: {fileID: 8300000, guid: 1197aca27cf2c634e95c5ae50a2bcc9b, type: 3}
+  - SoundName: Rail Gun
+    Clip: {fileID: 8300000, guid: e9ae3c27160d072469c44ef5053d1ae6, type: 3}
+  - SoundName: Atomic Gun
+    Clip: {fileID: 8300000, guid: 550e6ca4746c57345b5c7684d7aab676, type: 3}
+  - SoundName: Ship Engine
+    Clip: {fileID: 8300000, guid: 54fe5d67174eae24084b5d188f6f5993, type: 3}
   BgmSource: {fileID: 0}
   SfxSource: {fileID: 0}
 --- !u!1 &882206380
