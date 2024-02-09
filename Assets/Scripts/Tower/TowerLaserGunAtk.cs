@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TowerLaserGunAtk : MonoBehaviour, ITower
 {
+    [SerializeField] private GameObject ShootPfx;
+
     private Tower m_Tower;
     private Transform m_Target;
     private float m_NextAtkTime;
@@ -19,9 +21,11 @@ public class TowerLaserGunAtk : MonoBehaviour, ITower
         }
 
         BulletDefault bullet = LevelManager.Instance.PoolManager.TowerBullet.GetNextObject();
-        bullet.transform.position = this.transform.position;
+        bullet.transform.position = this.m_Tower.ShootPoint.position;
         bullet.transform.rotation = Util.LookAt2DRotation(this.transform.position, this.m_Target.position);
         bullet.StartBullet(this.m_Tower.BulletStat);
+        ShootPfx.SetActive(false);
+        ShootPfx.SetActive(true);
 
         this.m_NextAtkTime = Time.time + (1 / this.m_Tower.TowerAtkRate);
     }

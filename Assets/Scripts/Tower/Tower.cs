@@ -9,8 +9,10 @@ public class Tower : MonoBehaviour
     public float TowerAtkSpeed;
     public float TowerAtkRange;
     public LayerMask TowerAtkLayers;
+    public Transform ShootPoint;
 
     [SerializeField] private uint m_EssenceCost;
+    [SerializeField] private bool m_LookAtTarget;
     public int EssenceCost => (int)this.m_EssenceCost;
 
     // Assign at runtime
@@ -35,7 +37,7 @@ public class Tower : MonoBehaviour
         // Check and get target
         EnemyDetection();
 
-        if (this.m_EnemyTarget != null)
+        if (this.m_EnemyTarget != null && m_LookAtTarget)
         {
             this.transform.rotation = Util.LookAt2DRotation(
                 transform.position, this.m_EnemyTarget.position

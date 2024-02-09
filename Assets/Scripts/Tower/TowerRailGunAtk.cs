@@ -41,7 +41,7 @@ public class TowerRailGunAtk : MonoBehaviour, ITower
             }
 
             // Visual Fx
-            m_LineRenderer.SetPosition(0, transform.position);
+            m_LineRenderer.SetPosition(0, m_Tower.ShootPoint.position);
             m_LineRenderer.SetPosition(1, endPt);
             StartCoroutine(ProjectFxFade());
 
