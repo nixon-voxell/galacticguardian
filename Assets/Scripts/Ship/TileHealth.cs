@@ -17,7 +17,12 @@ public class TileHealth : MonoBehaviour, IDamageable
         if (this.Health <= 0)
         {
             this.m_TileNode.DestroyTile();
+
+            // FX
             ShakerManager.Instance.Shake("TileDestroyed");
+            GameObject pfx = LevelManager.Instance.PoolManager.FxNodeDestroyed.GetNextObject().gameObject;
+            pfx.transform.position = transform.position;
+            pfx.SetActive(true);
         }
     }
 

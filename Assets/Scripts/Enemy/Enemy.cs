@@ -147,6 +147,8 @@ public class Enemy : StateController, IDamageable
         Essence essence = LevelManager.Instance.PoolManager.Essence.GetNextObject();
         essence.transform.position = transform.position;
         essence.InitializeObject(EssenceDropAmt);
+        AudioManager.Instance.PlaySfx("EnemyDestroyed");
+
     }
 
 }

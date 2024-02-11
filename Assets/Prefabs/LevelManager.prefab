@@ -75,3 +75,7 @@ MonoBehaviour:
     Count: 200
     m_Prefab: {fileID: 6350535071732960594, guid: 1adcfc3d2a4b21d43bb837a17fd95fc2, type: 3}
     m_DefaultActive: 0
+  FxNodeDestroyed:
+    Count: 30
+    m_Prefab: {fileID: 725748389856807712, guid: f3d5e357526af244e98655f72a8ab89c, type: 3}
+    m_DefaultActive: 0

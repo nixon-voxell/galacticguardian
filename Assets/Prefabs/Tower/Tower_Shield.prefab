@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7892693218959182398}
   - component: {fileID: 8107021187561106245}
   - component: {fileID: 4257330159323539250}
+  - component: {fileID: 8552987624080965437}
   m_Layer: 6
   m_Name: Tower_Shield
   m_TagString: Tile
@@ -58,7 +59,9 @@ MonoBehaviour:
   TowerAtkLayers:
     serializedVersion: 2
     m_Bits: 256
+  ShootPoint: {fileID: 0}
   m_EssenceCost: 100
+  m_LookAtTarget: 0
 --- !u!222 &4257330159323539250
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -67,6 +70,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5529224485039471416}
   m_CullTransparentMesh: 1
+--- !u!95 &8552987624080965437
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529224485039471416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8ef25f055b1b3d4f9b3925810246423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8914992789002160822
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   shakerName: TowerPlaced
   strength: 0.1
   roughness: 5
-  fadeIn: 0.05
-  fadeOut: 0.15
+  fadeIn: 0.25
+  fadeOut: 0.5
   positionInfluence: {x: 0.5, y: 0.5, z: 0}
   rotationInfluence: {x: 5, y: 5, z: 5}

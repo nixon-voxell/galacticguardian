@@ -5007,7 +5007,7 @@ GameObject:
   - component: {fileID: 725748389856807713}
   - component: {fileID: 725748389856807726}
   m_Layer: 0
-  m_Name: CFXR Explosion Smoke 2 Solo (HDR)
+  m_Name: NodeDestroyed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5023,8 +5023,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 725748390055121425}
   - {fileID: 725748390129463917}
@@ -9742,8 +9742,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clearBehavior: 1
   cameraShake:
-    enabled: 1
-    useMainCamera: 1
+    enabled: 0
+    useMainCamera: 0
     cameras: []
     delay: 0.05
     duration: 0.6

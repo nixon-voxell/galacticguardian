@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 7628955637011390882}
   - component: {fileID: 2910809368432290605}
   - component: {fileID: 7685752790787235390}
+  - component: {fileID: 2962529195755969115}
   m_Layer: 6
   m_Name: Tower_Atomic
   m_TagString: Tile
@@ -189,6 +190,27 @@ MonoBehaviour:
   m_AOERadius: 2.5
   m_HitDelay: 0.75
   m_ShootPfx: {fileID: 9010929757549595985}
+--- !u!95 &2962529195755969115
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992479335638915273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8ef25f055b1b3d4f9b3925810246423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4998122891020331617
 PrefabInstance:
   m_ObjectHideFlags: 0
