@@ -20,9 +20,11 @@ public class TileHealth : MonoBehaviour, IDamageable
 
             // FX
             ShakerManager.Instance.Shake("TileDestroyed");
+            AudioManager.Instance.PlaySfx("TileExplode");
             GameObject pfx = LevelManager.Instance.PoolManager.FxNodeDestroyed.GetNextObject().gameObject;
             pfx.transform.position = transform.position;
             pfx.SetActive(true);
+
         }
     }
 

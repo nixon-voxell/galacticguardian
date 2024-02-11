@@ -90,7 +90,7 @@ public class Enemy : StateController, IDamageable
         m_EnemyCurrentHP -= damage;
 
         Debug.Log("Enemy: " + gameObject.name + " | Damage: " + damage);
-
+        AudioManager.Instance.PlaySfx("EnemyHit");
 
         if (m_EnemyCurrentHP <= 0)
         {

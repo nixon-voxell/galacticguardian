@@ -192,6 +192,10 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 2f674adfd9547b144adc571ecc62622f, type: 3}
   - SoundName: EnemyDestroyed
     Clip: {fileID: 8300000, guid: 061182eebb237024aa0c52ec65712143, type: 3}
+  - SoundName: TileExplode
+    Clip: {fileID: 8300000, guid: 9c780ca788d91b648ad5ebcaf687202a, type: 3}
+  - SoundName: EnemyHit
+    Clip: {fileID: 8300000, guid: f95047272f383f7448448f38de3d42e1, type: 3}
   BgmSource: {fileID: 5552519374346335810}
   SfxSource: {fileID: 6469739051992134348}
 --- !u!1 &7274030369401694663
