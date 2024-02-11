@@ -30,7 +30,6 @@ public class GameStat : SingletonMono<GameStat>
     public void AddEssence(int essenceAmt)
     {
         Debug.Log("[STATS] Essence Add: " + essenceAmt);
-
         EssenceCount += essenceAmt;
         if (essenceAmt > 0)
         {
@@ -44,6 +43,7 @@ public class GameStat : SingletonMono<GameStat>
 
     public void AddKey()
     {
+        AudioManager.Instance.PlaySfx("KeyTake");
         KeyCount++;
     }
 

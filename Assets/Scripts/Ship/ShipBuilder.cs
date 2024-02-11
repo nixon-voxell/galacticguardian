@@ -76,6 +76,7 @@ public class ShipBuilder : MonoBehaviour
                     // Tile can only be built when there is enough essence
                     if (GameStat.Instance.EssenceCount < this.m_EssenceCost)
                     {
+                        AudioManager.Instance.PlaySfx("BuildFail");
                         return;
                     }
 
@@ -98,6 +99,7 @@ public class ShipBuilder : MonoBehaviour
                     // Tower can only be built when there is enough essence
                     if (GameStat.Instance.EssenceCount < cost)
                     {
+                        AudioManager.Instance.PlaySfx("BuildFail");
                         return;
                     }
 

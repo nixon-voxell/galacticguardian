@@ -196,6 +196,14 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 9c780ca788d91b648ad5ebcaf687202a, type: 3}
   - SoundName: EnemyHit
     Clip: {fileID: 8300000, guid: f95047272f383f7448448f38de3d42e1, type: 3}
+  - SoundName: EssenceTake
+    Clip: {fileID: 8300000, guid: 3934922f8fff156409a80e5ba37b7556, type: 3}
+  - SoundName: GameStart
+    Clip: {fileID: 8300000, guid: edee5339b4b0cf24b9b56378758da595, type: 3}
+  - SoundName: KeyTake
+    Clip: {fileID: 8300000, guid: fc5fbdf75f152034794a9b9664f03fb8, type: 3}
+  - SoundName: BuildFail
+    Clip: {fileID: 8300000, guid: c2f4ca94246af3440842d5c8ccab0867, type: 3}
   BgmSource: {fileID: 5552519374346335810}
   SfxSource: {fileID: 6469739051992134348}
 --- !u!1 &7274030369401694663

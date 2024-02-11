@@ -51,6 +51,9 @@ public class GameManager : SingletonMono<GameManager>
         // Return to normal time scale
         Time.timeScale = 1.0f;
 
+        // SFX
+        AudioManager.Instance.PlaySfx("GameStart");
+
         this.m_CurrGameState = GameState.InGame;
     }
 

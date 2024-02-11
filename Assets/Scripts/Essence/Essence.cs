@@ -22,8 +22,9 @@ public class Essence : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && !m_IsCollected) 
         {
+            AudioManager.Instance.PlaySfx("EssenceTake");
             GameStat.Instance.AddEssence(m_EssenceAmt);
-            m_CollectParticle.SetActive(true);
+            m_CollectParticle.SetActive(false); // just set false. Due to low sprite visibility
             m_SpriteRenderer.SetActive(false);
             m_IsCollected = true;
         }
