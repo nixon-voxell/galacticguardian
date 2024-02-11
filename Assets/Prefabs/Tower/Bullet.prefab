@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HitFx: 
   m_Pfx: {fileID: 0}
-  m_MeshRenderer: {fileID: 7496510806915090960}
+  m_Renderer: {fileID: 2988633065261169414}
   m_Collider: {fileID: 7859737043559714117}
 --- !u!50 &5469935792745676930
 Rigidbody2D:

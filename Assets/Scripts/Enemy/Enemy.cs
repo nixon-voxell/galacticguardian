@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 [System.Serializable]
@@ -46,9 +47,16 @@ public class Enemy : StateController, IDamageable
     public State AtkState;
     public EnemyChase ChaseState;
 
+    [Header("Components")]
+    [SerializeField] private GameObject m_DamagedModel;
+
+    private const float DAMAGE_DURATION = 0.25f;
+
+
     // Assign at RunTime
     private float m_EnemyCurrentHP;
     private Transform m_AtkTarget;
+    private bool m_Damaged = false;
 
     public Transform AtkTarget { get => m_AtkTarget; }
 
@@ -84,6 +92,8 @@ public class Enemy : StateController, IDamageable
 
         // Reassignation
         m_EnemyCurrentHP = EnemyMaxHP;
+
+        m_DamagedModel.SetActive(false);
     }
 
     public void OnDamage(Transform attacker, float damage)
@@ -92,6 +102,7 @@ public class Enemy : StateController, IDamageable
 
         Debug.Log("Enemy: " + gameObject.name + " | Damage: " + damage);
         AudioManager.Instance.PlaySfx("EnemyHit");
+        StartCoroutine(DamageEffect());
 
         if (m_EnemyCurrentHP <= 0)
         {
@@ -150,6 +161,24 @@ public class Enemy : StateController, IDamageable
             transform.rotation = Util.LookAt2DRotation(transform.position, LevelManager.Instance.Player.transform.position);
     }
 
+    private IEnumerator DamageEffect()
+    {
+        // Set Active model
+        if (m_Damaged)
+            yield break;
+
+        m_Damaged = true;
+        m_DamagedModel.SetActive(true);
+
+        // Disable damage model
+        yield return new WaitForSeconds(DAMAGE_DURATION);
+
+        if (m_Damaged)
+        {
+            m_DamagedModel.SetActive(false);
+            m_Damaged = false;
+        }
+    }
 
     private void DestroyEnemy()
     {

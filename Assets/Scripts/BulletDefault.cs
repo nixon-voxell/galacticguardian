@@ -5,7 +5,7 @@ public class BulletDefault : MonoBehaviour
 {
     [SerializeField] private string m_HitFx; //Hit effect name on the fx manager SO
     [SerializeField] private GameObject m_Pfx;
-    [SerializeField] private SpriteRenderer m_MeshRenderer;
+    [SerializeField] private GameObject m_Renderer;
     [SerializeField] private Collider2D m_Collider;
 
     private BulletStat m_BulletStat;
@@ -49,7 +49,7 @@ public class BulletDefault : MonoBehaviour
         this.m_Rb.velocity = Vector2.zero;
         this.m_Activated = true;
         this.m_Collider.enabled = true;
-        this.m_MeshRenderer.enabled = true;
+        this.m_Renderer.SetActive(true);
         if (m_Pfx != null)
             this.m_Pfx?.SetActive(true);
 
@@ -90,7 +90,7 @@ public class BulletDefault : MonoBehaviour
             m_Activated = false;
             m_BulletStat.BulletSpeed = 0;
             m_Collider.enabled = false;
-            m_MeshRenderer.enabled = false;
+            m_Renderer.SetActive(false);
             gameObject.SetActive(false);
 
             if (m_Pfx != null)
