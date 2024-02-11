@@ -7,6 +7,7 @@ public class TileNode : MonoBehaviour
 {
     public SpriteRenderer SpriteRenderer => this.m_SpriteRenderer;
     [SerializeField] private SpriteRenderer m_SpriteRenderer;
+    [SerializeField] private Sprite m_MainTileSprite;
 
     private TileHealth m_TileHealth;
     public TileHealth TileHealth => this.m_TileHealth;
@@ -60,6 +61,11 @@ public class TileNode : MonoBehaviour
     public void SetColor(Color color)
     {
         this.SpriteRenderer.color = color;
+    }
+
+    public void SetTileSprite(Sprite sprite)
+    {
+        this.SpriteRenderer.sprite = sprite;
     }
 
     public void Awake()

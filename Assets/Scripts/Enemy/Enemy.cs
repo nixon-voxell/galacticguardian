@@ -61,6 +61,7 @@ public class Enemy : StateController, IDamageable
     {
         EnemyDetection();
         EvaluateState();
+        AdjustRotation();
 
         this.StateUpdate();
     }
@@ -140,6 +141,15 @@ public class Enemy : StateController, IDamageable
             m_AtkTarget = null;
         }
     }
+
+    private void AdjustRotation()
+    {
+        if (m_AtkTarget != null)
+            transform.rotation = Util.LookAt2DRotation(transform.position, m_AtkTarget.transform.position);
+        else
+            transform.rotation = Util.LookAt2DRotation(transform.position, LevelManager.Instance.Player.transform.position);
+    }
+
 
     private void DestroyEnemy()
     {

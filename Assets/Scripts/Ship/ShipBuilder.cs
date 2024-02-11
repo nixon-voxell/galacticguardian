@@ -14,6 +14,8 @@ public class ShipBuilder : MonoBehaviour
     [SerializeField] private uint m_EssenceCost = 100;
     [SerializeField] private float m_TileDefaultHealth = 10.0f;
 
+    [SerializeField] private Sprite m_CenterTileSprite;
+
     private TileNode[] m_TileNodes;
     private InGameHud m_InGameHud;
 
@@ -149,7 +151,8 @@ public class ShipBuilder : MonoBehaviour
         // Set core tile to active
         centerTile.SetActive(true);
         // Set core tile color
-        centerTile.SetColor(this.m_CenterTileColor);
+        centerTile.SetTileSprite(m_CenterTileSprite);
+        centerTile.SetColor(m_CenterTileColor);
         centerTile.BuildTowerBtn.style.backgroundColor = this.m_CenterTileColor;
         // Set health
         centerTile.TileHealth.Initialize(this.m_TileDefaultHealth, this.m_TileDefaultHealth);
@@ -157,6 +160,7 @@ public class ShipBuilder : MonoBehaviour
         this.CheckTilesConnected();
         this.CheckCanBuildTiles();
         this.CheckCanBuildTowers();
+
     }
 
     private void Update()
@@ -211,6 +215,9 @@ public class ShipBuilder : MonoBehaviour
 
             tileNode.SetCanBuildTower(true);
         }
+
+        // Disable building in center tile
+        this.GetCenterTile().SetCanBuildTower(false);
     }
 
     private void CheckTilesConnected()

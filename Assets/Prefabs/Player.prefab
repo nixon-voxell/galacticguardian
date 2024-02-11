@@ -105,6 +105,7 @@ MonoBehaviour:
   m_TilesFromCenter: 6
   m_TileSize: 1
   m_TileNodePrefab: {fileID: 761703079437377203, guid: b00bf583e3d0a594cbc70e615637baee, type: 3}
-  m_CenterTileColor: {r: 0.93333334, g: 0.6156863, b: 0.4392157, a: 1}
+  m_CenterTileColor: {r: 1, g: 1, b: 1, a: 1}
   m_EssenceCost: 100
-  m_TileDefaultHealth: 10
+  m_TileDefaultHealth: 50
+  m_CenterTileSprite: {fileID: 21300000, guid: 388f159b27b527c40a18f28a5b2e5987, type: 3}
