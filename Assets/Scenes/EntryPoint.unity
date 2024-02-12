@@ -6223,13 +6223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTransform: {fileID: 0}
   m_Offset: {x: 0, y: 0, z: -10}
-  m_GridBackground: {fileID: 5655107570161876638}
-  m_Background: {fileID: 1771675446}
-  m_BG1ParallaxFactor: -0.95
-  m_Background2: {fileID: 1682796089}
-  m_BG2ParallaxFactor: -0.85
-  m_Background3: {fileID: 2045993171}
-  m_BG3ParallaxFactor: -0.75
+  m_Background: {fileID: 5655107570161876638}
 --- !u!4 &1349468150
 Transform:
   m_ObjectHideFlags: 0
@@ -10888,14 +10882,6 @@ PrefabInstance:
     - target: {fileID: 2200738062448289985, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2801559329707999253, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2801559329707999253, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
-      propertyPath: m_SortingOrder
-      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 8825199300590644529, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
       propertyPath: m_Name
