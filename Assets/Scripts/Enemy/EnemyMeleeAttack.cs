@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMeleeAttack : State
@@ -36,7 +33,12 @@ public class EnemyMeleeAttack : State
             poolManager.PlacePoolItemAt(hitPos, poolManager.FxDemonBulletHit);
 
             // Damage
-            collider.transform.GetComponent<IDamageable>().OnDamage(m_Enemy.transform, m_Enemy.EnemyDamage);
+            IDamageable damageable = collider.transform.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.OnDamage(m_Enemy.transform, m_Enemy.EnemyDamage);
+            }
+
             m_NextAtkTime = Time.time + (1 / m_Enemy.EnemyAtkRate);
         }
 
@@ -67,6 +69,6 @@ public class EnemyMeleeAttack : State
         if (m_Victim == null)
             Debug.LogWarning("[SYSTEM] Melee Atk: Victim is null");
 
-        
+
     }
 }

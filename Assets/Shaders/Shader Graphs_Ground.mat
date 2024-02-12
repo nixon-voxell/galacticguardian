@@ -46,15 +46,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _Luminance: 1
-    - _Power: 2.5
+    - _Power: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 2.5
-    - _Size: 0.4
+    - _Size: 0.6
     m_Colors:
-    - _BrightColor: {r: 0.20561324, g: 1.2513037, b: 1.4980394, a: 1}
+    - _BrightColor: {r: 3.2898116, g: 20.020857, b: 23.968628, a: 1}
     - _DarkColor: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
-    - _Position: {r: 20, g: 20, b: 0, a: 0}
+    - _Position: {r: 30, g: 30, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8302862396590284282
 MonoBehaviour:

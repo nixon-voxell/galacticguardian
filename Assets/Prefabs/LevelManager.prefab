@@ -87,3 +87,7 @@ MonoBehaviour:
     Count: 60
     m_Prefab: {fileID: 2273008110032898390, guid: 39ac9ed3ef0e2084682da644102d1a89, type: 3}
     m_DefaultActive: 0
+  FxBloodSplash:
+    Count: 60
+    m_Prefab: {fileID: 4553287630450876387, guid: 11d3e01775a810443a9eb606c4391212, type: 3}
+    m_DefaultActive: 0

@@ -8,10 +8,11 @@ public class PoolManager : MonoBehaviour
     public Pool<Essence> Essence;
 
 
-    // Effects 
+    // Effects
     public Pool<ParticleSystem> FxTileDestroyed;
     public Pool<ParticleSystem> FxDemonBulletHit;
     public Pool<ParticleSystem> FxEnemyDestroyed;
+    public Pool<ParticleSystem> FxBloodSplash;
 
     private void Start()
     {
@@ -23,9 +24,10 @@ public class PoolManager : MonoBehaviour
         FxTileDestroyed.Initialize(CreateParent("Fx Tile Destroyed Pool"));
         FxDemonBulletHit.Initialize(CreateParent("Fx Tile Hit Pool"));
         FxEnemyDestroyed.Initialize(CreateParent("Fx Enemy Destroyed Pool"));
+        FxBloodSplash.Initialize(CreateParent("Fx Blood Spash Pool"));
     }
 
-    public T PlacePoolItemAt<T>(Vector2 position, Pool<T> pfxPool) where T: Component
+    public T PlacePoolItemAt<T>(Vector2 position, Pool<T> pfxPool) where T : Component
     {
         T component = pfxPool.GetNextObject();
         Transform componentTrans = component.transform;

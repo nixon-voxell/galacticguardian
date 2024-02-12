@@ -354,6 +354,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6687401845951712036, guid: 55f3aee7bb518a54fabc384359a76127, type: 3}
+      propertyPath: FxEnemyDamaged.Count
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687401845951712036, guid: 55f3aee7bb518a54fabc384359a76127, type: 3}
+      propertyPath: FxEnemyDamaged.m_Prefab
+      value: 
+      objectReference: {fileID: 4553287630450876387, guid: 11d3e01775a810443a9eb606c4391212, type: 3}
     - target: {fileID: 8758723253303286363, guid: 55f3aee7bb518a54fabc384359a76127, type: 3}
       propertyPath: m_Name
       value: LevelManager

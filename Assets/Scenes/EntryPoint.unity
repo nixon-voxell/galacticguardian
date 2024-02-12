@@ -1965,8 +1965,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -10886,10 +10886,6 @@ PrefabInstance:
     - target: {fileID: 8825199300590644529, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
       propertyPath: m_Name
       value: GridBackground
-      objectReference: {fileID: 0}
-    - target: {fileID: 8825199300590644529, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

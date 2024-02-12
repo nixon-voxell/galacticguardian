@@ -103,8 +103,12 @@ public class Enemy : StateController, IDamageable
         Debug.Log("Enemy: " + gameObject.name + " | Damage: " + damage);
         AudioManager.Instance.PlaySfx("EnemyHit");
 
-        if (gameObject.activeInHierarchy) 
+        if (gameObject.activeInHierarchy)
+        {
+            PoolManager poolManager = LevelManager.Instance.PoolManager;
+            poolManager.PlacePoolItemAt(this.transform.position, poolManager.FxBloodSplash);
             StartCoroutine(DamageEffect());
+        }
 
         if (m_EnemyCurrentHP <= 0)
         {
