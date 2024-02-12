@@ -73,7 +73,7 @@
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
-    background-color: rgba(171, 157, 242, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     transition-timing-function: ease-in-out-cubic;
     transition-duration: 0.1s;
     -unity-font-definition: url('project://database/Assets/Fonts/Techno%20Font/Techno%20SDF%201.asset?fileID=11400000&guid=9a9e13a54f327c0489043ac68e5e27d1&type=2#Techno SDF 1');
@@ -81,4 +81,5 @@
 
 .tower-btn:hover {
     scale: 1.2 1.2;
+    background-color: rgb(0, 0, 0);
 }
