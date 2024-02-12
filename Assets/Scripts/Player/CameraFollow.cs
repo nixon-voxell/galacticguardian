@@ -5,7 +5,6 @@ public class CameraFollow : SingletonMono<CameraFollow>
     [HideInInspector] public Transform PlayerTransform;
 
     [SerializeField] private Vector3 m_Offset;
-    [SerializeField] private Vector2 m_MaterialOffset;
     [SerializeField] private SpriteRenderer m_GridBackground;
     [SerializeField] private Transform m_Background;
     [SerializeField] private float m_BG1ParallaxFactor;
@@ -16,19 +15,14 @@ public class CameraFollow : SingletonMono<CameraFollow>
 
 
     private Vector2 m_PreviousBGPosition;
-    
-    private void Start()
-    {
-        m_PreviousBGPosition = transform.position;
-    }
-
     private Material m_BgMaterial;
     private Vector2 m_MaterialOffset;
     private float m_PositionMultiplier;
 
     private void Start()
     {
-        this.m_BgMaterial = this.m_Background.material;
+        m_PreviousBGPosition = transform.position;
+        this.m_BgMaterial = this.m_GridBackground.material;
         // Initial position is the offset
         this.m_MaterialOffset = this.m_BgMaterial.GetVector("_Position");
         this.m_PositionMultiplier = this.m_BgMaterial.GetFloat("_Size") * 0.5f;
