@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1303056816284516678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2058572674174608603, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_Name
+      value: Asteroid Long Brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064424770288887607, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713007193275169746, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b35ffaf2734547b28c818dfc441a1bf, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2058572674174608603, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2237588563662452898}
+  m_SourcePrefab: {fileID: 100100000, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+--- !u!1 &1046215782264645021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2058572674174608603, guid: 54dbcc1ab88064048a52425d6f025fa3, type: 3}
+  m_PrefabInstance: {fileID: 1303056816284516678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &2237588563662452898
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046215782264645021}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 300
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

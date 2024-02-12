@@ -10,6 +10,7 @@ TagManager:
   - Key
   - Planeta
   - Projectile
+  - Obstacle
   layers:
   - Default
   - TransparentFX
