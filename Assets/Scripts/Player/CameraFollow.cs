@@ -22,6 +22,18 @@ public class CameraFollow : SingletonMono<CameraFollow>
         m_PreviousBGPosition = transform.position;
     }
 
+    private Material m_BgMaterial;
+    private Vector2 m_MaterialOffset;
+    private float m_PositionMultiplier;
+
+    private void Start()
+    {
+        this.m_BgMaterial = this.m_Background.material;
+        // Initial position is the offset
+        this.m_MaterialOffset = this.m_BgMaterial.GetVector("_Position");
+        this.m_PositionMultiplier = this.m_BgMaterial.GetFloat("_Size") * 0.5f;
+    }
+
     private void Update()
     {
         if (this.PlayerTransform == null)
@@ -37,8 +49,8 @@ public class CameraFollow : SingletonMono<CameraFollow>
             new Vector2(
                 this.transform.position.x,
                 this.transform.position.y
-            ) * 0.5f + this.m_MaterialOffset
-            );
+            ) * this.m_PositionMultiplier + this.m_MaterialOffset
+        );
         }
 
 
@@ -54,7 +66,5 @@ public class CameraFollow : SingletonMono<CameraFollow>
 
             m_PreviousBGPosition = transform.position;
         }
-
-        
     }
 }
