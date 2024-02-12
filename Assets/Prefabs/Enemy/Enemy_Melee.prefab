@@ -624,7 +624,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -677,7 +677,6 @@ MonoBehaviour:
   AtkLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  DamageDuration: 0
   AtkState: {fileID: 253845280765208721}
   ChaseState: {fileID: 6007758984651726667}
   m_DamagedModel: {fileID: 5485856181040756974}
