@@ -16,12 +16,16 @@ public class CameraFollow : SingletonMono<CameraFollow>
         }
 
         this.transform.position = this.PlayerTransform.position + this.m_Offset;
-        this.m_Background.material.SetVector(
+        if (m_Background != null)
+        {
+            this.m_Background.material.SetVector(
             "_Position",
             new Vector2(
                 this.transform.position.x,
                 this.transform.position.y
             ) * 0.5f + this.m_MaterialOffset
         );
+        }
+        
     }
 }
