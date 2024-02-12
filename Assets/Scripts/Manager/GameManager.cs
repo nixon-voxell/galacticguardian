@@ -17,6 +17,9 @@ public class GameManager : SingletonMono<GameManager>
 
     public void ToStart()
     {
+        // Reset camera position
+        CameraFollow.Instance.transform.position = CameraFollow.Instance.Offset;
+
         // Unload game world
         SceneManager.UnloadSceneAsync(this.GameWorld);
 
@@ -36,7 +39,7 @@ public class GameManager : SingletonMono<GameManager>
         SceneManager.LoadSceneAsync(this.GameWorld, LoadSceneMode.Additive);
 
         // Reset camera position
-        Camera.main.transform.position = Vector3.zero;
+        CameraFollow.Instance.transform.position = CameraFollow.Instance.Offset;
 
         // Enable only in game hud
         UiManager.Instance.SetOnlyVisible<InGameHud>();
@@ -59,7 +62,6 @@ public class GameManager : SingletonMono<GameManager>
 
     public void ToEnd()
     {
-
         // Enable only score board
         UiManager.Instance.SetOnlyVisible<ScoreBoard>();
         UiManager.Instance.GetUi<ScoreBoard>().SetValues((int)GameStat.Instance.Time, GameStat.Instance.KillCount);
