@@ -75,7 +75,15 @@ MonoBehaviour:
     Count: 200
     m_Prefab: {fileID: 6350535071732960594, guid: 1adcfc3d2a4b21d43bb837a17fd95fc2, type: 3}
     m_DefaultActive: 0
-  FxNodeDestroyed:
-    Count: 30
+  FxTileDestroyed:
+    Count: 50
     m_Prefab: {fileID: 725748389856807712, guid: f3d5e357526af244e98655f72a8ab89c, type: 3}
+    m_DefaultActive: 0
+  FxDemonBulletHit:
+    Count: 50
+    m_Prefab: {fileID: 1817459171762951058, guid: f8b22f94646ce024895254b84b7cbaa5, type: 3}
+    m_DefaultActive: 0
+  FxEnemyDestroyed:
+    Count: 60
+    m_Prefab: {fileID: 2273008110032898390, guid: 39ac9ed3ef0e2084682da644102d1a89, type: 3}
     m_DefaultActive: 0

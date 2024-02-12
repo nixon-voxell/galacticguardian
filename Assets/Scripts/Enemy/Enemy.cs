@@ -47,7 +47,7 @@ public class Enemy : StateController, IDamageable
     public State AtkState;
     public EnemyChase ChaseState;
 
-    [Header("Components")]
+    [Header("Particle Components")]
     [SerializeField] private GameObject m_DamagedModel;
 
     private const float DAMAGE_DURATION = 0.25f;
@@ -102,7 +102,9 @@ public class Enemy : StateController, IDamageable
 
         Debug.Log("Enemy: " + gameObject.name + " | Damage: " + damage);
         AudioManager.Instance.PlaySfx("EnemyHit");
-        StartCoroutine(DamageEffect());
+
+        if (gameObject.activeInHierarchy) 
+            StartCoroutine(DamageEffect());
 
         if (m_EnemyCurrentHP <= 0)
         {
@@ -183,8 +185,10 @@ public class Enemy : StateController, IDamageable
     private void DestroyEnemy()
     {
         gameObject.SetActive(false);
-        Essence essence = LevelManager.Instance.PoolManager.Essence.GetNextObject();
-        essence.transform.position = transform.position;
+
+        PoolManager poolManager = LevelManager.Instance.PoolManager;
+        poolManager.PlacePoolItemAt(transform.position, poolManager.FxEnemyDestroyed);
+        Essence essence = poolManager.PlacePoolItemAt(transform.position, poolManager.Essence);
         essence.InitializeObject(EssenceDropAmt);
         AudioManager.Instance.PlaySfx("EnemyDestroyed");
 

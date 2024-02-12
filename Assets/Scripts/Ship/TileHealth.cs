@@ -14,6 +14,8 @@ public class TileHealth : MonoBehaviour, IDamageable
         this.Health -= damage;
         Debug.Log($"Node: {gameObject.name} | Health: {Health} | Damage: {damage}");
 
+        AudioManager.Instance.PlaySfx("TileHit");
+
         if (this.Health <= 0)
         {
             this.m_TileNode.DestroyTile();
@@ -21,7 +23,7 @@ public class TileHealth : MonoBehaviour, IDamageable
             // FX
             ShakerManager.Instance.Shake("TileDestroyed");
             AudioManager.Instance.PlaySfx("TileExplode");
-            GameObject pfx = LevelManager.Instance.PoolManager.FxNodeDestroyed.GetNextObject().gameObject;
+            GameObject pfx = LevelManager.Instance.PoolManager.FxTileDestroyed.GetNextObject().gameObject;
             pfx.transform.position = transform.position;
             pfx.SetActive(true);
 

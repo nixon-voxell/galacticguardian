@@ -30,6 +30,12 @@ public class EnemyMeleeAttack : State
         Collider2D collider = Physics2D.OverlapCircle(transform.position, m_MeleeAtkRange, m_Enemy.AtkLayerMask);
         if (collider != null && Time.time > m_NextAtkTime)
         {
+            // Hit fx
+            Vector2 hitPos = collider.ClosestPoint(transform.position);
+            PoolManager poolManager = LevelManager.Instance.PoolManager;
+            poolManager.PlacePoolItemAt(hitPos, poolManager.FxDemonBulletHit);
+
+            // Damage
             collider.transform.GetComponent<IDamageable>().OnDamage(m_Enemy.transform, m_Enemy.EnemyDamage);
             m_NextAtkTime = Time.time + (1 / m_Enemy.EnemyAtkRate);
         }

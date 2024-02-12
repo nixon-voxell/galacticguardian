@@ -9,7 +9,9 @@ public class PoolManager : MonoBehaviour
 
 
     // Effects 
-    public Pool<ParticleSystem> FxNodeDestroyed;
+    public Pool<ParticleSystem> FxTileDestroyed;
+    public Pool<ParticleSystem> FxDemonBulletHit;
+    public Pool<ParticleSystem> FxEnemyDestroyed;
 
     private void Start()
     {
@@ -18,7 +20,20 @@ public class PoolManager : MonoBehaviour
         TowerBullet.Initialize(CreateParent("Tower Bullet Pool"));
         AtomicBullet.Initialize(CreateParent("Atomic Bullet Pool"));
         Essence.Initialize(CreateParent("Essence Bullet Pool"));
-        FxNodeDestroyed.Initialize(CreateParent("Fx Node Destroyed Pool"));
+        FxTileDestroyed.Initialize(CreateParent("Fx Tile Destroyed Pool"));
+        FxDemonBulletHit.Initialize(CreateParent("Fx Tile Hit Pool"));
+        FxEnemyDestroyed.Initialize(CreateParent("Fx Enemy Destroyed Pool"));
+    }
+
+    public T PlacePoolItemAt<T>(Vector2 position, Pool<T> pfxPool) where T: Component
+    {
+        T component = pfxPool.GetNextObject();
+        Transform componentTrans = component.transform;
+        componentTrans.position = position;
+        componentTrans.gameObject.SetActive(false);
+        componentTrans.gameObject.SetActive(true);
+
+        return component;
     }
 
     private Transform CreateParent(string newChildName)

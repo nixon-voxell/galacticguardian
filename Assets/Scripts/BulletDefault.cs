@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BulletDefault : MonoBehaviour
 {
-    [SerializeField] private string m_HitFx; //Hit effect name on the fx manager SO
     [SerializeField] private GameObject m_Pfx;
     [SerializeField] private GameObject m_Renderer;
     [SerializeField] private Collider2D m_Collider;
@@ -66,11 +65,11 @@ public class BulletDefault : MonoBehaviour
             if (!m_BulletStat.PierceThroughEnemy)
                 m_BulletStat.EnemyGoThroughCount--;
 
-            // TODO: SOUNDFX - Turret bullet hit sfx
         }
 
-        //if (m_HitFx != "")
-        //    GameManager.Instance.EffectsManager.PlayEffectAtLocation(m_HitFx, collision.contacts[0].point);
+        Vector2 hitPos = collision.ClosestPoint(transform.position);
+        PoolManager poolManager =  LevelManager.Instance.PoolManager;
+        poolManager.PlacePoolItemAt(hitPos, poolManager.FxDemonBulletHit);
 
         // Enemy go through count will be -1 for it to be resetted
         if (m_BulletStat.EnemyGoThroughCount < 0 && !m_BulletStat.PierceThroughEnemy)
