@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         if (m_CurrentSpawnRate < m_MaxSpawnRate)
-            m_CurrentSpawnRate += m_SpawnRateIncrease * Time.deltaTime;
+            m_CurrentSpawnRate += m_SpawnRateIncrease / 10000f * Time.deltaTime;
     }
 
     private IEnumerator StartSpawning()

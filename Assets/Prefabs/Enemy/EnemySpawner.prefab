@@ -52,7 +52,7 @@ MonoBehaviour:
     m_Prefab: {fileID: 2544069029293496021, guid: 657b0187123b2a14d8130202e6431850, type: 3}
     m_DefaultActive: 0
   m_SpawnOffRange: 20
-  m_InitialSpawnRate: 0.2
-  m_SpawnRateIncrease: 0.01
-  m_MaxSpawnRate: 30
+  m_InitialSpawnRate: 0.25
+  m_SpawnRateIncrease: 6
+  m_MaxSpawnRate: 4
   SpawnActive: 0

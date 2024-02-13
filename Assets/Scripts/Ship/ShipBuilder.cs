@@ -12,7 +12,8 @@ public class ShipBuilder : MonoBehaviour
 
     [Tooltip("The number of essence that a single tile cost.")]
     [SerializeField] private uint m_EssenceCost = 100;
-    [SerializeField] private float m_TileDefaultHealth = 10.0f;
+    [SerializeField] private float m_TileDefaultHealth = 100.0f;
+    [SerializeField] private float m_TileCenterHealth = 1000.0f;
 
     [SerializeField] private Sprite m_CenterTileSprite;
 

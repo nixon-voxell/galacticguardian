@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EssenceObj: {fileID: 1994554375261014097, guid: 1adcfc3d2a4b21d43bb837a17fd95fc2, type: 3}
-  m_EssenceAmount: 20
+  m_EssenceAmount: 15
   m_EssenceSpawnCount: 5
 --- !u!58 &8108667496931471793
 CircleCollider2D:

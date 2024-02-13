@@ -33,14 +33,7 @@ public class Enemy : StateController, IDamageable
     [SerializeField] private EnemyStat m_MaxStat;
 
     public float ProgressionDuration;
-
-    public float EnemyMaxHP;
-    public float EnemyDamage;
-    public float EnemyMovementSpeed;
-    public float EnemyAtkRate;
-    public float EnemyAtkSpeed;
     public float EnemyAtkRange; // This stat not scaled
-    public int EssenceDropAmt; // This stat not scaled
     public LayerMask AtkLayerMask;
 
     [Header("Behaviours")]
@@ -49,6 +42,13 @@ public class Enemy : StateController, IDamageable
 
     [Header("Particle Components")]
     [SerializeField] private GameObject m_DamagedModel;
+
+    [Header("View Only")]
+    public float EnemyDamage;
+    public float EnemyMovementSpeed;
+    public float EnemyAtkRate;
+    public float EnemyAtkSpeed;
+    public int EssenceDropAmt;
 
     private const float DAMAGE_DURATION = 0.25f;
 
@@ -83,15 +83,12 @@ public class Enemy : StateController, IDamageable
         );
 
         // Enemy Scaling
-        EnemyMaxHP = currStat.Health;
+        m_EnemyCurrentHP = currStat.Health;
         EnemyDamage = currStat.Damage;
         EnemyMovementSpeed = currStat.Speed;
         EnemyAtkRate = currStat.AtkRate;
         EnemyAtkSpeed = currStat.AtkSpeed;
         EssenceDropAmt = currStat.EssenceDrop;
-
-        // Reassignation
-        m_EnemyCurrentHP = EnemyMaxHP;
 
         m_DamagedModel.SetActive(false);
     }
@@ -190,10 +187,15 @@ public class Enemy : StateController, IDamageable
     {
         gameObject.SetActive(false);
 
-        PoolManager poolManager = LevelManager.Instance.PoolManager;
-        poolManager.PlacePoolItemAt(transform.position, poolManager.FxEnemyDestroyed);
-        Essence essence = poolManager.PlacePoolItemAt(transform.position, poolManager.Essence);
-        essence.InitializeObject(EssenceDropAmt);
+        // DROP ESSENCE
+        // Removing for now coz its stupid to go and take it
+
+        //PoolManager poolManager = LevelManager.Instance.PoolManager;
+        //poolManager.PlacePoolItemAt(transform.position, poolManager.FxEnemyDestroyed);
+        //Essence essence = poolManager.PlacePoolItemAt(transform.position, poolManager.Essence);
+        //essence.InitializeObject(EssenceDropAmt);
+
+        GameStat.Instance.AddEssence(EssenceDropAmt);
         AudioManager.Instance.PlaySfx("EnemyDestroyed");
 
         GameStat.Instance.KillCount += 1;

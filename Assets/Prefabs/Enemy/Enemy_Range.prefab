@@ -989,7 +989,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3613730063623343122}
-  - {fileID: 1567797825619018660}
   - {fileID: 4721912162214796633}
   m_Father: {fileID: 370638884592542012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1311,53 +1310,6 @@ Transform:
   - {fileID: 7021780635047472599}
   m_Father: {fileID: 7916741815299418568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6238010316973936713
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1567797825619018660}
-  - component: {fileID: 253845280765208721}
-  m_Layer: 0
-  m_Name: MeleeAtk
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1567797825619018660
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6238010316973936713}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8270240909982369171}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &253845280765208721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6238010316973936713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11bbc79ef2682114195fafa70ef4c1ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StateController: {fileID: 0}
-  m_MeleeAtkRange: 0
-  m_Enemy: {fileID: 2544069029293496021}
 --- !u!1 &6334622036262797586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,33 +1966,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialState: {fileID: 6007758984651726667}
   m_BaseStat:
-    Health: 60
-    Damage: 3
-    Speed: 1
-    EssenceDrop: 100
+    Health: 90
+    Damage: 7.5
+    Speed: 3.5
+    EssenceDrop: 85
     AtkRate: 0.5
-    AtkSpeed: 4
+    AtkSpeed: 7
   m_MaxStat:
-    Health: 200
-    Damage: 10
-    Speed: 5
-    EssenceDrop: 200
-    AtkRate: 1
-    AtkSpeed: 8
+    Health: 1200
+    Damage: 55
+    Speed: 6
+    EssenceDrop: 125
+    AtkRate: 2.8
+    AtkSpeed: 12
   ProgressionDuration: 900
-  EnemyMaxHP: 60
-  EnemyDamage: 3
-  EnemyMovementSpeed: 1
-  EnemyAtkRate: 0.5
-  EnemyAtkSpeed: 4
-  EnemyAtkRange: 4
-  EssenceDropAmt: 100
+  EnemyAtkRange: 4.5
   AtkLayerMask:
     serializedVersion: 2
     m_Bits: 64
   AtkState: {fileID: 8469135666270334595}
   ChaseState: {fileID: 6007758984651726667}
   m_DamagedModel: {fileID: 247910327626655801}
+  EnemyDamage: 0
+  EnemyMovementSpeed: 0
+  EnemyAtkRate: 0
+  EnemyAtkSpeed: 0
+  EssenceDropAmt: 0
 --- !u!61 &1972430962922470054
 BoxCollider2D:
   m_ObjectHideFlags: 0

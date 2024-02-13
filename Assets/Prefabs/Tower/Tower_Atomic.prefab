@@ -164,16 +164,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5e736bcbc87654480cd3dcbe63ab68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerMaxHP: 100
-  TowerDamage: 50
+  TowerMaxHP: 300
+  TowerDamage: 200
   TowerAtkRate: 0.1
   TowerAtkSpeed: -1
-  TowerAtkRange: 10
+  TowerAtkRange: 12
   TowerAtkLayers:
     serializedVersion: 2
     m_Bits: 256
   ShootPoint: {fileID: 4132196867291798578}
-  m_EssenceCost: 150
+  m_EssenceCost: 650
   m_LookAtTarget: 0
 --- !u!114 &7685752790787235390
 MonoBehaviour:
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f11556f79f132419c15fea74ad3de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AOERadius: 2.5
-  m_HitDelay: 0.75
+  m_AOERadius: 2
+  m_HitDelay: 0.5
   m_ShootPfx: {fileID: 9010929757549595985}
 --- !u!95 &2962529195755969115
 Animator:

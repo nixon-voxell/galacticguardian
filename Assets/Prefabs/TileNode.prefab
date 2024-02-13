@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirePfx: {fileID: 909171346115892909}
-  m_MinHPStartFirePerc: 0.4
+  m_MinHPStartFirePerc: 0.5
   m_FireScaleRange: {x: 0.75, y: 1.5}
 --- !u!1001 &2720313537046499304
 PrefabInstance:

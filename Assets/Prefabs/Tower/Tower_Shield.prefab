@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5e736bcbc87654480cd3dcbe63ab68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerMaxHP: 250
+  TowerMaxHP: 1000
   TowerDamage: 0
   TowerAtkRate: 0
   TowerAtkSpeed: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   ShootPoint: {fileID: 0}
-  m_EssenceCost: 100
+  m_EssenceCost: 300
   m_LookAtTarget: 0
 --- !u!222 &4257330159323539250
 CanvasRenderer:
