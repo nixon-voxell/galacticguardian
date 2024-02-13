@@ -126,9 +126,9 @@ public class InGameHud : UiMono
         Util.CalculateTimeFromSeconds((int)GameStat.Instance.Time, out hrs, out mins, out secs);
         this.m_TimeLbl.text = $"{hrs:00}:{mins:00}:{secs:00}";
 
-        if (UserInput.Instance.Build)
+        if (UserInput.Instance.Build != m_BuildMenuActive)
         {
-            this.SetBuildMenuActive(!this.m_BuildMenuActive);
+            this.SetBuildMenuActive(UserInput.Instance.Build);
         }
     }
 }

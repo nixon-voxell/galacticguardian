@@ -53,7 +53,7 @@ public class GameManager : SingletonMono<GameManager>
 
         InGameHud hud = UiManager.Instance.GetUi<InGameHud>();
         hud.ResetButtons();
-        hud.SetBuildMenuActive(true);
+        hud.SetBuildMenuActive(false);
 
         // Reset Game Stat
         GameStat.Instance.Reset();

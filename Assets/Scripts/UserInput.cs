@@ -13,6 +13,6 @@ public class UserInput : SingletonMono<UserInput>
         this.m_Movement.x = Input.GetAxisRaw("Horizontal");
         this.m_Movement.y = Input.GetAxisRaw("Vertical");
 
-        this.m_Build = Input.GetKeyUp(KeyCode.B);
+        this.m_Build = Input.GetKey(KeyCode.Space) ? true : false;
     }
 }
