@@ -6,7 +6,7 @@ public class Portal : MonoBehaviour
     {
         if (collider.tag == "Tile")
         {
-            Debug.Log(collider);
+            GameManager.Instance.ToEnd(true);
         }
     }
 }

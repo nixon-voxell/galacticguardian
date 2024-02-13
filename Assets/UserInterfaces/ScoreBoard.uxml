@@ -4,7 +4,7 @@
     <Style src="project://database/Assets/UserInterfaces/USS/Label.uss?fileID=7433441132597879392&amp;guid=c5cc565c7edf9ae4fbefcce199dd3842&amp;type=3#Label" />
     <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.8);">
         <ui:VisualElement picking-mode="Ignore" class="header" style="align-self: center; flex-grow: 1; justify-content: center; background-color: rgba(0, 0, 0, 0.8); padding-top: 60px; padding-right: 60px; padding-bottom: 60px; padding-left: 60px;">
-            <ui:Label text="GAME OVER!" picking-mode="Ignore" class="label" style="color: rgb(255, 69, 84); font-size: 300px;" />
+            <ui:Label text="GAME OVER!" picking-mode="Ignore" name="title-lbl" class="label" style="color: rgb(255, 69, 84); font-size: 300px;" />
             <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; justify-content: space-around;">
                 <ui:Label tabindex="-1" text="Total Time:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
                 <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="total-time-lbl" class="label" />
