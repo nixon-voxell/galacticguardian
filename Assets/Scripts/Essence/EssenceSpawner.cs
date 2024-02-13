@@ -10,27 +10,57 @@ public class EssenceSpawner : MonoBehaviour
     private const float SPAWN_RANGE = 1.5f;
     private const float DELAY_SPAWN = 1.5f;
 
+    private Transform m_EssenceHolder;
+    private bool m_EssenceSpawned = false;
 
     private void Start()
     {
-        StartCoroutine(StartSpawnEssence());
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        // To prevent lagging everything when level is loaded
+        Util.CallFunctionNextFrame(this, () =>
+        {
+            m_EssenceHolder = new GameObject("Essence Holder").transform;
+            m_EssenceHolder.parent = transform;
+        });
     }
 
-    private IEnumerator StartSpawnEssence()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Delay spawn so won't lag the game on start
-        yield return new WaitForSeconds(DELAY_SPAWN);
+        if (collision.CompareTag("Player") || collision.CompareTag("Tile"))
+        {
+            if (!m_EssenceSpawned)
+            {
+                StartSpawnEssence();
+                m_EssenceSpawned = true;
+            }
+            else
+            {
+                CullEssence(true);
+            }
+        }
+    }
 
-        GetComponent<SpriteRenderer>().enabled = false;
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") || collision.CompareTag("Tile"))
+        {
+            CullEssence(false);
+        }
+    }
+
+    private void CullEssence(bool setActive)
+    {
+        m_EssenceHolder.gameObject.SetActive(setActive);
+    }
+
+    private void StartSpawnEssence()
+    {
         for (int i = 0; i < m_EssenceSpawnCount; i++)
         {
-            Vector2 randomPos = (Vector2)transform.position + Random.insideUnitCircle.normalized * SPAWN_RANGE;
-            GameObject essenceObj = Instantiate(m_EssenceObj, randomPos, Quaternion.identity, this.transform);
-            essenceObj.transform.parent = null;
+            Vector2 randomPos = (Vector2)transform.position + Random.insideUnitCircle * SPAWN_RANGE;
+            GameObject essenceObj = Instantiate(m_EssenceObj, randomPos, Quaternion.identity, m_EssenceHolder);
             essenceObj.GetComponent<Essence>().InitializeObject(m_EssenceAmount);
-            yield return null;
         }
-
-        Destroy(gameObject);
     }
 }

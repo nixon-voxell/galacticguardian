@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2295073919416108596}
   - component: {fileID: 982435701741898334}
   - component: {fileID: 1917359046914857124}
+  - component: {fileID: 8108667496931471793}
   m_Layer: 0
   m_Name: CrystalSpawner
   m_TagString: Untagged
@@ -100,3 +101,38 @@ MonoBehaviour:
   m_EssenceObj: {fileID: 1994554375261014097, guid: 1adcfc3d2a4b21d43bb837a17fd95fc2, type: 3}
   m_EssenceAmount: 20
   m_EssenceSpawnCount: 5
+--- !u!58 &8108667496931471793
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185286026748023034}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1975
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 100
