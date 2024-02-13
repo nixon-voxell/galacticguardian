@@ -17,7 +17,14 @@
                 <ui:Label tabindex="-1" text="High Score:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
                 <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="high-score-lbl" class="label" />
             </ui:VisualElement>
-            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row-reverse; padding-top: 200px;">
+            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; justify-content: space-around;">
+                <ui:Label tabindex="-1" text="Best Score:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="best-score-lbl" class="label" />
+            </ui:VisualElement>
+            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; justify-content: flex-end; margin-right: 80px;">
+                <ui:Label tabindex="-1" text="new score" parse-escape-sequences="true" display-tooltip-when-elided="true" name="best-score-indicator" class="label" style="font-size: 75px; color: rgb(255, 0, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement picking-mode="Ignore" style="flex-direction: row-reverse; padding-top: 100px;">
                 <ui:Button text="Quit to Main Menu" name="quit-btn" class="button" style="color: rgb(255, 216, 102); border-left-color: rgb(255, 216, 102); border-right-color: rgb(255, 216, 102); border-top-color: rgb(255, 216, 102); border-bottom-color: rgb(255, 216, 102);" />
             </ui:VisualElement>
         </ui:VisualElement>
