@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UserInterfaces/USS/Label.uss?fileID=7433441132597879392&amp;guid=c5cc565c7edf9ae4fbefcce199dd3842&amp;type=3#Label" />
     <Style src="project://database/Assets/UserInterfaces/USS/Buttons.uss?fileID=7433441132597879392&amp;guid=7f4794ba51420194e82a9f88a5ca176e&amp;type=3#Buttons" />
     <ui:VisualElement style="align-self: center; align-items: center; flex-grow: 1; flex-direction: column; justify-content: center;">
-        <ui:Label text="Ship" class="header label" style="font-size: 256px; text-shadow: 3.7px 2px 20px rgb(0, 0, 0);" />
+        <ui:Label text="galactic guardian" class="header label" style="font-size: 256px; text-shadow: 3.7px 2px 20px rgb(0, 0, 0); align-self: center;" />
         <ui:VisualElement style="height: 100px;" />
         <ui:Button text="PLAY!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="play-btn" class="button" style="border-left-color: rgb(120, 220, 232); border-right-color: rgb(120, 220, 232); border-top-color: rgb(120, 220, 232); border-bottom-color: rgb(120, 220, 232); color: rgb(120, 220, 232);" />
         <ui:Button text="QUIT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit-btn" class="button" style="border-left-color: rgb(255, 97, 136); border-right-color: rgb(255, 97, 136); border-top-color: rgb(255, 97, 136); border-bottom-color: rgb(255, 97, 136); color: rgb(255, 97, 136);" />

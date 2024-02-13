@@ -14,6 +14,12 @@ public class GameManager : SingletonMono<GameManager>
     private GameState m_CurrGameState = GameState.Start;
 
     [Voxell.Util.Scene] public string GameWorld;
+    [SerializeField] private GameObject m_Grid;
+
+    private void Start()
+    {
+        m_Grid.SetActive(false);
+    }
 
     public void ToStart()
     {
@@ -37,6 +43,7 @@ public class GameManager : SingletonMono<GameManager>
     {
         // Load game world
         SceneManager.LoadSceneAsync(this.GameWorld, LoadSceneMode.Additive);
+        m_Grid.SetActive(true);
 
         // Reset camera position
         CameraFollow.Instance.transform.position = CameraFollow.Instance.Offset;
