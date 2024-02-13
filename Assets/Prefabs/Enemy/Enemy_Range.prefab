@@ -1966,21 +1966,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialState: {fileID: 6007758984651726667}
   m_BaseStat:
-    Health: 90
-    Damage: 7.5
-    Speed: 3.5
+    Health: 100
+    Damage: 35
+    Speed: 4
     EssenceDrop: 85
-    AtkRate: 0.5
-    AtkSpeed: 7
+    AtkRate: 0.45
+    AtkSpeed: 8
   m_MaxStat:
     Health: 1200
-    Damage: 55
+    Damage: 100
     Speed: 6
-    EssenceDrop: 125
-    AtkRate: 2.8
-    AtkSpeed: 12
-  ProgressionDuration: 900
-  EnemyAtkRange: 4.5
+    EssenceDrop: 100
+    AtkRate: 4.5
+    AtkSpeed: 13
+  ProgressionDuration: 850
+  EnemyAtkRange: 5.5
   AtkLayerMask:
     serializedVersion: 2
     m_Bits: 64

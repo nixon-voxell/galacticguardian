@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateController: {fileID: 0}
-  m_MeleeAtkRange: 0.5
+  m_MeleeAtkRange: 0.75
   m_Enemy: {fileID: 2544069029293496021}
 --- !u!1 &6853598209075417861
 GameObject:
@@ -607,9 +607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialState: {fileID: 6007758984651726667}
   m_BaseStat:
-    Health: 150
-    Damage: 15
-    Speed: 4
+    Health: 175
+    Damage: 20
+    Speed: 4.5
     EssenceDrop: 85
     AtkRate: 1
     AtkSpeed: -1
@@ -617,11 +617,11 @@ MonoBehaviour:
     Health: 1500
     Damage: 90
     Speed: 6
-    EssenceDrop: 125
-    AtkRate: 3
+    EssenceDrop: 100
+    AtkRate: 3.5
     AtkSpeed: -1
   ProgressionDuration: 900
-  EnemyAtkRange: 4
+  EnemyAtkRange: 3
   AtkLayerMask:
     serializedVersion: 2
     m_Bits: 64
