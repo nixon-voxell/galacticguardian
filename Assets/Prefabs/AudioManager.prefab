@@ -206,6 +206,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: c2f4ca94246af3440842d5c8ccab0867, type: 3}
   - SoundName: TileHit
     Clip: {fileID: 8300000, guid: 7e2b5cbe3b2f7b548b8bb0e4decf0b3d, type: 3}
+  - SoundName: EnemySpawn
+    Clip: {fileID: 8300000, guid: bd2ad9017a5940345a777f857b2dd33d, type: 3}
   BgmSource: {fileID: 5552519374346335810}
   SfxSource: {fileID: 6469739051992134348}
 --- !u!1 &7274030369401694663
