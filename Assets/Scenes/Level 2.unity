@@ -262,6 +262,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (12)
@@ -590,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7466441333045802999, guid: 652377fe27866164d9a69cc5b781e6d6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -766,6 +774,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (13)
@@ -974,6 +986,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (10)
@@ -1053,6 +1069,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (14)
@@ -1127,6 +1147,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (4)
@@ -1285,6 +1309,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (3)
@@ -1443,6 +1471,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (6)
@@ -1668,6 +1700,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.1
@@ -1730,6 +1766,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.2929153
@@ -1930,6 +1970,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7466441333045802999, guid: 652377fe27866164d9a69cc5b781e6d6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1948,6 +1992,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 208.06886
@@ -2285,6 +2333,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (2)
@@ -2403,6 +2455,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (7)
@@ -2751,6 +2807,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 208.06886
@@ -2885,6 +2945,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.6
@@ -3046,6 +3110,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 208.06886
@@ -3426,6 +3494,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (1)
@@ -3500,6 +3572,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (8)
@@ -3688,6 +3764,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (5)
@@ -4059,6 +4139,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.0429153
@@ -4131,6 +4215,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.6
@@ -4328,6 +4416,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7
@@ -4565,6 +4657,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (11)
@@ -4773,6 +4869,10 @@ PrefabInstance:
     - target: {fileID: 6173171638253489966, guid: 652377fe27866164d9a69cc5b781e6d6, type: 3}
       propertyPath: m_Name
       value: rock_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466441333045802999, guid: 652377fe27866164d9a69cc5b781e6d6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5069,7 +5169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5380848902056856097, guid: 7e14e372c9013cb42832468a312847d2, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6549528603650734894, guid: 7e14e372c9013cb42832468a312847d2, type: 3}
       propertyPath: m_Name
@@ -5093,6 +5193,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 2724705791552433215, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3442960552027917410, guid: 36d64028eb89d6e44926590d16c998db, type: 3}
       propertyPath: m_Name
       value: rock_7 (9)
@@ -5226,7 +5330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5380848902056856097, guid: 7e14e372c9013cb42832468a312847d2, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6549528603650734894, guid: 7e14e372c9013cb42832468a312847d2, type: 3}
       propertyPath: m_Name
@@ -5250,6 +5354,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1011865939}
     m_Modifications:
+    - target: {fileID: 1348283656976247082, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395946889675769520, guid: 9a25fbc9eca1b1145aab278d462d00db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 208.06886
