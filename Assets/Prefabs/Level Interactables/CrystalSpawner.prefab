@@ -97,4 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3baca0a78be6a8046b66147fc8d35d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EssenceAmount: 50
+  m_EssenceObj: {fileID: 1994554375261014097, guid: 1adcfc3d2a4b21d43bb837a17fd95fc2, type: 3}
+  m_EssenceAmount: 20
+  m_EssenceSpawnCount: 5
