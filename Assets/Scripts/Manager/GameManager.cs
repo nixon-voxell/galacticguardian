@@ -69,26 +69,29 @@ public class GameManager : SingletonMono<GameManager>
 
     public void ToEnd(bool win = false)
     {
-        // Disable build menu
-        UiManager.Instance.GetUi<InGameHud>().SetBuildMenuActive(false);
-
-        // Enable only score board
-        UiManager.Instance.SetOnlyVisible<ScoreBoard>();
-        ScoreBoard scoreBoard = UiManager.Instance.GetUi<ScoreBoard>();
-
-        scoreBoard.SetValues((int)GameStat.Instance.Time, GameStat.Instance.KillCount);
-        if (win)
+        if (m_CurrGameState == GameState.InGame)
         {
-            scoreBoard.SetTitle("You Win!", Color.green);
-        }
-        else
-        {
-            scoreBoard.SetTitle("Game Over...", Color.red);
-        }
+            // Disable build menu
+            UiManager.Instance.GetUi<InGameHud>().SetBuildMenuActive(false);
 
-        // Immediate slow down of time
-        Time.timeScale = 0.1f;
+            // Enable only score board
+            UiManager.Instance.SetOnlyVisible<ScoreBoard>();
+            ScoreBoard scoreBoard = UiManager.Instance.GetUi<ScoreBoard>();
 
-        this.m_CurrGameState = GameState.End;
+            scoreBoard.SetValues((int)GameStat.Instance.Time, GameStat.Instance.KillCount);
+            if (win)
+            {
+                scoreBoard.SetTitle("You Win!", Color.green);
+            }
+            else
+            {
+                scoreBoard.SetTitle("Game Over", Color.red);
+            }
+
+            // Immediate slow down of time
+            Time.timeScale = 0.1f;
+
+            this.m_CurrGameState = GameState.End;
+        }
     }
 }
