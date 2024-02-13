@@ -196,6 +196,7 @@ public class Enemy : StateController, IDamageable
         essence.InitializeObject(EssenceDropAmt);
         AudioManager.Instance.PlaySfx("EnemyDestroyed");
 
+        GameStat.Instance.KillCount += 1;
     }
 
 }
