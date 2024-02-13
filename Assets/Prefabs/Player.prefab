@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a43d34dead144399b037148b428be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementSpeed: 3
+  m_MovementSpeed: 2.5
   m_Explosion: {fileID: 0}
   m_Player: {fileID: 0}
 --- !u!114 &6885105723410722839
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_TileSize: 1
   m_TileNodePrefab: {fileID: 761703079437377203, guid: b00bf583e3d0a594cbc70e615637baee, type: 3}
   m_CenterTileColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EssenceCost: 100
-  m_TileDefaultHealth: 100
-  m_TileCenterHealth: 500
+  m_EssenceCost: 50
+  m_TileDefaultHealth: 125
+  m_TileCenterHealth: 1000
   m_CenterTileSprite: {fileID: 21300000, guid: 388f159b27b527c40a18f28a5b2e5987, type: 3}

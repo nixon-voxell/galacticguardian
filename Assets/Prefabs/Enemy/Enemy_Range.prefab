@@ -1969,15 +1969,15 @@ MonoBehaviour:
     Health: 100
     Damage: 35
     Speed: 4
-    EssenceDrop: 85
+    EssenceDrop: 120
     AtkRate: 0.45
     AtkSpeed: 8
   m_MaxStat:
-    Health: 1200
-    Damage: 100
+    Health: 2000
+    Damage: 65
     Speed: 6
-    EssenceDrop: 100
-    AtkRate: 4.5
+    EssenceDrop: 250
+    AtkRate: 5.5
     AtkSpeed: 13
   ProgressionDuration: 850
   EnemyAtkRange: 5.5

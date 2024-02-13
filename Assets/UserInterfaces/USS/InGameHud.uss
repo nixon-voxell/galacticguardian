@@ -85,7 +85,7 @@
 }
 
 .tower-cost {
-    color: rgb(255, 54, 54);
+    color: rgb(64, 172, 255);
     text-shadow: 0.5px 0.5px 2px rgb(0, 0, 0);
     -unity-font-style: bold;
     font-size: 20px;

@@ -53,7 +53,7 @@ MonoBehaviour:
   TowerDamage: 85
   TowerAtkRate: 0.45
   TowerAtkSpeed: -1
-  TowerAtkRange: 8
+  TowerAtkRange: 9.5
   TowerAtkLayers:
     serializedVersion: 2
     m_Bits: 256

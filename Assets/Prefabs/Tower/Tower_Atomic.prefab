@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TowerMaxHP: 300
   TowerDamage: 200
-  TowerAtkRate: 0.1
+  TowerAtkRate: 0.15
   TowerAtkSpeed: -1
   TowerAtkRange: 12
   TowerAtkLayers:
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f11556f79f132419c15fea74ad3de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AOERadius: 2
-  m_HitDelay: 0.5
+  m_AOERadius: 2.5
+  m_HitDelay: 0.25
   m_ShootPfx: {fileID: 9010929757549595985}
 --- !u!95 &2962529195755969115
 Animator:
