@@ -56,7 +56,7 @@ public class ShipBuilder : MonoBehaviour
         this.m_MaxIndex2D = this.m_GridLength - 1;
         this.m_CenterTileIndex = mathx.flatten_int2((int)this.m_TilesFromCenter, this.m_GridLength);
 
-        float tileStart = -this.m_TileSize * (this.m_TilesFromCenter + 0.5f);
+        float tileStart = -this.m_TileSize * (this.m_TilesFromCenter + 0.5f) + this.m_TileSize * 0.5f;
 
         this.m_TileNodes = new TileNode[this.m_TileCount];
 
