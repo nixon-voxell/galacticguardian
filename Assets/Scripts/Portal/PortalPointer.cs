@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PortalPointer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform m_PortalTransform;
+    [SerializeField] private GameObject m_Pointer;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        this.m_Pointer.SetActive(UserInput.Instance.Build);
+        this.transform.right = (m_PortalTransform.position - this.transform.position).normalized;
     }
 }
