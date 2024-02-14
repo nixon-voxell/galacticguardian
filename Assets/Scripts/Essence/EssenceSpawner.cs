@@ -17,12 +17,8 @@ public class EssenceSpawner : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = false;
 
-        // To prevent lagging everything when level is loaded
-        Util.CallFunctionNextFrame(this, () =>
-        {
-            m_EssenceHolder = new GameObject("Essence Holder").transform;
-            m_EssenceHolder.parent = transform;
-        });
+        m_EssenceHolder = new GameObject("Essence Holder").transform;
+        m_EssenceHolder.parent = this.transform;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
