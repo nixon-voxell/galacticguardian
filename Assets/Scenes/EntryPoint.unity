@@ -6620,6 +6620,7 @@ Transform:
   - {fileID: 882206381}
   - {fileID: 1189783052}
   - {fileID: 32155048}
+  - {fileID: 2036328666}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1318406193
@@ -6638,6 +6639,7 @@ MonoBehaviour:
   - {fileID: 882206383}
   - {fileID: 1189783053}
   - {fileID: 32155050}
+  - {fileID: 2036328668}
 --- !u!1 &1319154791
 GameObject:
   m_ObjectHideFlags: 0
@@ -11351,6 +11353,105 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2036328665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036328666}
+  - component: {fileID: 2036328667}
+  - component: {fileID: 2036328668}
+  m_Layer: 0
+  m_Name: StoryBoard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036328666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036328665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1318406192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036328667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036328665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 688d16f59663a9f4a8e4943e74e6d5ac, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: a60e5989ee7622648aeb8e06a76d5dc8, type: 3}
+  m_SortingOrder: 0
+--- !u!114 &2036328668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036328665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7f872ee9f328946ae7e96a9c154a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialVisibility: 0
+  GameWorld: GameWorld
+  m_Grid: {fileID: 1071869808}
+  m_Slides:
+  - Image: {fileID: 2800000, guid: 6fef474d25807fa42a7df561b05407ff, type: 3}
+    Content: "One day, Joe Riccitiella went to a caf\xE9 to meet his old\narcheologist
+      friend Jim Blackburst.\n\nIt was almost midnight, when both decided to sit
+      down."
+  - Image: {fileID: 2800000, guid: e1506ab56b73fe9428f98e72dd9cf85a, type: 3}
+    Content: 'Joe asked about the work that Jim had been working on a few years back.
+
+
+      It
+      was a crsytal like material that glows bluish light.'
+  - Image: {fileID: 2800000, guid: 0c7822bec77d60449aae5b94f5dfa081, type: 3}
+    Content: 'Joe wanted to see the material.
+
+
+      Jim agreed and brought it to
+      his house the following night.'
+  - Image: {fileID: 2800000, guid: 6f13fe6eece422149bc660c4a66d7765, type: 3}
+    Content: "The night came, Jim arrived at Joe\u2019s house with a large briefcase
+      as agreed.\n\nBoth of them scurried to the back of the house into Joe\u2019s
+      personal laboratory."
+  - Image: {fileID: 2800000, guid: dc526522b2c84884bbd245721c56c851, type: 3}
+    Content: 'The laboratory was huge, containing all sorts of mysterious
+
+      inventions
+      that Jim could not even begin to comprehend.'
+  - Image: {fileID: 2800000, guid: 1da9b075042cc6e4e9cedf3155151eef, type: 3}
+    Content: First examining it, then shining light onto it, and then finally, trying
+      to energize it.
+  - Image: {fileID: 2800000, guid: b6e578d7e7814a9489bfb5c73fbbd0a3, type: 3}
+    Content: 'Suddenly, the energized crystal went unstable!
+
+
+      Both of them
+      end up teleporting into a spaceship stranded in space!'
 --- !u!1 &2045993170
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,6 +39,9 @@ public class GameManager : SingletonMono<GameManager>
 
     public void ToInGame()
     {
+        UiManager.Instance.SetOnlyVisible<StoryBoard>();
+
+        /*
         // Load game world
         SceneManager.LoadSceneAsync(this.GameWorld, LoadSceneMode.Additive);
         m_Grid.SetActive(true);
@@ -61,6 +64,7 @@ public class GameManager : SingletonMono<GameManager>
 
         // SFX
         AudioManager.Instance.PlaySfx("GameStart");
+        */
 
         this.m_CurrGameState = GameState.InGame;
     }
