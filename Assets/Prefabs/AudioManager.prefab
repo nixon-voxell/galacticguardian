@@ -179,7 +179,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 2a5f1053e2ad004498eebc6266ed7242, type: 3}
   m_SfxSoundList:
   - SoundName: Laser Gun
-    Clip: {fileID: 8300000, guid: d4010652e88b5a6409e56e3260170abe, type: 3}
+    Clip: {fileID: 8300000, guid: fdd2758ecc88d24459273146ea3dba8e, type: 3}
   - SoundName: Rail Gun
     Clip: {fileID: 8300000, guid: 42aba6aca0e49a14ebb06fff29d5e3c4, type: 3}
   - SoundName: Atomic Gun
@@ -208,6 +208,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 7e2b5cbe3b2f7b548b8bb0e4decf0b3d, type: 3}
   - SoundName: EnemySpawn
     Clip: {fileID: 8300000, guid: bd2ad9017a5940345a777f857b2dd33d, type: 3}
+  - SoundName: Commander
+    Clip: {fileID: 8300000, guid: 49b2b4ecb1a1c514d868ec02b8871d20, type: 3}
   BgmSource: {fileID: 5552519374346335810}
   SfxSource: {fileID: 6469739051992134348}
 --- !u!1 &7274030369401694663

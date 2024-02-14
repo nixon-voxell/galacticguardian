@@ -69,6 +69,7 @@ public class StoryBoard : UiMono
 
                     // SFX
                     AudioManager.Instance.PlaySfx("GameStart");
+                    AudioManager.Instance.PlaySfx("Commander");
                 }
             }
             // else if (GameManager.Instance.CurrGameState == GameState.End)
