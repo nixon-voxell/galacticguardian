@@ -54,7 +54,7 @@ Material:
     m_Colors:
     - _BrightColor: {r: 3.2898116, g: 20.020857, b: 23.968628, a: 1}
     - _DarkColor: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
-    - _Position: {r: 30, g: 30, b: 0, a: 0}
+    - _Position: {r: 210, g: 210, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8302862396590284282
 MonoBehaviour:

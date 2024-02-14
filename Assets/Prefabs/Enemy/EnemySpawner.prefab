@@ -53,6 +53,6 @@ MonoBehaviour:
     m_DefaultActive: 0
   m_SpawnOffRange: 20
   m_InitialSpawnRate: 0.3
-  m_SpawnRateIncrease: 20
-  m_MaxSpawnRate: 30
+  m_SpawnRateIncrease: 10
+  m_MaxSpawnRate: 20
   SpawnActive: 0
