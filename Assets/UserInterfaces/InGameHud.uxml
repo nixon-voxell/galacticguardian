@@ -18,19 +18,19 @@
             <ui:VisualElement name="tower-btn-grp" style="flex-direction: row; align-self: center;">
                 <ui:Button name="tower0-btn" class="tower-btn" style="-unity-background-scale-mode: scale-to-fit;">
                     <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Images/Guns/Laser%20Gun.png?fileID=21300000&amp;guid=122d5afd9efda214695e2ce441eb6e55&amp;type=3#Laser Gun&apos;); -unity-background-scale-mode: scale-to-fit; margin-top: 6px; margin-right: 6px; margin-bottom: 6px; margin-left: 6px;" />
-                    <ui:Label tabindex="-1" text="300" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" class="tower-cost" style="top: 57px; left: 45px;" />
+                    <ui:Label tabindex="-1" text="300" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" class="tower-cost" style="top: 0; left: 0; margin-top: -8px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
                 </ui:Button>
                 <ui:Button name="tower1-btn" class="tower-btn">
                     <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Images/Guns/Towers.png?fileID=524387213&amp;guid=4725904574465b54c90f971ba2e7c5b9&amp;type=3#Towers_5&apos;); -unity-background-scale-mode: scale-to-fit; margin-top: 6px; margin-right: 6px; margin-bottom: 6px; margin-left: 6px;" />
-                    <ui:Label tabindex="-1" text="650" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" class="tower-cost" style="top: 57px; left: 45px;" />
+                    <ui:Label tabindex="-1" text="650" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" class="tower-cost" style="top: 0; left: 0; margin-top: -8px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
                 </ui:Button>
                 <ui:Button name="tower2-btn" class="tower-btn">
                     <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Images/Guns/Towers.png?fileID=-1012517998&amp;guid=4725904574465b54c90f971ba2e7c5b9&amp;type=3#Towers_3&apos;); -unity-background-scale-mode: scale-to-fit; margin-top: 6px; margin-right: 6px; margin-bottom: 6px; margin-left: 6px;" />
-                    <ui:Label tabindex="-1" text="450" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" name="Label" class="tower-cost" style="top: 57px; left: 45px;" />
+                    <ui:Label tabindex="-1" text="450" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" name="Label" class="tower-cost" style="top: 0; left: 0; margin-top: -8px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
                 </ui:Button>
                 <ui:Button name="tower3-btn" text="Shield" class="tower-btn">
                     <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Images/Towers/Block%202.png?fileID=21300000&amp;guid=56e54a99960709446bb0a4aee6a6d00e&amp;type=3#Block 2&apos;); -unity-background-scale-mode: scale-to-fit; margin-top: 6px; margin-right: 6px; margin-bottom: 6px; margin-left: 6px;" />
-                    <ui:Label tabindex="-1" text="300" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" class="tower-cost" style="top: 57px; left: 45px;" />
+                    <ui:Label tabindex="-1" text="300" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" class="tower-cost" style="top: 0; left: 0; margin-top: -8px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
                 </ui:Button>
             </ui:VisualElement>
         </ui:VisualElement>
