@@ -29,7 +29,7 @@ public class ScoreBoard : UiMono
         // Calculate score
         float timeScore = GameStat.Instance.Time * 10;
         float killScore = enemiesKilled * 50;
-        int finalScore = (int) (timeScore + killScore);
+        int finalScore = (int)(timeScore + killScore);
         m_HighScoreLbl.text = finalScore.ToString();
         m_BestScoreIndicator.visible = false;
 
@@ -43,7 +43,11 @@ public class ScoreBoard : UiMono
         }
 
         m_BestScoreLbl.text = bestScore.ToString();
+    }
 
+    public void HideBestScore()
+    {
+        this.m_BestScoreIndicator.visible = false;
     }
 
     private void Start()
