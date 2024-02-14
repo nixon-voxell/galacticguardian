@@ -30,7 +30,7 @@ public class TileHealth : MonoBehaviour, IDamageable
         }
     }
 
-    public void Initialize(float currentHealth, float maxHealth)
+    public void InitializeHealth(float currentHealth, float maxHealth)
     {
         this.Health = currentHealth;
         this.MaxHealth = maxHealth;

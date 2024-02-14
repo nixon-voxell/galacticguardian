@@ -88,7 +88,7 @@ public class ShipBuilder : MonoBehaviour
                     AudioManager.Instance.PlaySfx("TileBuild");
 
                     tileNode.SetActive(true);
-                    tileNode.TileHealth.Initialize(this.m_TileDefaultHealth, this.m_TileDefaultHealth);
+                    tileNode.TileHealth.InitializeHealth(this.m_TileDefaultHealth, this.m_TileDefaultHealth);
 
                     this.CheckCanBuildTiles();
                     this.CheckCanBuildTowers();
@@ -111,7 +111,7 @@ public class ShipBuilder : MonoBehaviour
                     ShakerManager.Instance.Shake("TowerPlaced");
                     AudioManager.Instance.PlaySfx("TowerBuild");
 
-                    tileNode.TileHealth.Initialize(tileNode.Tower.TowerMaxHP, tileNode.Tower.TowerMaxHP);
+                    tileNode.TileHealth.InitializeHealth(tileNode.Tower.TowerMaxHP, tileNode.Tower.TowerMaxHP);
 
                     this.CheckCanBuildTiles();
                     this.CheckCanBuildTowers();
@@ -156,7 +156,7 @@ public class ShipBuilder : MonoBehaviour
         centerTile.SetColor(m_CenterTileColor);
         centerTile.BuildTowerBtn.style.backgroundColor = this.m_CenterTileColor;
         // Set health
-        centerTile.TileHealth.Initialize(this.m_TileDefaultHealth, this.m_TileDefaultHealth);
+        centerTile.TileHealth.InitializeHealth(this.m_TileCenterHealth, this.m_TileCenterHealth);
 
         this.CheckTilesConnected();
         this.CheckCanBuildTiles();
