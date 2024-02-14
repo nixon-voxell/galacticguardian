@@ -609,14 +609,14 @@ MonoBehaviour:
   m_BaseStat:
     Health: 250
     Damage: 30
-    Speed: 4.5
+    Speed: 6
     EssenceDrop: 120
     AtkRate: 1.5
     AtkSpeed: -1
   m_MaxStat:
-    Health: 1700
+    Health: 900
     Damage: 70
-    Speed: 6
+    Speed: 9
     EssenceDrop: 250
     AtkRate: 4
     AtkSpeed: -1
