@@ -32,6 +32,7 @@ public class GameManager : SingletonMono<GameManager>
         // Enable only start menu
         UiManager.Instance.SetOnlyVisible<StartMenu>();
         UiManager.Instance.GetUi<InGameHud>().ResetButtons();
+        UiManager.Instance.GetUi<ScoreBoard>().HideBestScore();
 
         // Return to normal time scale
         Time.timeScale = 1.0f;
