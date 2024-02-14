@@ -12551,22 +12551,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7722996036104174015, guid: 1c40e31fb6ac8b34c83bca13b2bfce9b, type: 3}
-      propertyPath: m_SfxSoundList.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722996036104174015, guid: 1c40e31fb6ac8b34c83bca13b2bfce9b, type: 3}
-      propertyPath: m_SfxSoundList.Array.data[0].Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: fdd2758ecc88d24459273146ea3dba8e, type: 3}
-    - target: {fileID: 7722996036104174015, guid: 1c40e31fb6ac8b34c83bca13b2bfce9b, type: 3}
-      propertyPath: m_SfxSoundList.Array.data[15].Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 49b2b4ecb1a1c514d868ec02b8871d20, type: 3}
-    - target: {fileID: 7722996036104174015, guid: 1c40e31fb6ac8b34c83bca13b2bfce9b, type: 3}
-      propertyPath: m_SfxSoundList.Array.data[15].SoundName
-      value: Commander
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
