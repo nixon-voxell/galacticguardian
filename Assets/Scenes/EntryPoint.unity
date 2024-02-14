@@ -5071,6 +5071,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1071869808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825199300590644529, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
+  m_PrefabInstance: {fileID: 5655107570161876637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1071869809 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2801559329707999253, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
+  m_PrefabInstance: {fileID: 5655107570161876637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1083003493
 GameObject:
   m_ObjectHideFlags: 0
@@ -6838,7 +6848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTransform: {fileID: 0}
   m_Offset: {x: 0, y: 0, z: -10}
-  m_Background: {fileID: 5655107570161876638}
+  m_Background: {fileID: 1071869809}
 --- !u!4 &1349468150
 Transform:
   m_ObjectHideFlags: 0
@@ -10629,11 +10639,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1919569864 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8825199300590644529, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
-  m_PrefabInstance: {fileID: 5655107570161876637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1934653793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12274,7 +12279,7 @@ PrefabInstance:
     - target: {fileID: 7318408693640230890, guid: 17b5327695cdbf94680f2e288b14a575, type: 3}
       propertyPath: m_Grid
       value: 
-      objectReference: {fileID: 1919569864}
+      objectReference: {fileID: 1071869808}
     - target: {fileID: 7432806624497628164, guid: 17b5327695cdbf94680f2e288b14a575, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12382,18 +12387,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8825199300590644529, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
---- !u!212 &5655107570161876638 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2801559329707999253, guid: e13d464e737b56d42a4334b5b0c6269d, type: 3}
-  m_PrefabInstance: {fileID: 5655107570161876637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5757623668219037420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12518,6 +12518,6 @@ SceneRoots:
   - {fileID: 4550135589525877637}
   - {fileID: 1318406192}
   - {fileID: 5757623668219037420}
-  - {fileID: 5655107570161876637}
   - {fileID: 1655194305}
   - {fileID: 1513960516}
+  - {fileID: 5655107570161876637}

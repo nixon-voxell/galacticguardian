@@ -16,13 +16,10 @@ public class GameManager : SingletonMono<GameManager>
     [Voxell.Util.Scene] public string GameWorld;
     [SerializeField] private GameObject m_Grid;
 
-    private void Start()
-    {
-        m_Grid.SetActive(false);
-    }
-
     public void ToStart()
     {
+        this.m_Grid.SetActive(false);
+
         // Reset camera position
         CameraFollow.Instance.transform.position = CameraFollow.Instance.Offset;
 

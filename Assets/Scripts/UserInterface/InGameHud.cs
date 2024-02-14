@@ -81,6 +81,7 @@ public class InGameHud : UiMono
         this.TileBtnGrp.visible = active;
         this.TileBtnGrp.style.display = active ? DisplayStyle.Flex : DisplayStyle.None;
         this.TowerBtnGrp.visible = active;
+        this.TowerBtnGrp.style.display = active ? DisplayStyle.Flex : DisplayStyle.None;
 
         this.m_BuildMenuActive = active;
     }
