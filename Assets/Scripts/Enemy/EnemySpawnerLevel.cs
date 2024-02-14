@@ -25,11 +25,13 @@ public class EnemySpawnerLevel : MonoBehaviour
         {
             print("Enter");
 
-
-
             Vector2 randomPos = (Vector2)transform.position + Random.insideUnitCircle.normalized * m_SpawnRange;
             int enemyIdx = Random.Range(0, m_EnemyPool.Length);
-            GameObject enemyObj = Instantiate(m_EnemyPool[enemyIdx], randomPos, Quaternion.identity);
+
+            GameObject enemyObj = Instantiate(m_EnemyPool[enemyIdx], randomPos, Quaternion.identity, this.transform);
+            enemyObj.transform.parent = null;
+            enemyObj.transform.localScale = Vector3.one;
+
             enemyObj.GetComponent<Enemy>().InitializeEnemy();
             AudioManager.Instance.PlaySfx("EnemySpawn");
 
