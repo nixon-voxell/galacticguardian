@@ -294,4 +294,4 @@ PolygonCollider2D:
       - {x: 1.18, y: -4.48}
       - {x: 1.53, y: -4.3399997}
       - {x: 1.61, y: -4.31}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
