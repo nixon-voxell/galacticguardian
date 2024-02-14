@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerMaxHP: 300
-  TowerDamage: 40
-  TowerAtkRate: 1.75
-  TowerAtkSpeed: 12
-  TowerAtkRange: 7.5
+  TowerDamage: 35
+  TowerAtkRate: 1.5
+  TowerAtkSpeed: 16
+  TowerAtkRange: 6.5
   TowerAtkLayers:
     serializedVersion: 2
     m_Bits: 256

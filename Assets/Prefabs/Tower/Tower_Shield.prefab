@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5e736bcbc87654480cd3dcbe63ab68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerMaxHP: 1000
+  TowerMaxHP: 1250
   TowerDamage: 0
   TowerAtkRate: 0
   TowerAtkSpeed: 0
