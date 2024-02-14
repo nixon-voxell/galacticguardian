@@ -1967,16 +1967,16 @@ MonoBehaviour:
   InitialState: {fileID: 6007758984651726667}
   m_BaseStat:
     Health: 100
-    Damage: 35
+    Damage: 40
     Speed: 4
     EssenceDrop: 120
-    AtkRate: 0.45
+    AtkRate: 0.35
     AtkSpeed: 8
   m_MaxStat:
-    Health: 2000
-    Damage: 65
+    Health: 1300
+    Damage: 80
     Speed: 6
-    EssenceDrop: 250
+    EssenceDrop: 300
     AtkRate: 5.5
     AtkSpeed: 13
   ProgressionDuration: 850

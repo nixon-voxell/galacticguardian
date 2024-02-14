@@ -608,19 +608,19 @@ MonoBehaviour:
   InitialState: {fileID: 6007758984651726667}
   m_BaseStat:
     Health: 175
-    Damage: 20
+    Damage: 30
     Speed: 4.5
     EssenceDrop: 120
-    AtkRate: 1
+    AtkRate: 1.5
     AtkSpeed: -1
   m_MaxStat:
-    Health: 3000
-    Damage: 50
+    Health: 1700
+    Damage: 70
     Speed: 6
-    EssenceDrop: 250
+    EssenceDrop: 300
     AtkRate: 4
     AtkSpeed: -1
-  ProgressionDuration: 900
+  ProgressionDuration: 600
   EnemyAtkRange: 3
   AtkLayerMask:
     serializedVersion: 2
